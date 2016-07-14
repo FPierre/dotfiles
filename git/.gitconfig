@@ -1,0 +1,7 @@
+[user]
+	email = pflauder@gmail.com
+	name = FPierre
+[core]
+	editor = emacs
+[color]
+	ui = auto
