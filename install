@@ -15,6 +15,7 @@ add-apt-repository -y ppa:git-core/ppa
 add-apt-repository -y ppa:webupd8team/sublime-text-3
 add-apt-repository -y ppa:videolan/stable-daily
 add-apt-repository -y ppa:nginx/stable
+add-apt-repository -y ppa:linrunner/tlp
 curl -sL https://deb.nodesource.com/setup_6.x | sudo bash -
 
 # Update package list and upgrade system
@@ -25,7 +26,7 @@ PACKAGES=$PACKAGES' curl emacs24 sublime-text-installer git nginx nodejs tmux'
 # Utils
 PACKAGES=$PACKAGES' redshift'
 # Others
-PACKAGES=$PACKAGES' htop powertop skype vlc calibre'
+PACKAGES=$PACKAGES' htop powertop tlp skype vlc calibre'
 
 # Packages installation
 apt-get -y install $PACKAGES
