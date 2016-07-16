@@ -5,8 +5,12 @@ alias gc='git checkout'
 alias schema='git update-index --assume-unchanged db/schema.rb'
 alias gemfile='git update-index --assume-unchanged Gemfile.lock'
 
-# Ruby
+# Ruby on Rails
+alias bi='bundle install'
 alias be='bundle exec'
+alias rs="rails s"
+alias rc="rails c"
+alias logreq='tail -f log/development.log -n 10000 | grep --line-buffered Started'
 
 # Typo
 alias exti='exit'
@@ -23,6 +27,8 @@ alias sudo="sudo "
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 
-# View HTTP traffic
-alias sniff="sudo ngrep -d 'en1' -t '^(GET|POST) ' 'tcp and port 80'"
+# Show active network listeners
+alias netlisteners='lsof -i -P | grep LISTEN'
+# sniff GET and POST traffic over http
+alias sniff="sudo ngrep -t '^(GET|POST) ' 'tcp and port 80'"
 alias httpdump="sudo tcpdump -i en1 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET \/.*\""
