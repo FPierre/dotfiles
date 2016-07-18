@@ -1,0 +1,24 @@
+{
+  "bootstrapped": true,
+  "in_process_packages":
+  [
+  ],
+  "installed_packages":
+  [
+    "BracketHighlighter",
+    "Color Highlighter",
+    "GitGutter",
+    "Material Theme",
+    "Material Theme - Appbar",
+    "Package Control",
+    "RuboCop",
+    "Ruby Slim",
+    "SCSS",
+    "SideBarEnhancements",
+    "SublimeLinter",
+    "SublimeLinter-jshint",
+    "SublimeLinter-ruby",
+    "Unicode Character Highlighter",
+    "Vue Syntax Highlight"
+  ]
+}
