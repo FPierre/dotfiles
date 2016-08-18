@@ -12,6 +12,8 @@ alias bi='bundle install'
 alias be='bundle exec'
 alias rs="rails s"
 alias rc="rails c"
+alias rt="rails t"
+alias cop="rubocop"
 
 # Typo
 alias exti='exit'
