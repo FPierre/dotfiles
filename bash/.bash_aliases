@@ -1,9 +1,10 @@
 # GIT
 alias gs='git status'
+alias ga='git add'
 alias gb='git branch'
 alias gc='git checkout'
 alias gd='git diff'
-alias g='git'
+alias gm='git merge'
 alias schema='git update-index --assume-unchanged db/schema.rb'
 alias gemfile='git update-index --assume-unchanged Gemfile.lock'
 
