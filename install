@@ -15,9 +15,13 @@ add-apt-repository -y ppa:git-core/ppa
 add-apt-repository -y ppa:webupd8team/sublime-text-3
 add-apt-repository -y ppa:videolan/stable-daily
 add-apt-repository -y ppa:nginx/stable
-add-apt-repository -y ppa:linrunner/tlp
 add-apt-repository -y ppa:wireshark-dev/stable 
 curl -sL https://deb.nodesource.com/setup_6.x | sudo bash -
+
+# Laptop only
+if [ -d '/sys/class/power_supply' ]; then
+    add-apt-repository -y ppa:linrunner/tlp
+fi
 
 # Update package list and upgrade system
 apt-get -y update && apt-get -y upgrade
@@ -27,7 +31,12 @@ PACKAGES=$PACKAGES' curl emacs24 sublime-text-installer git nginx nodejs tmux'
 # Utils
 PACKAGES=$PACKAGES' redshift wireshark'
 # Others
-PACKAGES=$PACKAGES' htop powertop tlp skype vlc calibre'
+PACKAGES=$PACKAGES' htop skype vlc calibre'
+
+# Laptop only
+if [ -d '/sys/class/power_supply' ]; then
+    PACKAGES=$PACKAGES' powertop tlp'
+fi
 
 # Packages installation
 apt-get -y install $PACKAGES
