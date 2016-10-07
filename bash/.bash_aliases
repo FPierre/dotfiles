@@ -1,3 +1,9 @@
+# SSH
+alias nice='ssh seniormedia@nice.seniormedia.fr'
+alias richmond='ssh seniormedia@richmond.seniormedia.fr'
+alias chicago='ssh seniormedia@chicago.seniormedia.fr'
+alias msi='ssh pierre@88.190.46.158'
+
 # GIT
 alias gs='git status'
 alias gb='git branch'
