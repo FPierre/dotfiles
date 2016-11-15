@@ -19,6 +19,7 @@
 		"SublimeLinter-jshint",
 		"SublimeLinter-ruby",
 		"Unicode Character Highlighter",
-		"Vue Syntax Highlight"
+		"Vue Syntax Highlight",
+		"zz File Icons"
 	]
 }
