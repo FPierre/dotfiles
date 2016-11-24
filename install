@@ -53,5 +53,7 @@ ln -sfv "${DOTFILES_DIR}/sublime_text/Package\ Control.sublime-settings" "${HOME
 ln -sfv "${DOTFILES_DIR}/sublime_text/Default\ \(Linux\).sublime-keymap" "${HOME}/.config/sublime-text-3/Packages/User/Default\ \(Linux\).sublime-keymap"
 ln -sfv "${DOTFILES_DIR}/tmux/.tmux.conf" "${HOME}/.tmux.conf"
 ln -sfv "${DOTFILES_DIR}/gemrc/.gemrc" "${HOME}/.gemrc"
+ln -sfv "${DOTFILES_DIR}/git/.gitconfig" "${HOME}/.gitconfig
+
 
 source "${HOME}/.bash_prompt"
