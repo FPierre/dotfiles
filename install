@@ -29,9 +29,9 @@ apt-get -y update && apt-get -y upgrade
 # Development
 PACKAGES=$PACKAGES' curl emacs24 sublime-text-installer git nginx nodejs tmux'
 # Utils
-PACKAGES=$PACKAGES' redshift wireshark'
+PACKAGES=$PACKAGES' redshift htop iftop'
 # Others
-PACKAGES=$PACKAGES' htop skype vlc calibre'
+PACKAGES=$PACKAGES' skype vlc calibre'
 
 # Laptop only
 if [ -d '/sys/class/power_supply' ]; then
