@@ -1,14 +1,7 @@
 # SSH
 
-# GIT
-alias gs='git status'
-alias ga='git add'
-alias gb='git branch'
-alias gc='git checkout'
-alias gd='git diff'
-alias gm='git merge'
-alias schema='git update-index --assume-unchanged db/schema.rb'
-alias gemfile='git update-index --assume-unchanged Gemfile.lock'
+alias tunnel_nice='ssh -L 0.0.0.0:3307:localhost:3306 nice'
+alias tunnel_richmond='ssh -L 0.0.0.0:3308:localhost:3306 richmond'
 
 # Ruby on Rails
 alias bi='bundle install'
