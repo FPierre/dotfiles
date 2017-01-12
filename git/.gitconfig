@@ -1,7 +1,15 @@
 [user]
-	email = pflauder@gmail.com
-	name = FPierre
+  email = pflauder@gmail.com
+  name = FPierre
 [core]
-	editor = emacs
+  editor = emacs
 [color]
-	ui = auto
+  ui = auto
+[alias]
+  co = checkout
+  br = branch
+  ci = commit
+  st = status
+  ad = add
+  di = diff
+  me = merge
