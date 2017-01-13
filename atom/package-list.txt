@@ -14,3 +14,6 @@ minimap-pigments
 open-terminal-here
 pigments
 wakatime
+Sublime-Style-Column-Selection
+atom-beautify
+file-icons
