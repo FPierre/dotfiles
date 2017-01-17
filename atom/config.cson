@@ -1,4 +1,32 @@
 "*":
+  "atom-beautify":
+    general:
+      _analyticsUserId: "03ba43de-d762-48f7-a911-8391fcd24766"
+    js:
+      beautify_on_save: true
+      break_chained_methods: true
+      end_with_newline: true
+      indent_size: 2
+    markdown:
+      beautify_on_save: true
+    ruby:
+      beautify_on_save: true
+      indent_size: 2
+    sass:
+      beautify_on_save: true
+    scss:
+      align_assignments: true
+      beautify_on_save: true
+      convert_quotes: "double"
+      force_indentation: true
+      indent_size: 2
+      no_lead_zero: true
+    vue:
+      beautify_on_save: true
+      end_with_newline: true
+      indent_inner_html: true
+      indent_size: 2
+    xtemplate: {}
   "atom-material-ui":
     colors:
       abaseColor: "#ffa726"
@@ -10,6 +38,12 @@
     ui:
       panelContrast: true
   core:
+    allowPendingPaneItems: false
+    openEmptyEditorOnStart: false
+    packagesWithKeymapsDisabled: [
+      "git-diff"
+      "highlight-selected"
+    ]
     projectHome: "/var/www"
     telemetryConsent: "no"
     themes: [
@@ -26,6 +60,7 @@
     softWrap: true
     softWrapAtPreferredLineLength: true
     zoomFontWhenCtrlScrolling: false
+  "file-icons": {}
   minimap:
     absoluteMode: true
     plugins:
@@ -37,6 +72,6 @@
   wakatime:
     apikey: "Saved in your ~/.wakatime.cfg file"
   "wakatime-hidden":
-    lastInit: 1484207756
+    lastInit: 1484639919
   welcome:
     showOnStartup: false
