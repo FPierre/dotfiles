@@ -1,4 +1,6 @@
 # SSH
+alias tunnel_nice='ssh -L 0.0.0.0:3307:localhost:3306 nice'
+alias tunnel_richmond='ssh -L 0.0.0.0:3308:localhost:3306 richmond'
 
 # Ruby on Rails
 alias bi='bundle install'

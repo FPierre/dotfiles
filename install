@@ -10,12 +10,17 @@ fi
 # Get current dir (so run this script from anywhere)
 DOTFILES_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-# Packages
+#
+# System packages
+#
+
+# PPA
 add-apt-repository -y ppa:git-core/ppa
 add-apt-repository -y ppa:webupd8team/sublime-text-3
 add-apt-repository -y ppa:videolan/stable-daily
 add-apt-repository -y ppa:nginx/stable
 add-apt-repository -y ppa:wireshark-dev/stable 
+add-apt-repository -y ppa:webupd8team/atom
 curl -sL https://deb.nodesource.com/setup_6.x | sudo bash -
 
 # Laptop only
@@ -27,33 +32,50 @@ fi
 apt-get -y update && apt-get -y upgrade
 
 # Development
-PACKAGES=$PACKAGES' curl emacs24 sublime-text-installer git nginx nodejs tmux'
+SYSTEM_PACKAGES=$SYSTEM_PACKAGES' curl emacs24 sublime-text-installer atom git nginx nodejs tmux'
 # Utils
-PACKAGES=$PACKAGES' redshift htop iftop'
+SYSTEM_PACKAGES=$SYSTEM_PACKAGES' redshift htop iftop'
 # Others
-PACKAGES=$PACKAGES' skype vlc calibre'
+SYSTEM_PACKAGES=$SYSTEM_PACKAGES' skype vlc calibre'
 
 # Laptop only
 if [ -d '/sys/class/power_supply' ]; then
-    PACKAGES=$PACKAGES' powertop tlp'
+    SYSTEM_PACKAGES=$SYSTEM_PACKAGES' powertop tlp'
 fi
 
 # Packages installation
-apt-get -y install $PACKAGES
+apt-get -y install $SYSTEM_PACKAGES
 
 # Remove useless packages
 apt-get remove -y --purge growisofs totem totem-common libtotem0 gimp-data mintnanny thunderbird pidgin cowsay mintwelcome hexchat
 
+#
+# Atom packages
+#
+
+apm install --packages-file ../atom/package-list.txt
+
+#
 # Symlinks
+#
+
+# Bash
 ln -sfv "${DOTFILES_DIR}/bash/.bash_aliases" "${HOME}/.bash_aliases"
 ln -sfv "${DOTFILES_DIR}/bash/.bash_prompt" "${HOME}/.bash_prompt"
+# Redshift
 ln -sfv "${DOTFILES_DIR}/redshift/redshift.conf" "${HOME}/redshift/redshift.conf"
+# Sublime Text 3
 ln -sfv "${DOTFILES_DIR}/sublime_text/Preferences.sublime-settings" "${HOME}/.config/sublime-text-3/Packages/User/Preferences.sublime-settings"
 ln -sfv "${DOTFILES_DIR}/sublime_text/Package\ Control.sublime-settings" "${HOME}/.config/sublime-text-3/Packages/User/Package\ Control.sublime-settings"
 ln -sfv "${DOTFILES_DIR}/sublime_text/Default\ \(Linux\).sublime-keymap" "${HOME}/.config/sublime-text-3/Packages/User/Default\ \(Linux\).sublime-keymap"
+# Tmux
 ln -sfv "${DOTFILES_DIR}/tmux/.tmux.conf" "${HOME}/.tmux.conf"
+# Ruby
 ln -sfv "${DOTFILES_DIR}/gemrc/.gemrc" "${HOME}/.gemrc"
-ln -sfv "${DOTFILES_DIR}/git/.gitconfig" "${HOME}/.gitconfig
-
+# GIT
+ln -sfv "${DOTFILES_DIR}/git/.gitconfig" "${HOME}/.gitconfig"
+# Atom
+ln -sfv "${DOTFILES_DIR}/atom/config.cson" "${HOME}/.atom/config.cson"
+ln -sfv "${DOTFILES_DIR}/atom/styles.less" "${HOME}/.atom/styles.less"
 
 source "${HOME}/.bash_prompt"

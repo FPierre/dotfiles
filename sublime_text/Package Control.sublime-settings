@@ -8,6 +8,7 @@
 		"BracketHighlighter",
 		"Color Highlighter",
 		"GitGutter",
+		"JavaScriptNext - ES6 Syntax",
 		"Material Theme",
 		"Package Control",
 		"RuboCop",
@@ -18,6 +19,8 @@
 		"SublimeLinter-jshint",
 		"SublimeLinter-ruby",
 		"Unicode Character Highlighter",
-		"Vue Syntax Highlight"
+		"Vue Syntax Highlight",
+		"WakaTime",
+		"zz File Icons"
 	]
 }
