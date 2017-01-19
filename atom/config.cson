@@ -60,6 +60,8 @@
     softWrap: true
     softWrapAtPreferredLineLength: true
     zoomFontWhenCtrlScrolling: false
+  "exception-reporting":
+    userId: "9cefe855-af2c-b16e-f3a6-460d8875a5fa"
   "file-icons": {}
   minimap:
     absoluteMode: true
@@ -72,6 +74,6 @@
   wakatime:
     apikey: "Saved in your ~/.wakatime.cfg file"
   "wakatime-hidden":
-    lastInit: 1484639919
+    lastInit: 1484776796
   welcome:
     showOnStartup: false
