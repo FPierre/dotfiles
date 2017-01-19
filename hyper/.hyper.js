@@ -7,19 +7,19 @@ module.exports = {
     fontFamily: '"Fira Code", Menlo, "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
 
     // terminal cursor background color and opacity (hex, rgb, hsl, hsv, hwb or cmyk)
-    cursorColor: 'rgba(248,28,229,0.8)',
+    cursorColor: '#d3d7cf',
 
     // `BEAM` for |, `UNDERLINE` for _, `BLOCK` for █
     cursorShape: 'BLOCK',
 
     // color of the text
-    foregroundColor: '#fff',
+    foregroundColor: '#d3d7cf',
 
     // terminal background color
-    backgroundColor: '#000',
+    backgroundColor: '#263236',
 
     // border color (window, tabs)
-    borderColor: '#333',
+    borderColor: '#263236',
 
     // custom css to embed in the main window
     css: '',
@@ -45,20 +45,20 @@ module.exports = {
     // an array here instead of a color map object
     colors: {
       black: '#000000',
-      red: '#ff0000',
-      green: '#33ff00',
-      yellow: '#ffff00',
-      blue: '#0066ff',
-      magenta: '#cc00ff',
-      cyan: '#00ffff',
+      red: '#ff5370',
+      green: '#c3e88d',
+      yellow: '#ffcb6b',
+      blue: '#82aaff',
+      magenta: '#bb80b3',
+      cyan: '#89ddff',
       white: '#d0d0d0',
       lightBlack: '#808080',
-      lightRed: '#ff0000',
-      lightGreen: '#33ff00',
-      lightYellow: '#ffff00',
-      lightBlue: '#0066ff',
-      lightMagenta: '#cc00ff',
-      lightCyan: '#00ffff',
+      lightRed: '#e53935',
+      lightGreen: '#91b859',
+      lightYellow: '#ffb62c',
+      lightBlue: '#6182b8',
+      lightMagenta: '#945eb8',
+      lightCyan: '#39adb5',
       lightWhite: '#ffffff'
     },
 
@@ -92,7 +92,7 @@ module.exports = {
   //   `hyperpower`
   //   `@company/project`
   //   `project#1.0.1`
-    plugins: ['hyper-material-theme', 'hyperline', 'hyper-arc-dark-controls'],
+    plugins: ['hyperline', 'hyper-arc-dark-controls'],
 
   // in development, you can create a directory under
   // `~/.hyper_plugins/local/` and include it here
