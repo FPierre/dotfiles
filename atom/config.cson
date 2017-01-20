@@ -2,15 +2,18 @@
   "atom-beautify":
     general:
       _analyticsUserId: "03ba43de-d762-48f7-a911-8391fcd24766"
+      analytics: false
     js:
       beautify_on_save: true
       break_chained_methods: true
+      disabled: true
       end_with_newline: true
       indent_size: 2
     markdown:
       beautify_on_save: true
     ruby:
       beautify_on_save: true
+      disabled: true
       indent_size: 2
     sass:
       beautify_on_save: true
@@ -38,7 +41,6 @@
     ui:
       panelContrast: true
   core:
-    allowPendingPaneItems: false
     openEmptyEditorOnStart: false
     packagesWithKeymapsDisabled: [
       "git-diff"
@@ -52,7 +54,7 @@
     ]
   editor:
     fontFamily: "Fira Code"
-    fontSize: 15
+    fontSize: 18
     lineHeight: 2
     preferredLineLength: 120
     showIndentGuide: true
@@ -63,6 +65,9 @@
   "exception-reporting":
     userId: "9cefe855-af2c-b16e-f3a6-460d8875a5fa"
   "file-icons": {}
+  "git-diff":
+    showIconsInEditorGutter: true
+  "linter-rubocop": {}
   minimap:
     absoluteMode: true
     plugins:
