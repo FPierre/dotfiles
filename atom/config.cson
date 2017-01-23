@@ -77,6 +77,8 @@
       pigments: true
       pigmentsDecorationsZIndex: 0
   "one-dark-ui": {}
+  "project-manager":
+    alwaysOpenInSameWindow: true
   wakatime:
     apikey: "Saved in your ~/.wakatime.cfg file"
   "wakatime-hidden":
