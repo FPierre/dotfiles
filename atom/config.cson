@@ -72,6 +72,10 @@
   "file-icons": {}
   "linter-scss-lint":
     disableWhenNoConfigFileInPath: true
+  "git-diff":
+    showIconsInEditorGutter: true
+  linter: {}
+  "linter-rubocop": {}
   minimap:
     absoluteMode: true
     plugins:
@@ -80,9 +84,16 @@
       pigments: true
       pigmentsDecorationsZIndex: 0
   "one-dark-ui": {}
+  "project-manager":
+    alwaysOpenInSameWindow: true
   wakatime:
     apikey: "Saved in your ~/.wakatime.cfg file"
   "wakatime-hidden":
     lastInit: 1485195258
   welcome:
     showOnStartup: false
+  whitespace:
+    ignoreWhitespaceOnCurrentLine: false
+'.slim.text':
+  whitespace:
+    removeTrailingWhitespace: true

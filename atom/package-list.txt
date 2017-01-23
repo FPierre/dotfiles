@@ -1,10 +1,12 @@
+atom-beautify
 atom-material-syntax
 atom-material-ui
+file-icons
 highlight-selected
 language-slim
 language-vue
 linter
-linter-jshint
+linter-eslint
 linter-rubocop
 linter-scss-lint
 linter-slim
@@ -13,7 +15,7 @@ minimap-git-diff
 minimap-pigments
 open-terminal-here
 pigments
-wakatime
+project-manager
+sort-lines
 Sublime-Style-Column-Selection
-atom-beautify
-file-icons
+wakatime
