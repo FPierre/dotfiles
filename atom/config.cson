@@ -65,6 +65,7 @@
   "file-icons": {}
   "git-diff":
     showIconsInEditorGutter: true
+  linter: {}
   "linter-rubocop": {}
   minimap:
     absoluteMode: true
@@ -77,6 +78,6 @@
   wakatime:
     apikey: "Saved in your ~/.wakatime.cfg file"
   "wakatime-hidden":
-    lastInit: 1484735069
+    lastInit: 1485157421
   welcome:
     showOnStartup: false
