@@ -85,3 +85,8 @@
     lastInit: 1485157421
   welcome:
     showOnStartup: false
+  whitespace:
+    ignoreWhitespaceOnCurrentLine: false
+'.slim.text':
+  whitespace:
+    removeTrailingWhitespace: true
