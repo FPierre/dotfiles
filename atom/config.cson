@@ -62,6 +62,8 @@
     softWrap: true
     softWrapAtPreferredLineLength: true
     zoomFontWhenCtrlScrolling: false
+  "exception-reporting":
+    userId: "9cefe855-af2c-b16e-f3a6-460d8875a5fa"
   "file-icons": {}
   "git-diff":
     showIconsInEditorGutter: true
