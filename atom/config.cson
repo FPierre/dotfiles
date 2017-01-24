@@ -17,10 +17,12 @@
       indent_size: 2
     sass:
       beautify_on_save: true
+      disabled: true
     scss:
       align_assignments: true
       beautify_on_save: true
       convert_quotes: "double"
+      disabled: true
       force_indentation: true
       indent_size: 2
       no_lead_zero: true
@@ -82,11 +84,11 @@
   wakatime:
     apikey: "Saved in your ~/.wakatime.cfg file"
   "wakatime-hidden":
-    lastInit: 1485157421
+    lastInit: 1485244734
   welcome:
     showOnStartup: false
   whitespace:
     ignoreWhitespaceOnCurrentLine: false
-'.slim.text':
+".slim.text":
   whitespace:
     removeTrailingWhitespace: true
