@@ -31,18 +31,20 @@
     xtemplate: {}
   "atom-material-ui":
     colors:
-      abaseColor: "#ffa726"
-      accentColor: "#9f6918"
-      predefinedColor: "Orange"
-    tabs: {}
+      genAccent: true
+      paintCursor: true
+    tabs:
+      noTabMinWidth: true
     treeView:
       compactList: true
     ui:
       panelContrast: true
+  autosave:
+    enabled: true
   core:
     allowPendingPaneItems: false
     disabledPackages: [
-      "linter-scss-lint"
+      "atom-beautify"
     ]
     openEmptyEditorOnStart: false
     packagesWithKeymapsDisabled: [
@@ -59,7 +61,7 @@
     autoIndent: false
     autoIndentOnPaste: false
     fontFamily: "Fira Code"
-    fontSize: 15
+    fontSize: 18
     lineHeight: 2
     preferredLineLength: 120
     showIndentGuide: true
@@ -70,12 +72,13 @@
   "exception-reporting":
     userId: "9cefe855-af2c-b16e-f3a6-460d8875a5fa"
   "file-icons": {}
-  "linter-scss-lint":
-    disableWhenNoConfigFileInPath: true
   "git-diff":
     showIconsInEditorGutter: true
-  linter: {}
+  linter:
+    errorPanelHeight: 341
   "linter-rubocop": {}
+  "linter-scss-lint":
+    disableWhenNoConfigFileInPath: true
   minimap:
     absoluteMode: true
     plugins:
@@ -89,7 +92,7 @@
   wakatime:
     apikey: "Saved in your ~/.wakatime.cfg file"
   "wakatime-hidden":
-    lastInit: 1485244734
+    lastInit: 1485340093
   welcome:
     showOnStartup: false
   whitespace:
