@@ -76,6 +76,7 @@ ln -sfv "${DOTFILES_DIR}/gemrc/.gemrc" "${HOME}/.gemrc"
 ln -sfv "${DOTFILES_DIR}/git/.gitconfig" "${HOME}/.gitconfig"
 # Atom
 ln -sfv "${DOTFILES_DIR}/atom/config.cson" "${HOME}/.atom/config.cson"
+ln -sfv "${DOTFILES_DIR}/atom/keymap.cson" "${HOME}/.atom/keymap.cson"
 ln -sfv "${DOTFILES_DIR}/atom/styles.less" "${HOME}/.atom/styles.less"
 # Hyper.js
 ln -sfv "${DOTFILES_DIR}/hyper/.hyper.js" "${HOME}/.hyper.js"
