@@ -32,6 +32,7 @@
 # http://flight-manual.atom.io/using-atom/sections/basic-customization/#_cson
 'atom-text-editor':
   'ctrl-e': 'editor:move-to-end-of-screen-line'
+  'ctrl-"': 'editor:move-to-first-character-of-line'
 
 'atom-text-editor:not([mini])':
   'f9': 'sort-lines:sort'

@@ -18,4 +18,3 @@ pigments
 project-manager
 sort-lines
 Sublime-Style-Column-Selection
-wakatime

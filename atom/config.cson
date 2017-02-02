@@ -30,18 +30,20 @@
     xtemplate: {}
   "atom-material-ui":
     colors:
-      abaseColor: "#ffa726"
-      accentColor: "#9f6918"
-      predefinedColor: "Orange"
-    tabs: {}
+      genAccent: true
+      paintCursor: true
+    tabs:
+      noTabMinWidth: true
     treeView:
       compactList: true
     ui:
       panelContrast: true
+  autosave:
+    enabled: true
   core:
     allowPendingPaneItems: false
     disabledPackages: [
-      "linter-scss-lint"
+      "atom-beautify"
     ]
     openEmptyEditorOnStart: false
     packagesWithKeymapsDisabled: [
@@ -86,10 +88,6 @@
   "one-dark-ui": {}
   "project-manager":
     alwaysOpenInSameWindow: true
-  wakatime:
-    apikey: "Saved in your ~/.wakatime.cfg file"
-  "wakatime-hidden":
-    lastInit: 1485244734
   welcome:
     showOnStartup: false
   whitespace:
