@@ -42,9 +42,6 @@
     enabled: true
   core:
     allowPendingPaneItems: false
-    disabledPackages: [
-      "atom-beautify"
-    ]
     openEmptyEditorOnStart: false
     packagesWithKeymapsDisabled: [
       "git-diff"
