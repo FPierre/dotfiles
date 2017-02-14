@@ -42,9 +42,6 @@
     enabled: true
   core:
     allowPendingPaneItems: false
-    disabledPackages: [
-      "atom-beautify"
-    ]
     openEmptyEditorOnStart: false
     packagesWithKeymapsDisabled: [
       "git-diff"
@@ -78,6 +75,8 @@
   "linter-rubocop": {}
   "linter-scss-lint":
     disableWhenNoConfigFileInPath: true
+  "linter-stylelint":
+    useStandard: true
   minimap:
     absoluteMode: true
     plugins:
