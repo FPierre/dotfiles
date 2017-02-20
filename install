@@ -32,7 +32,7 @@ fi
 apt-get -y update && apt-get -y upgrade
 
 # Development
-SYSTEM_PACKAGES=$SYSTEM_PACKAGES' curl emacs24 sublime-text-installer atom git nginx nodejs tmux'
+SYSTEM_PACKAGES=$SYSTEM_PACKAGES' curl emacs24 atom git nginx nodejs tmux'
 # Utils
 SYSTEM_PACKAGES=$SYSTEM_PACKAGES' redshift htop iftop'
 # Others
@@ -41,7 +41,7 @@ SYSTEM_PACKAGES=$SYSTEM_PACKAGES' skype vlc calibre'
 # Laptop only
 if [ -d '/sys/class/power_supply' ]; then
     SYSTEM_PACKAGES=$SYSTEM_PACKAGES' powertop tlp'
-fi
+fi<
 
 # Packages installation
 apt-get -y install $SYSTEM_PACKAGES
@@ -59,19 +59,19 @@ apm install --packages-file ../atom/package-list.txt
 # Symlinks
 #
 
+# Emacs
+ln -sfv "${DOTFILES_DIR}/emacs/.emacs" "${HOME}/.emacs"
 # Bash
 ln -sfv "${DOTFILES_DIR}/bash/.bash_aliases" "${HOME}/.bash_aliases"
 ln -sfv "${DOTFILES_DIR}/bash/.bash_prompt" "${HOME}/.bash_prompt"
 # Redshift
 ln -sfv "${DOTFILES_DIR}/redshift/redshift.conf" "${HOME}/redshift/redshift.conf"
-# Sublime Text 3
-ln -sfv "${DOTFILES_DIR}/sublime_text/Preferences.sublime-settings" "${HOME}/.config/sublime-text-3/Packages/User/Preferences.sublime-settings"
-ln -sfv "${DOTFILES_DIR}/sublime_text/Package\ Control.sublime-settings" "${HOME}/.config/sublime-text-3/Packages/User/Package\ Control.sublime-settings"
-ln -sfv "${DOTFILES_DIR}/sublime_text/Default\ \(Linux\).sublime-keymap" "${HOME}/.config/sublime-text-3/Packages/User/Default\ \(Linux\).sublime-keymap"
 # Tmux
 ln -sfv "${DOTFILES_DIR}/tmux/.tmux.conf" "${HOME}/.tmux.conf"
 # Ruby
 ln -sfv "${DOTFILES_DIR}/gemrc/.gemrc" "${HOME}/.gemrc"
+# Bundler
+ln -sfv "${DOTFILES_DIR}/bundler/config" "${HOME}/.bundle/config"
 # GIT
 ln -sfv "${DOTFILES_DIR}/git/.gitconfig" "${HOME}/.gitconfig"
 # Atom
