@@ -16,12 +16,10 @@ DOTFILES_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 # PPA
 add-apt-repository -y ppa:git-core/ppa
-add-apt-repository -y ppa:webupd8team/sublime-text-3
 add-apt-repository -y ppa:videolan/stable-daily
 add-apt-repository -y ppa:nginx/stable
-add-apt-repository -y ppa:wireshark-dev/stable 
 add-apt-repository -y ppa:webupd8team/atom
-curl -sL https://deb.nodesource.com/setup_6.x | sudo bash -
+curl -sL https://deb.nodesource.com/setup_7.x | sudo bash -
 
 # Laptop only
 if [ -d '/sys/class/power_supply' ]; then
