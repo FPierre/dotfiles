@@ -77,11 +77,16 @@
     disableWhenNoConfigFileInPath: true
   "linter-stylelint":
     useStandard: true
+  "markdown-preview":
+    breakOnSingleNewline: true
+    useGitHubStyle: true
   minimap:
     absoluteMode: true
     plugins:
       "git-diff": true
       "git-diffDecorationsZIndex": 0
+      "highlight-selected": true
+      "highlight-selectedDecorationsZIndex": 0
       pigments: true
       pigmentsDecorationsZIndex: 0
   "one-dark-ui": {}
