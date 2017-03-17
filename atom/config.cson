@@ -47,7 +47,7 @@
       "git-diff"
       "highlight-selected"
     ]
-    projectHome: "/var/www"
+    projectHome: "/home/pierre/workplace"
     telemetryConsent: "no"
     themes: [
       "atom-material-ui"
@@ -71,7 +71,8 @@
   "git-diff":
     showIconsInEditorGutter: true
   linter: {}
-  "linter-eslint": {}
+  "linter-eslint":
+    useGlobalEslint: true
   "linter-rubocop": {}
   "linter-scss-lint":
     disableWhenNoConfigFileInPath: true
