@@ -36,6 +36,46 @@ SYSTEM_PACKAGES=$SYSTEM_PACKAGES' redshift htop iftop'
 # Others
 SYSTEM_PACKAGES=$SYSTEM_PACKAGES' skype vlc calibre'
 
+#
+# Terminal configuration
+#
+
+# http://www.growingwiththeweb.com/2015/05/colours-in-gnome-terminal.html
+
+# https://github.com/atom-material/atom-material-syntax/blob/master/styles/colors.less
+# very-light-gray: #EEFFFF rgb(238,255,255) text color
+# light-gray:      #B2CCD6 rgb(178,204,214)
+# gray:            #373b41 rgb(55,59,65)
+# dark-gray:       #282a2e rgb(40,42,46)
+# very-dark-gray:  #263238 rgb(38,50,56) background color
+# teal:            #009688 rgb(0,150,136)
+# light-teal:      #73d1c8 rgb(115,209,200)
+# green:           #C3E88D rgb(195,232,141)
+# cyan:            #89DDF3 rgb(137,221,243)
+# blue:            #82AAFF rgb(130,170,255)
+# indigo:          #7986CB rgb(121,134,203)
+# purple:          #C792EA rgb(199,146,234)
+# pink:            #FF5370 rgb(255,83,112)
+# red:             #F07178 rgb(240,113,120)
+# strong-orange:   #F78C6A rgb(247,140,106)
+# orange:          #FFCB6B rgb(255,203,107)
+# light-orange:    #FFE082 rgb(255,224,130)
+
+profile_id=b1dcc9dd-5262-4d8d-a863-c897e6d979b9
+dconf write /org/gnome/terminal/legacy/profiles:/:$profile_id/bold-color-same-as-fg "true"
+dconf write /org/gnome/terminal/legacy/profiles:/:$profile_id/use-theme-colors "false"
+dconf write /org/gnome/terminal/legacy/profiles:/:$profile_id/background-transparency-percent "0"
+dconf write /org/gnome/terminal/legacy/profiles:/:$profile_id/use-transparent-background "false"
+# Left to right colors: black, red, green, orange, blue, purple, cyan/teal, grey
+dconf write /org/gnome/terminal/legacy/profiles:/:$profile_id/palette "['rgb(38,50,56)', 'rgb(240,113,120)', 'rgb(195,232,141)', 'rgb(255,224,130)', 'rgb(130,170,255)', 'rgb(199,146,234)', 'rgb(137,221,243)', 'rgb(178,204,214)', 'rgb(178,204,214)', 'rgb(240,113,120)', 'rgb(195,232,141)', 'rgb(255,224,130)', 'rgb(130,170,255)', 'rgb(199,146,234)', 'rgb(137,221,243)', 'rgb(178,204,214)']"
+dconf write /org/gnome/terminal/legacy/profiles:/:$profile_id/background-color "'#263238'"
+dconf write /org/gnome/terminal/legacy/profiles:/:$profile_id/visible-name "'Default'"
+dconf write /org/gnome/terminal/legacy/profiles:/:$profile_id/bold-color "'#000000'"
+dconf write /org/gnome/terminal/legacy/profiles:/:$profile_id/foreground-color "'#FFFFFF'"
+dconf write /org/gnome/terminal/legacy/profiles:/:$profile_id/background-color "'#263238'"
+dconf write /org/gnome/terminal/legacy/profiles:/:$profile_id/use-theme-transparency "false"
+dconf write /org/gnome/terminal/legacy/profiles:/:$profile_id/font "'Fira Code 14'"
+
 # Laptop only
 if [ -d '/sys/class/power_supply' ]; then
     SYSTEM_PACKAGES=$SYSTEM_PACKAGES' powertop tlp'
