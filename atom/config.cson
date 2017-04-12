@@ -32,6 +32,7 @@
     colors:
       genAccent: true
       paintCursor: true
+    fonts: {}
     tabs:
       noTabMinWidth: true
     treeView:
@@ -58,6 +59,7 @@
     autoIndentOnPaste: false
     fontFamily: "Fira Code"
     fontSize: 18
+    invisibles: {}
     lineHeight: 2
     preferredLineLength: 120
     showIndentGuide: true
@@ -73,11 +75,15 @@
   linter: {}
   "linter-eslint":
     useGlobalEslint: true
+  "linter-pug": {}
   "linter-rubocop": {}
+  "linter-sass-lint": {}
   "linter-scss-lint":
     disableWhenNoConfigFileInPath: true
   "linter-stylelint":
     useStandard: true
+  "linter-ui-default":
+    showPanel: true
   "markdown-preview":
     breakOnSingleNewline: true
     useGitHubStyle: true
