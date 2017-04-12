@@ -1,5 +1,3 @@
 (setq make-backup-files nil)
-
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
 (setq-default indent-tabs-mode nil)
-(setq-default tab-width 4)
-(setq indent-line-function 'insert-tab)
