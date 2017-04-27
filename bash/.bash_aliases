@@ -5,6 +5,7 @@ alias tunnel_richmond='ssh -L 0.0.0.0:3308:localhost:3306 richmond'
 # Ruby on Rails
 alias bi='bundle install'
 alias be='bundle exec'
+alias bo='bundle outdated'
 alias rs="rails s"
 alias rc="rails c"
 alias rt="rails t"
