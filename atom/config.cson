@@ -1,35 +1,7 @@
 "*":
-  "atom-beautify":
-    general:
-      _analyticsUserId: "03ba43de-d762-48f7-a911-8391fcd24766"
-    js:
-      beautify_on_save: true
-      end_with_newline: true
-      indent_size: 2
-    markdown:
-      beautify_on_save: true
-    ruby:
-      beautify_on_save: true
-      indent_size: 2
-    sass:
-      beautify_on_save: true
-      disabled: true
-    scss:
-      align_assignments: true
-      beautify_on_save: true
-      convert_quotes: "double"
-      disabled: true
-      force_indentation: true
-      indent_size: 2
-      no_lead_zero: true
-    vue:
-      beautify_on_save: true
-      end_with_newline: true
-      indent_inner_html: true
-      indent_size: 2
-    xtemplate: {}
   "atom-material-ui":
     colors:
+      accentColor: "#af0010"
       genAccent: true
       paintCursor: true
     fonts: {}
@@ -61,11 +33,10 @@
     fontSize: 18
     invisibles: {}
     lineHeight: 2
-    preferredLineLength: 120
+    preferredLineLength: 100
     showIndentGuide: true
     showInvisibles: true
     softWrap: true
-    softWrapAtPreferredLineLength: true
     zoomFontWhenCtrlScrolling: false
   "exception-reporting":
     userId: "9cefe855-af2c-b16e-f3a6-460d8875a5fa"
@@ -76,14 +47,15 @@
   "linter-eslint":
     useGlobalEslint: true
   "linter-pug": {}
-  "linter-rubocop": {}
+  "linter-rubocop":
+    command: "/home/pierre/.rvm/gems/ruby-2.4.0/wrappers/rubocop"
   "linter-sass-lint": {}
   "linter-scss-lint":
     disableWhenNoConfigFileInPath: true
   "linter-stylelint":
     useStandard: true
   "linter-ui-default":
-    showPanel: true
+    panelHeight: 81
   "markdown-preview":
     breakOnSingleNewline: true
     useGitHubStyle: true
