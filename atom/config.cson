@@ -15,6 +15,13 @@
     enabled: true
   core:
     allowPendingPaneItems: false
+    disabledPackages: [
+      "github"
+      "go-to-line"
+      "language-coffee-script"
+      "language-objective-c"
+      "styleguide"
+    ]
     openEmptyEditorOnStart: false
     packagesWithKeymapsDisabled: [
       "git-diff"
