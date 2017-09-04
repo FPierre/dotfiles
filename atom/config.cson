@@ -37,7 +37,7 @@
     autoIndent: false
     autoIndentOnPaste: false
     fontFamily: "Fira Code"
-    fontSize: 18
+    fontSize: 17
     invisibles: {}
     lineHeight: 2
     preferredLineLength: 100
