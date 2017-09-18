@@ -20,7 +20,8 @@ add-apt-repository -y ppa:git-core/ppa
 add-apt-repository -y ppa:videolan/stable-daily
 add-apt-repository -y ppa:nginx/stable
 add-apt-repository -y ppa:webupd8team/atom
-curl -sL https://deb.nodesource.com/setup_7.x | sudo bash -
+curl -sL https://deb.nodesource.com/setup_8.x | sudo bash -
+sudo add-apt-repository ppa:ubuntu-elisp/ppa
 
 # Laptop only
 if [ -d '/sys/class/power_supply' ]; then
@@ -31,7 +32,7 @@ fi
 apt-get -y update && apt-get -y upgrade
 
 # Development
-SYSTEM_PACKAGES=$SYSTEM_PACKAGES' curl emacs24 atom git nginx nodejs tmux'
+SYSTEM_PACKAGES=$SYSTEM_PACKAGES' curl emacs25 atom git nginx nodejs tmux'
 # Utils
 SYSTEM_PACKAGES=$SYSTEM_PACKAGES' redshift htop iftop'
 # Others

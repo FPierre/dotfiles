@@ -16,11 +16,11 @@
   core:
     allowPendingPaneItems: false
     disabledPackages: [
-      "github"
       "go-to-line"
       "language-coffee-script"
       "language-objective-c"
       "styleguide"
+      "github"
     ]
     openEmptyEditorOnStart: false
     packagesWithKeymapsDisabled: [
@@ -37,7 +37,7 @@
     autoIndent: false
     autoIndentOnPaste: false
     fontFamily: "Fira Code"
-    fontSize: 17
+    fontSize: 18
     invisibles: {}
     lineHeight: 2
     preferredLineLength: 100
