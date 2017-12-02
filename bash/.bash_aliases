@@ -18,7 +18,7 @@ alias eixt='exit'
 alias exut='exit'
 
 # Launcher
-alias em='emacs -nw'
+alias em='emacs25 -nw'
 alias server='python -m SimpleHTTPServer'
 
 # Make sure aliases can be sudo'ed
