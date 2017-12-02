@@ -47,7 +47,11 @@
     zoomFontWhenCtrlScrolling: false
   "exception-reporting":
     userId: "9cefe855-af2c-b16e-f3a6-460d8875a5fa"
-  "file-icons": {}
+  "file-icons":
+    strategies:
+      usertypes: false
+  "file-types":
+    mjs: "text.js"
   "git-diff":
     showIconsInEditorGutter: true
   linter: {}
@@ -55,7 +59,7 @@
     useGlobalEslint: true
   "linter-pug": {}
   "linter-rubocop":
-    command: "/home/pierre/.rvm/gems/ruby-2.4.0/wrappers/rubocop"
+    command: "/home/pierre/.rvm/gems/ruby-2.4.1/wrappers/rubocop"
   "linter-sass-lint": {}
   "linter-scss-lint":
     disableWhenNoConfigFileInPath: true
