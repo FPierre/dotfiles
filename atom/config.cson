@@ -1,9 +1,11 @@
 "*":
   "atom-material-ui":
     colors:
-      accentColor: "#af0010"
+      abaseColor: "#7e7e7e"
+      accentColor: "#a27373"
       genAccent: true
       paintCursor: true
+      predefinedColor: "Grey"
     fonts: {}
     tabs:
       noTabMinWidth: true
@@ -21,6 +23,15 @@
       "language-objective-c"
       "styleguide"
       "github"
+      "about"
+      "autocomplete-snippets"
+      "language-clojure"
+      "language-csharp"
+      "language-java"
+      "language-less"
+      "language-make"
+      "language-perl"
+      "open-on-github"
     ]
     openEmptyEditorOnStart: false
     packagesWithKeymapsDisabled: [
@@ -78,6 +89,8 @@
   "one-dark-ui": {}
   "project-manager":
     alwaysOpenInSameWindow: true
+  "tree-view":
+    hideVcsIgnoredFiles: true
   welcome:
     showOnStartup: false
   whitespace:
