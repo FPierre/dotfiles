@@ -1,9 +1,11 @@
 "*":
   "atom-material-ui":
     colors:
-      accentColor: "#af0010"
+      abaseColor: "#7e7e7e"
+      accentColor: "#a27373"
       genAccent: true
       paintCursor: true
+      predefinedColor: "Grey"
     fonts: {}
     tabs:
       noTabMinWidth: true
@@ -21,6 +23,16 @@
       "language-objective-c"
       "styleguide"
       "github"
+      "about"
+      "autocomplete-snippets"
+      "language-clojure"
+      "language-csharp"
+      "language-java"
+      "language-less"
+      "language-make"
+      "language-perl"
+      "open-on-github"
+      "welcome"
     ]
     openEmptyEditorOnStart: false
     packagesWithKeymapsDisabled: [
@@ -59,7 +71,7 @@
     useGlobalEslint: true
   "linter-pug": {}
   "linter-rubocop":
-    command: "/home/pierre/.rvm/gems/ruby-2.4.1/wrappers/rubocop"
+    command: "/home/pierre/.rvm/gems/ruby-2.4.1/bin/rubocop"
   "linter-sass-lint": {}
   "linter-scss-lint":
     disableWhenNoConfigFileInPath: true
