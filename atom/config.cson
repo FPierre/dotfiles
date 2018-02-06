@@ -32,6 +32,7 @@
       "language-make"
       "language-perl"
       "open-on-github"
+      "welcome"
     ]
     openEmptyEditorOnStart: false
     packagesWithKeymapsDisabled: [
@@ -66,7 +67,7 @@
     useGlobalEslint: true
   "linter-pug": {}
   "linter-rubocop":
-    command: "/home/pierre/.rvm/gems/ruby-2.4.0/wrappers/rubocop"
+    command: "/home/pierre/.rvm/gems/ruby-2.4.1/bin/rubocop"
   "linter-sass-lint": {}
   "linter-scss-lint":
     disableWhenNoConfigFileInPath: true
@@ -89,8 +90,6 @@
   "one-dark-ui": {}
   "project-manager":
     alwaysOpenInSameWindow: true
-  "tree-view":
-    hideVcsIgnoredFiles: true
   welcome:
     showOnStartup: false
   whitespace:
