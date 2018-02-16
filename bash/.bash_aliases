@@ -1,24 +1,9 @@
-# SSH
-alias tunnel_nice='ssh -L 0.0.0.0:3307:localhost:3306 nice'
-alias tunnel_richmond='ssh -L 0.0.0.0:3308:localhost:3306 richmond'
-alias tunnel_asterisk='ssh -L 0.0.0.0:3309:localhost:3306 asterisk'
-
-# Ruby on Rails
-alias bi='bundle install'
-alias be='bundle exec'
-alias bo='bundle outdated'
-alias rs="rails s"
-alias rc="rails c"
-alias rt="rails t"
-alias cop="rubocop"
-
 # Typo
 alias exti='exit'
 alias eixt='exit'
 alias exut='exit'
 
-# Launcher
-alias em='emacs25 -nw'
+# Python server
 alias server='python -m SimpleHTTPServer'
 
 # Make sure aliases can be sudo'ed
