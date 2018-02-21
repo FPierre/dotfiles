@@ -95,8 +95,6 @@ apm install --packages-file ../atom/package-list.txt
 # Symlinks
 #
 
-# Emacs
-ln -sfv "${DOTFILES_DIR}/emacs/.emacs" "${HOME}/.emacs"
 # Bash
 ln -sfv "${DOTFILES_DIR}/bash/.bash_aliases" "${HOME}/.bash_aliases"
 ln -sfv "${DOTFILES_DIR}/bash/.bash_prompt" "${HOME}/.bash_prompt"
@@ -104,10 +102,6 @@ ln -sfv "${DOTFILES_DIR}/bash/.bash_prompt" "${HOME}/.bash_prompt"
 ln -sfv "${DOTFILES_DIR}/redshift/redshift.conf" "${HOME}/redshift/redshift.conf"
 # Tmux
 ln -sfv "${DOTFILES_DIR}/tmux/.tmux.conf" "${HOME}/.tmux.conf"
-# Ruby
-ln -sfv "${DOTFILES_DIR}/gemrc/.gemrc" "${HOME}/.gemrc"
-# Bundler
-ln -sfv "${DOTFILES_DIR}/bundler/config" "${HOME}/.bundle/config"
 # GIT
 ln -sfv "${DOTFILES_DIR}/git/.gitconfig" "${HOME}/.gitconfig"
 # Atom
