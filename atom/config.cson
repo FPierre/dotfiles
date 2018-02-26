@@ -33,13 +33,14 @@
       "language-perl"
       "open-on-github"
       "welcome"
+      "spell-check"
     ]
     openEmptyEditorOnStart: false
     packagesWithKeymapsDisabled: [
       "git-diff"
       "highlight-selected"
     ]
-    projectHome: "/home/pierre/workplace"
+    projectHome: "/home/pierre/Workplace"
     telemetryConsent: "no"
     themes: [
       "atom-material-ui"
@@ -62,23 +63,17 @@
   "file-icons":
     strategies:
       usertypes: false
-  "file-types":
-    mjs: "text.js"
   "git-diff":
     showIconsInEditorGutter: true
-  linter: {}
   "linter-eslint":
-    useGlobalEslint: true
-  "linter-pug": {}
-  "linter-rubocop":
-    command: "/home/pierre/.rvm/gems/ruby-2.4.1/bin/rubocop"
-  "linter-sass-lint": {}
+    disableWhenNoEslintConfig: false
   "linter-scss-lint":
     disableWhenNoConfigFileInPath: true
   "linter-stylelint":
     useStandard: true
   "linter-ui-default":
-    panelHeight: 81
+    panelHeight: 186
+    showPanel: false
   "markdown-preview":
     breakOnSingleNewline: true
     useGitHubStyle: true
@@ -91,13 +86,12 @@
       "highlight-selectedDecorationsZIndex": 0
       pigments: true
       pigmentsDecorationsZIndex: 0
-  "one-dark-ui": {}
   "project-manager":
     alwaysOpenInSameWindow: true
   welcome:
     showOnStartup: false
   whitespace:
     ignoreWhitespaceOnCurrentLine: false
-".slim.text":
-  whitespace:
-    removeTrailingWhitespace: true
+".js.source":
+  editor:
+    tabLength: 4
