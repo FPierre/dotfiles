@@ -39,6 +39,7 @@
     packagesWithKeymapsDisabled: [
       "git-diff"
       "highlight-selected"
+      "open-terminal-here"
     ]
     projectHome: "/home/pierre/Workplace"
     telemetryConsent: "no"
@@ -73,7 +74,6 @@
     useStandard: true
   "linter-ui-default":
     panelHeight: 186
-    showPanel: false
   "markdown-preview":
     breakOnSingleNewline: true
     useGitHubStyle: true

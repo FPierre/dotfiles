@@ -2,7 +2,7 @@
   email = pflauder@gmail.com
   name = FPierre
 [core]
-  editor = emacs
+  editor = nano
 [color]
   ui = auto
 [alias]
