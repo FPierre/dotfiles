@@ -18,7 +18,6 @@ DOTFILES_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 # PPA
 add-apt-repository -y ppa:git-core/ppa
 add-apt-repository -y ppa:videolan/stable-daily
-add-apt-repository -y ppa:nginx/stable
 add-apt-repository -y ppa:webupd8team/atom
 curl -sL https://deb.nodesource.com/setup_9.x | sudo bash -
 
@@ -30,9 +29,7 @@ fi
 # Update package list and upgrade system
 apt-get -y update && apt-get -y upgrade
 
-# Redis dependency
-SYSTEM_PACKAGES=$SYSTEM_PACKAGES' software-properties-common'
-SYSTEM_PACKAGES=$SYSTEM_PACKAGES' curl atom git nginx nodejs tmux'
+SYSTEM_PACKAGES=$SYSTEM_PACKAGES' curl atom git nodejs tmux'
 SYSTEM_PACKAGES=$SYSTEM_PACKAGES' redshift htop iftop'
 SYSTEM_PACKAGES=$SYSTEM_PACKAGES' vlc calibre'
 
