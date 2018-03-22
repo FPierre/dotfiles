@@ -6,7 +6,6 @@
       genAccent: true
       paintCursor: true
       predefinedColor: "Grey"
-    fonts: {}
     tabs:
       noTabMinWidth: true
     treeView:
@@ -28,12 +27,16 @@
       "language-clojure"
       "language-csharp"
       "language-java"
-      "language-less"
       "language-make"
       "language-perl"
       "open-on-github"
       "welcome"
       "spell-check"
+      "archive-view"
+      "background-tips"
+      "keybinding-resolver"
+      "language-c"
+      "language-go"
     ]
     openEmptyEditorOnStart: false
     packagesWithKeymapsDisabled: [
@@ -52,12 +55,10 @@
     autoIndentOnPaste: false
     fontFamily: "Fira Code"
     fontSize: 18
-    invisibles: {}
     lineHeight: 2
     preferredLineLength: 100
     showIndentGuide: true
     showInvisibles: true
-    softWrap: true
     zoomFontWhenCtrlScrolling: false
   "exception-reporting":
     userId: "9cefe855-af2c-b16e-f3a6-460d8875a5fa"
@@ -74,7 +75,6 @@
     useStandard: true
   "linter-ui-default":
     panelHeight: 186
-    showPanel: false
   "markdown-preview":
     breakOnSingleNewline: true
     useGitHubStyle: true
@@ -94,5 +94,8 @@
   whitespace:
     ignoreWhitespaceOnCurrentLine: false
 ".js.source":
+  editor:
+    tabLength: 4
+".less.source":
   editor:
     tabLength: 4
