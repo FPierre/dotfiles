@@ -37,6 +37,11 @@
       "keybinding-resolver"
       "language-c"
       "language-go"
+      "encoding-selector"
+      "exception-reporting"
+      "grammar-selector"
+      "language-property-list"
+      "language-toml"
     ]
     openEmptyEditorOnStart: false
     packagesWithKeymapsDisabled: [
@@ -59,6 +64,8 @@
     preferredLineLength: 100
     showIndentGuide: true
     showInvisibles: true
+    softWrap: true
+    softWrapAtPreferredLineLength: true
     zoomFontWhenCtrlScrolling: false
   "exception-reporting":
     userId: "9cefe855-af2c-b16e-f3a6-460d8875a5fa"

@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# TODO check if redshift is already installed (Linux Mint)
+# TODO install vlc and calibre only if non pro
+# TODO install https://github.com/bobthecow/git-flow-completion
+# TODO install https://github.com/creationix/nvm
+
 # Run this script in sudo su -
 
 # Root permission
@@ -17,9 +22,8 @@ DOTFILES_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 # PPA
 add-apt-repository -y ppa:git-core/ppa
-add-apt-repository -y ppa:videolan/stable-daily
 add-apt-repository -y ppa:webupd8team/atom
-curl -sL https://deb.nodesource.com/setup_9.x | sudo bash -
+# curl -sL https://deb.nodesource.com/setup_9.x | sudo bash -
 
 # Laptop only
 if [ -d '/sys/class/power_supply' ]; then
@@ -29,9 +33,8 @@ fi
 # Update package list and upgrade system
 apt-get -y update && apt-get -y upgrade
 
-SYSTEM_PACKAGES=$SYSTEM_PACKAGES' curl atom git nodejs tmux'
-SYSTEM_PACKAGES=$SYSTEM_PACKAGES' redshift htop iftop'
-SYSTEM_PACKAGES=$SYSTEM_PACKAGES' vlc calibre'
+SYSTEM_PACKAGES=$SYSTEM_PACKAGES' curl atom git git-flow bash-completion tmux htop iftop'
+# SYSTEM_PACKAGES=$SYSTEM_PACKAGES' vlc calibre'
 
 # Laptop only
 if [ -d '/sys/class/power_supply' ]; then
@@ -40,9 +43,6 @@ fi
 
 # Packages installation
 apt-get -y install $SYSTEM_PACKAGES
-
-# Remove useless packages
-apt-get remove -y --purge growisofs totem totem-common libtotem0 gimp-data mintnanny thunderbird pidgin cowsay mintwelcome hexchat
 
 #
 # Terminal configuration
@@ -96,7 +96,7 @@ apm install --packages-file ../atom/package-list.txt
 ln -sfv "${DOTFILES_DIR}/bash/.bash_aliases" "${HOME}/.bash_aliases"
 ln -sfv "${DOTFILES_DIR}/bash/.bash_prompt" "${HOME}/.bash_prompt"
 # Redshift
-ln -sfv "${DOTFILES_DIR}/redshift/redshift.conf" "${HOME}/redshift/redshift.conf"
+# ln -sfv "${DOTFILES_DIR}/redshift/redshift.conf" "${HOME}/redshift/redshift.conf"
 # Tmux
 ln -sfv "${DOTFILES_DIR}/tmux/.tmux.conf" "${HOME}/.tmux.conf"
 # GIT
