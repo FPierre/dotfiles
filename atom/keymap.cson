@@ -34,3 +34,4 @@
   'ctrl-e': 'editor:move-to-end-of-screen-line'
   'ctrl-"': 'editor:move-to-first-character-of-line'
   'f9': 'sort-lines:sort'
+  'shift-alt-L': 'editor:split-selections-into-lines'

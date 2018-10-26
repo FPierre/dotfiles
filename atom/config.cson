@@ -40,7 +40,6 @@
       "encoding-selector"
       "exception-reporting"
       "grammar-selector"
-      "language-property-list"
       "language-toml"
     ]
     openEmptyEditorOnStart: false
@@ -59,7 +58,8 @@
     autoIndent: false
     autoIndentOnPaste: false
     fontFamily: "Fira Code"
-    fontSize: 18
+    fontSize: 27
+    invisibles: {}
     lineHeight: 2
     preferredLineLength: 100
     showIndentGuide: true
@@ -96,13 +96,9 @@
       pigmentsDecorationsZIndex: 0
   "project-manager":
     alwaysOpenInSameWindow: true
+  "tree-view":
+    hideVcsIgnoredFiles: false
   welcome:
     showOnStartup: false
   whitespace:
     ignoreWhitespaceOnCurrentLine: false
-".js.source":
-  editor:
-    tabLength: 4
-".less.source":
-  editor:
-    tabLength: 4
