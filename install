@@ -1,22 +1,43 @@
 #!/bin/bash
 
-# TODO check if redshift is already installed (Linux Mint)
-# TODO install https://github.com/bobthecow/git-flow-completion
-# TODO install Insomnia
+# TODO
+# check if redshift is already installed (Linux Mint)
+# install https://github.com/bobthecow/git-flow-completion
+# install VLC 3
+# install Calibre
+# Install Android studio
+#   Android 6.0
+#     Google API
+#     Android SDK Plateform 23
+#     Sources for Android 23
+#     Intel x86 Atom System Image
+# install dconf editor
+# install Filezilla
+# install Gnome tweaks
+# install MongoDB Compass
+# install Mysql workbench
+# install Kubectl
+# install Yarn
+# install NPM
+# import Insomnia configuration
+# import Redshift configuration
+# import OS shortkey
+# import Kubectl configuration
+# import Yarn configuration
+# import NPM configuration
 
-# TODO read https://www.ubuntupit.com/best-things-to-do-after-installing-ubuntu/
-# TODO read https://sites.google.com/site/easylinuxtipsproject/3
+sudo apt-get install preload
 
-# TODO install nano syntax highlighting https://www.if-not-true-then-false.com/2009/tuning-nano-text-editor-with-nanorc/ and https://github.com/scopatz/nanorc
+sudo apt-get install tlp-rdw
+sudo tlp start
 
-# https://themer.mjswensen.com/
-# https://github.com/typicode/json-server
 
-# Laptop detection
-is_laptop() {
-    [ -d '/sys/class/power_supply' ]
-}
+# read https://www.ubuntupit.com/best-things-to-do-after-installing-ubuntu/
+# read https://sites.google.com/site/easylinuxtipsproject/3
 
+# install nano syntax highlighting
+# https://www.if-not-true-then-false.com/2009/tuning-nano-text-editor-with-nanorc/
+# https://github.com/scopatz/nanorc
 
 # Run script in sudo su -
 if [ $USER != 'root' -o $UID != 0 ]; then
@@ -34,24 +55,28 @@ DOTFILES_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 # PPA
 add-apt-repository -y ppa:git-core/ppa
 add-apt-repository -y ppa:webupd8team/atom
+add-apt-repository -y ppa:linrunner/tlp
 
-if is_laptop; then
-    add-apt-repository -y ppa:linrunner/tlp
-fi
+# NVM
+wget --quiet -O - https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
+
+# Insomnia
+echo "deb https://dl.bintray.com/getinsomnia/Insomnia /" | sudo tee -a /etc/apt/sources.list.d/insomnia.list
+wget --quiet -O - https://insomnia.rest/keys/debian-public.key.asc | sudo apt-key add -
+
+# Yarn
+wget --quiet -O - https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
 
 apt-get -y update && apt-get -y upgrade
 
-SYSTEM_PACKAGES=$SYSTEM_PACKAGES' curl atom git git-flow bash-completion tmux htop iftop fonts-firacode'
-# SYSTEM_PACKAGES=$SYSTEM_PACKAGES' vlc calibre'
-
-if is_laptop; then
-    SYSTEM_PACKAGES=$SYSTEM_PACKAGES' powertop tlp'
-fi
+SYSTEM_PACKAGES=$SYSTEM_PACKAGES' curl atom git git-flow bash-completion tmux htop iftop fonts-firacode powertop tlp insomnia preload'
 
 apt-get -y install $SYSTEM_PACKAGES
 
-# NVM
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
+# Install Yarn with NVM
+# https://yarnpkg.com/lang/en/docs/install/#debian-stable
+apt-get install --no-install-recommends yarn
 
 #
 # Terminal configuration

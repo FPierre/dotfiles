@@ -1,17 +1,19 @@
 "*":
   "atom-material-ui":
     colors:
-      abaseColor: "#7e7e7e"
-      accentColor: "#a27373"
+      abaseColor: "#cddc39"
+      accentColor: "#737f10"
       genAccent: true
       paintCursor: true
-      predefinedColor: "Grey"
+      predefinedColor: "Lime"
     tabs:
+      compactTabs: true
       noTabMinWidth: true
     treeView:
       compactList: true
     ui:
       panelContrast: true
+      panelShadows: true
   autosave:
     enabled: true
   core:
@@ -41,6 +43,11 @@
       "exception-reporting"
       "grammar-selector"
       "language-toml"
+      "teletype"
+      "language-python"
+      "language-ruby-on-rails"
+      "language-sass"
+      "package-generator"
     ]
     openEmptyEditorOnStart: false
     packagesWithKeymapsDisabled: [
