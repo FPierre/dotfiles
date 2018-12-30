@@ -26,24 +26,12 @@
 # import Yarn configuration
 # import NPM configuration
 
-sudo apt-get install preload
-
-sudo apt-get install tlp-rdw
-sudo tlp start
-
-
 # read https://www.ubuntupit.com/best-things-to-do-after-installing-ubuntu/
 # read https://sites.google.com/site/easylinuxtipsproject/3
 
 # install nano syntax highlighting
 # https://www.if-not-true-then-false.com/2009/tuning-nano-text-editor-with-nanorc/
 # https://github.com/scopatz/nanorc
-
-# Run script in sudo su -
-if [ $USER != 'root' -o $UID != 0 ]; then
-    echo 'This script must be run as root (sudo su -).'
-    exit 1
-fi
 
 # Current dir (the script can be run from anywhere)
 DOTFILES_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
@@ -53,30 +41,33 @@ DOTFILES_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 #
 
 # PPA
-add-apt-repository -y ppa:git-core/ppa
-add-apt-repository -y ppa:webupd8team/atom
-add-apt-repository -y ppa:linrunner/tlp
+sudo add-apt-repository -y ppa:git-core/ppa
 
 # NVM
 wget --quiet -O - https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
 
 # Insomnia
-echo "deb https://dl.bintray.com/getinsomnia/Insomnia /" | sudo tee -a /etc/apt/sources.list.d/insomnia.list
 wget --quiet -O - https://insomnia.rest/keys/debian-public.key.asc | sudo apt-key add -
+echo "deb https://dl.bintray.com/getinsomnia/Insomnia /" | sudo tee -a /etc/apt/sources.list.d/insomnia.list
 
 # Yarn
 wget --quiet -O - https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
-echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee -a /etc/apt/sources.list.d/yarn.list
 
-apt-get -y update && apt-get -y upgrade
+# Atom
+wget --quiet -O - https://packagecloud.io/AtomEditor/atom/gpgkey | sudo apt-key add -
+echo "deb [arch=amd64] https://packagecloud.io/AtomEditor/atom/any/ any main" | sudo tee -a /etc/apt/sources.list.d/atom.list
 
-SYSTEM_PACKAGES=$SYSTEM_PACKAGES' curl atom git git-flow bash-completion tmux htop iftop fonts-firacode powertop tlp insomnia preload'
+SYSTEM_PACKAGES=$SYSTEM_PACKAGES' atom bash-completion curl git git-flow tmux htop iftop fonts-firacode powertop tlp tlp-rdw insomnia preload'
 
-apt-get -y install $SYSTEM_PACKAGES
+sudo apt-get -y update && sudo apt-get -y upgrade && sudo apt-get -y install $SYSTEM_PACKAGES
 
 # Install Yarn with NVM
 # https://yarnpkg.com/lang/en/docs/install/#debian-stable
-apt-get install --no-install-recommends yarn
+sudo apt-get install --no-install-recommends yarn
+
+# TLP
+sudo tlp start
 
 #
 # Terminal configuration
