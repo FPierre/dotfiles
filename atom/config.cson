@@ -48,6 +48,7 @@
       "language-ruby-on-rails"
       "language-sass"
       "package-generator"
+      "language-rust-bundled"
     ]
     openEmptyEditorOnStart: false
     packagesWithKeymapsDisabled: [
