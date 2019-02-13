@@ -13,3 +13,4 @@
   ad = add
   di = diff
   me = merge
+  fe = fetch --all -p

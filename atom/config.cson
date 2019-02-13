@@ -82,7 +82,8 @@
   "git-diff":
     showIconsInEditorGutter: true
   "linter-eslint":
-    disableWhenNoEslintConfig: false
+    disabling:
+      disableWhenNoEslintConfig: false
   "linter-scss-lint":
     disableWhenNoConfigFileInPath: true
   "linter-stylelint":
