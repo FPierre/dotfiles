@@ -1,30 +1,50 @@
 #!/bin/bash
 
 # TODO
-# check if redshift is already installed (Linux Mint)
-# install https://github.com/bobthecow/git-flow-completion
-# install VLC 3
-# install Calibre
-# Install Android studio
-#   Android 6.0
-#     Google API
-#     Android SDK Plateform 23
-#     Sources for Android 23
-#     Intel x86 Atom System Image
-# install dconf editor
-# install Filezilla
-# install Gnome tweaks
-# install MongoDB Compass
-# install Mysql workbench
-# install Kubectl
-# install Yarn
-# install NPM
-# import Insomnia configuration
-# import Redshift configuration
-# import OS shortkey
-# import Kubectl configuration
-# import Yarn configuration
-# import NPM configuration
+#
+# Install
+#
+# * GIT Flow
+# * GIT Flow completion: https://github.com/bobthecow/git-flow-completion
+# * VLC 3
+# * MongoDB Compass
+# * Mysql Workbench
+# * Yarn
+# * NPM
+# * NVM
+# * Vue CLI
+# * Textpander
+# * Chrome
+# * Insomnia
+# * Atom
+# * DBeaver
+#
+# * Ansible
+# * Terraform
+# * Tmux
+# * AWS
+# * Calibre
+# * Now
+# * VSCode
+# * Arduino
+# * Android studio
+# * dconf editor
+# * Filezilla
+# * Gnome tweaks
+# * Kubectl
+# * https://github.com/ggreer/the_silver_searcher
+#
+# Backup
+#
+# * Insomnia
+# * OS shortkey
+# * Kubectl
+# * Yarn
+# * NPM
+# * Firefox bookmarks
+# * MySQL Workbench connections
+#
+# * Redshift
 
 # read https://www.ubuntupit.com/best-things-to-do-after-installing-ubuntu/
 # read https://sites.google.com/site/easylinuxtipsproject/3
@@ -34,7 +54,7 @@
 # https://github.com/scopatz/nanorc
 
 # Current dir (the script can be run from anywhere)
-DOTFILES_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+DOTFILES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 #
 # System packages
@@ -42,25 +62,42 @@ DOTFILES_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 # PPA
 sudo add-apt-repository -y ppa:git-core/ppa
-
 # NVM
-wget --quiet -O - https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
-
+wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.0/install.sh \
+  | bash
 # Insomnia
-wget --quiet -O - https://insomnia.rest/keys/debian-public.key.asc | sudo apt-key add -
-echo "deb https://dl.bintray.com/getinsomnia/Insomnia /" | sudo tee -a /etc/apt/sources.list.d/insomnia.list
-
+echo "deb https://dl.bintray.com/getinsomnia/Insomnia/" \
+  | sudo tee -a /etc/apt/sources.list.d/insomnia.list
 # Yarn
-wget --quiet -O - https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
-echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee -a /etc/apt/sources.list.d/yarn.list
-
+wget --quiet -O - https://dl.yarnpkg.com/debian/pubkey.gpg \
+  | sudo apt-key add -
+echo "deb https://dl.yarnpkg.com/debian/ stable main" \
+  | sudo tee -a /etc/apt/sources.list.d/yarn.list
 # Atom
-wget --quiet -O - https://packagecloud.io/AtomEditor/atom/gpgkey | sudo apt-key add -
-echo "deb [arch=amd64] https://packagecloud.io/AtomEditor/atom/any/ any main" | sudo tee -a /etc/apt/sources.list.d/atom.list
+wget --quiet -O - https://packagecloud.io/AtomEditor/atom/gpgkey \
+  | sudo apt-key add -
+echo "deb [arch=amd64] https://packagecloud.io/AtomEditor/atom/any/ any main" \
+  | sudo tee -a /etc/apt/sources.list.d/atom.list
 
-SYSTEM_PACKAGES=$SYSTEM_PACKAGES' atom bash-completion curl git git-flow tmux htop iftop fonts-firacode powertop tlp tlp-rdw insomnia preload'
+SYSTEM_PACKAGES=$SYSTEM_PACKAGES'
+  atom
+  bash-completion
+  curl
+  git
+  git-flow
+  tmux
+  htop
+  iftop
+  fonts-firacode
+  powertop
+  tlp
+  tlp-rdw
+  insomnia
+  preload'
 
-sudo apt-get -y update && sudo apt-get -y upgrade && sudo apt-get -y install $SYSTEM_PACKAGES
+sudo apt-get -y update \
+  && sudo apt-get -y upgrade \
+  && sudo apt-get -y install $SYSTEM_PACKAGES
 
 # Install Yarn with NVM
 # https://yarnpkg.com/lang/en/docs/install/#debian-stable
@@ -112,6 +149,12 @@ dconf write /org/gnome/terminal/legacy/profiles:/:$profile_id/use-theme-transpar
 #
 
 apm install --packages-file ../atom/package-list.txt
+
+#
+# Yarn packages
+#
+
+yarn global add fast-cli @vue/cli
 
 #
 # Symlinks
