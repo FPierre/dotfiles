@@ -29,7 +29,6 @@
       "language-clojure"
       "language-csharp"
       "language-java"
-      "language-make"
       "language-perl"
       "open-on-github"
       "welcome"
@@ -46,9 +45,9 @@
       "teletype"
       "language-python"
       "language-ruby-on-rails"
-      "language-sass"
       "package-generator"
       "language-rust-bundled"
+      "language-ruby"
     ]
     openEmptyEditorOnStart: false
     packagesWithKeymapsDisabled: [
@@ -65,6 +64,7 @@
   editor:
     autoIndent: false
     autoIndentOnPaste: false
+    confirmCheckoutHeadRevision: false
     fontFamily: "Fira Code"
     fontSize: 28
     invisibles: {}
@@ -79,6 +79,11 @@
   "file-icons":
     strategies:
       usertypes: false
+  "find-and-replace":
+    useRipgrep: true
+  "fuzzy-finder":
+    scoringSystem: "fast"
+    useRipGrep: true
   "git-diff":
     showIconsInEditorGutter: true
   "linter-eslint":
@@ -102,8 +107,6 @@
       "highlight-selectedDecorationsZIndex": 0
       pigments: true
       pigmentsDecorationsZIndex: 0
-  "project-manager":
-    alwaysOpenInSameWindow: true
   "tree-view":
     hideVcsIgnoredFiles: false
   welcome:
