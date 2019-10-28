@@ -11,6 +11,7 @@
 # * Mysql Workbench
 # * Yarn
 # * NPM
+# * Starship
 # * NVM
 # * Vue CLI
 # * Textpander
@@ -18,6 +19,7 @@
 # * Insomnia
 # * Atom
 # * DBeaver
+# * Gnome apps + settings (workspace)
 #
 # * Ansible
 # * Terraform
@@ -37,19 +39,20 @@
 # Backup
 #
 # * Insomnia
+# * Starship
+# * Papier (Chrome)
+# * Atom unsaved tab
 # * OS shortkey
 # * Kubectl
 # * Yarn
 # * NPM
 # * Firefox bookmarks
 # * MySQL Workbench connections
-#
-# * Redshift
 
 # read https://www.ubuntupit.com/best-things-to-do-after-installing-ubuntu/
 # read https://sites.google.com/site/easylinuxtipsproject/3
 
-# install nano syntax highlighting
+# Install nano syntax highlighting
 # https://www.if-not-true-then-false.com/2009/tuning-nano-text-editor-with-nanorc/
 # https://github.com/scopatz/nanorc
 
@@ -57,22 +60,34 @@
 DOTFILES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 #
-# System packages
+# Packages
 #
 
-# PPA
+# GIT
 sudo add-apt-repository -y ppa:git-core/ppa
+
+# Starship
+wget -q --show-progress https://github.com/starship/starship/releases/latest/download/starship-x86_64-unknown-linux-gnu.tar.gz
+tar xvf starship-x86_64-unknown-linux-gnu.tar.gz
+sudo mv starship-x86_64-unknown-linux-gnu/starship /usr/local/bin/
+
 # NVM
 wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.0/install.sh \
   | bash
+
 # Insomnia
+wget --quiet -O - https://insomnia.rest/keys/debian-public.key.asc \
+  | sudo apt-key add -
 echo "deb https://dl.bintray.com/getinsomnia/Insomnia/" \
   | sudo tee -a /etc/apt/sources.list.d/insomnia.list
+
 # Yarn
+# Require Node.js to be installed with NVM
 wget --quiet -O - https://dl.yarnpkg.com/debian/pubkey.gpg \
   | sudo apt-key add -
 echo "deb https://dl.yarnpkg.com/debian/ stable main" \
   | sudo tee -a /etc/apt/sources.list.d/yarn.list
+
 # Atom
 wget --quiet -O - https://packagecloud.io/AtomEditor/atom/gpgkey \
   | sudo apt-key add -
@@ -87,7 +102,6 @@ SYSTEM_PACKAGES=$SYSTEM_PACKAGES'
   git-flow
   tmux
   htop
-  iftop
   fonts-firacode
   powertop
   tlp
@@ -106,43 +120,19 @@ sudo apt-get install --no-install-recommends yarn
 # TLP
 sudo tlp start
 
+# Starship
+# TODO append to ~/.bashrc
+# eval "$(starship init bash)"
+
 #
 # Terminal configuration
 #
 
-# http://www.growingwiththeweb.com/2015/05/colours-in-gnome-terminal.html
-# https://github.com/atom-material/atom-material-syntax/blob/master/styles/colors.less
-# very-light-gray: #EEFFFF rgb(238,255,255) text color
-# light-gray:      #B2CCD6 rgb(178,204,214)
-# gray:            #373b41 rgb(55,59,65)
-# dark-gray:       #282a2e rgb(40,42,46)
-# very-dark-gray:  #263238 rgb(38,50,56) background color
-# teal:            #009688 rgb(0,150,136)
-# light-teal:      #73d1c8 rgb(115,209,200)
-# green:           #C3E88D rgb(195,232,141)
-# cyan:            #89DDF3 rgb(137,221,243)
-# blue:            #82AAFF rgb(130,170,255)
-# indigo:          #7986CB rgb(121,134,203)
-# purple:          #C792EA rgb(199,146,234)
-# pink:            #FF5370 rgb(255,83,112)
-# red:             #F07178 rgb(240,113,120)
-# strong-orange:   #F78C6A rgb(247,140,106)
-# orange:          #FFCB6B rgb(255,203,107)
-# light-orange:    #FFE082 rgb(255,224,130)
+# TODO
 
-profile_id=b1dcc9dd-5262-4d8d-a863-c897e6d979b9
-dconf write /org/gnome/terminal/legacy/profiles:/:$profile_id/bold-color-same-as-fg "true"
-dconf write /org/gnome/terminal/legacy/profiles:/:$profile_id/use-theme-colors "false"
-dconf write /org/gnome/terminal/legacy/profiles:/:$profile_id/background-transparency-percent "0"
-dconf write /org/gnome/terminal/legacy/profiles:/:$profile_id/use-transparent-background "false"
-# Left to right colors: black, red, green, orange, blue, purple, cyan/teal, grey
-dconf write /org/gnome/terminal/legacy/profiles:/:$profile_id/palette "['rgb(38,50,56)', 'rgb(240,113,120)', 'rgb(195,232,141)', 'rgb(255,224,130)', 'rgb(130,170,255)', 'rgb(199,146,234)', 'rgb(137,221,243)', 'rgb(178,204,214)', 'rgb(178,204,214)', 'rgb(240,113,120)', 'rgb(195,232,141)', 'rgb(255,224,130)', 'rgb(130,170,255)', 'rgb(199,146,234)', 'rgb(137,221,243)', 'rgb(178,204,214)']"
-dconf write /org/gnome/terminal/legacy/profiles:/:$profile_id/background-color "'#263238'"
-dconf write /org/gnome/terminal/legacy/profiles:/:$profile_id/visible-name "'Default'"
-dconf write /org/gnome/terminal/legacy/profiles:/:$profile_id/bold-color "'#000000'"
-dconf write /org/gnome/terminal/legacy/profiles:/:$profile_id/foreground-color "'#FFFFFF'"
-dconf write /org/gnome/terminal/legacy/profiles:/:$profile_id/background-color "'#263238'"
-dconf write /org/gnome/terminal/legacy/profiles:/:$profile_id/use-theme-transparency "false"
+# Append to /etc/hosts
+# 127.0.0.1        mysql
+# 127.0.0.1        rabbitmq
 
 #
 # Atom packages
@@ -162,15 +152,28 @@ yarn global add fast-cli @vue/cli
 
 # Bash
 ln -sfv "${DOTFILES_DIR}/bash/.bash_aliases" "${HOME}/.bash_aliases"
-ln -sfv "${DOTFILES_DIR}/bash/.bash_prompt" "${HOME}/.bash_prompt"
 ln -sfv "${DOTFILES_DIR}/bash/.cubynrc" "${HOME}/.cubynrc"
-# Tmux
-ln -sfv "${DOTFILES_DIR}/tmux/.tmux.conf" "${HOME}/.tmux.conf"
+
 # GIT
 ln -sfv "${DOTFILES_DIR}/git/.gitconfig" "${HOME}/.gitconfig"
+
+# Starship
+ln -sfv "${DOTFILES_DIR}/starship/starship.toml" "${HOME}/.config/starship.toml"
+
 # Atom
 ln -sfv "${DOTFILES_DIR}/atom/config.cson" "${HOME}/.atom/config.cson"
 ln -sfv "${DOTFILES_DIR}/atom/keymap.cson" "${HOME}/.atom/keymap.cson"
 ln -sfv "${DOTFILES_DIR}/atom/styles.less" "${HOME}/.atom/styles.less"
 
 source "${HOME}/.bash_prompt"
+
+#
+# dconf
+#
+
+# Center new windows
+# Set to: true
+# Path: /org/gnome/mutter/center-new-windows
+
+# Make alt+tab only switch on current workspace apps
+# https://superuser.com/questions/394376/how-to-prevent-gnome-shells-alttab-from-grouping-windows-from-similar-apps/860001#860001
