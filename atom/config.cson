@@ -1,105 +1,54 @@
 "*":
-  "atom-material-ui":
-    colors:
-      abaseColor: "#cddc39"
-      accentColor: "#737f10"
-      genAccent: true
-      paintCursor: true
-      predefinedColor: "Lime"
-    tabs:
-      compactTabs: true
-      noTabMinWidth: true
-    treeView:
-      compactList: true
-    ui:
-      panelContrast: true
-      panelShadows: true
-  autosave:
-    enabled: true
   core:
-    allowPendingPaneItems: false
     disabledPackages: [
-      "go-to-line"
-      "language-coffee-script"
-      "language-objective-c"
-      "styleguide"
-      "github"
       "about"
-      "autocomplete-snippets"
-      "language-clojure"
-      "language-csharp"
-      "language-java"
-      "language-perl"
-      "open-on-github"
-      "welcome"
-      "spell-check"
       "archive-view"
       "background-tips"
-      "keybinding-resolver"
+      "dev-live-reload"
       "language-c"
-      "language-go"
-      "encoding-selector"
-      "exception-reporting"
-      "grammar-selector"
-      "language-toml"
-      "teletype"
-      "language-python"
-      "language-ruby-on-rails"
+      "language-clojure"
+      "language-coffee-script"
+      "language-csharp"
+      "welcome"
+      "styleguide"
       "package-generator"
+      "metrics"
+      "language-source"
       "language-rust-bundled"
+      "language-ruby-on-rails"
       "language-ruby"
+      "language-python"
+      "language-perl"
+      "language-objective-c"
+      "language-java"
+      "exception-reporting"
+      "encoding-selector"
+      "keybinding-resolver"
+      "go-to-line"
     ]
     openEmptyEditorOnStart: false
-    packagesWithKeymapsDisabled: [
-      "git-diff"
-      "highlight-selected"
-      "open-terminal-here"
-    ]
-    projectHome: "/home/pierre/Workplace"
     telemetryConsent: "no"
     themes: [
-      "atom-material-ui"
-      "atom-material-syntax"
+      "dracula-ui"
+      "dracula-syntax"
     ]
   editor:
-    autoIndent: false
-    autoIndentOnPaste: false
-    confirmCheckoutHeadRevision: false
-    fontFamily: "Fira Code"
-    fontSize: 28
+    fontFamily: "Fira Code, Menlo, Consolas, DejaVu Sans Mono, monospace"
+    fontSize: 26
     invisibles: {}
-    lineHeight: 2
     preferredLineLength: 100
-    showIndentGuide: true
-    showInvisibles: true
-    softWrap: true
     zoomFontWhenCtrlScrolling: false
   "exception-reporting":
-    userId: "9cefe855-af2c-b16e-f3a6-460d8875a5fa"
-  "file-icons":
-    strategies:
-      usertypes: false
+    userId: "ef4c678b-0720-4392-a0f1-0ac8761c1048"
   "find-and-replace":
     useRipgrep: true
-  "fuzzy-finder":
-    scoringSystem: "fast"
-    useRipGrep: true
   "git-diff":
     showIconsInEditorGutter: true
-  "linter-eslint":
-    disabling:
-      disableWhenNoEslintConfig: false
-  "linter-scss-lint":
-    disableWhenNoConfigFileInPath: true
-  "linter-stylelint":
-    useStandard: true
   "linter-ui-default":
-    panelHeight: 186
+    showPanel: true
   "markdown-preview":
-    breakOnSingleNewline: true
     useGitHubStyle: true
   minimap:
-    absoluteMode: true
     plugins:
       "git-diff": true
       "git-diffDecorationsZIndex": 0
@@ -107,9 +56,5 @@
       "highlight-selectedDecorationsZIndex": 0
       pigments: true
       pigmentsDecorationsZIndex: 0
-  "tree-view":
-    hideVcsIgnoredFiles: false
-  welcome:
-    showOnStartup: false
-  whitespace:
-    ignoreWhitespaceOnCurrentLine: false
+      selection: true
+      selectionDecorationsZIndex: 0
