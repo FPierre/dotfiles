@@ -8,6 +8,7 @@ alias exut='exit'
 #
 
 alias a="atom"
+alias c="code"
 
 # Make sure aliases can be sudo'ed
 alias sudo="sudo "
@@ -33,17 +34,9 @@ alias dockerc="docker-compose"
 alias dockerc-mysql-up="dockerc -f ~/Workspace/infra/infra-docker-compose/datasources.yml up -d mysql"
 alias dockerc-mysql-down="dockerc -f ~/Workspace/infra/infra-docker-compose/datasources.yml stop mysql"
 alias dockerc-rabbitmq-up="dockerc -f ~/Workspace/infra/infra-docker-compose/datasources.yml up -d rabbitmq"
-alias dockerc-rabbitmq-down="dockerc -f ~/Workspace/infra/infra-docker-compose/datasources.yml stop -d rabbitmq"
-
-#
-# GIT Flow
-#
-
-version () {
-  cur=`cat package.json | jq .version | sed 's/[\"\n]//g'`
-  echo $cur
-  echo $cur | xclip -selection clipboard
-}
+alias dockerc-rabbitmq-down="dockerc -f ~/Workspace/infra/infra-docker-compose/datasources.yml stop rabbitmq"
+alias dockerc-es-up="dockerc -f ~/Workspace/infra/infra-docker-compose/datasources.yml up -d elasticsearch"
+alias dockerc-es-down="dockerc -f ~/Workspace/infra/infra-docker-compose/datasources.yml stop elasticsearch"
 
 #
 # Yarn
@@ -62,3 +55,9 @@ yarn-links () {
 
   cd $current
 }
+
+#
+# NPM
+#
+
+alias npm-pre-publish="npm pack && tar -xvzf *.tgz"

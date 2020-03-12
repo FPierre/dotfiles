@@ -1,4 +1,6 @@
 "*":
+  autosave:
+    enabled: true
   core:
     disabledPackages: [
       "about"
@@ -28,15 +30,14 @@
     ]
     openEmptyEditorOnStart: false
     telemetryConsent: "no"
-    themes: [
-      "dracula-ui"
-      "dracula-syntax"
-    ]
   editor:
     fontFamily: "Fira Code, Menlo, Consolas, DejaVu Sans Mono, monospace"
     fontSize: 26
     invisibles: {}
+    lineHeight: 1.85
     preferredLineLength: 100
+    showIndentGuide: true
+    showInvisibles: true
     zoomFontWhenCtrlScrolling: false
   "exception-reporting":
     userId: "ef4c678b-0720-4392-a0f1-0ac8761c1048"
@@ -44,8 +45,15 @@
     useRipgrep: true
   "git-diff":
     showIconsInEditorGutter: true
+  "gruvbox-plus-syntax":
+    contrast: "Soft"
+    variant: "No Dimmed Colors"
+  "linter-eslint":
+    disabling:
+      disableWhenNoEslintConfig: false
   "linter-ui-default":
     showPanel: true
+    showStatusBar: false
   "markdown-preview":
     useGitHubStyle: true
   minimap:
@@ -58,3 +66,11 @@
       pigmentsDecorationsZIndex: 0
       selection: true
       selectionDecorationsZIndex: 0
+  "one-dark-ui": {}
+  "seti-syntax": {}
+  "seti-ui":
+    compactView: true
+    fileIcons: false
+  "tree-view": {}
+  whitespace:
+    ignoreWhitespaceOnCurrentLine: false

@@ -10,7 +10,7 @@
   br = branch
   ci = commit
   st = status
-  ad = add
+  ad = add -A
   di = diff
   me = merge
   fe = fetch --all -p

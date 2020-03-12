@@ -11,4 +11,5 @@ use_symbol_for_status = true
 style = "bold green"
 
 [directory]
+truncation_length = 7
 truncate_to_repo = false

@@ -1,5 +1,4 @@
 'atom-text-editor':
-  # 'ctrl-c': 'editor:copy-selection'
   'ctrl-"': 'editor:move-to-first-character-of-line'
   'ctrl-e': 'editor:move-to-end-of-screen-line'
   'shift-alt-L': 'editor:split-selections-into-lines'

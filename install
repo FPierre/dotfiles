@@ -2,52 +2,62 @@
 
 # TODO
 #
-# Install
+# Remove:
 #
+# * Tmux
+# * Atom
+#
+# Install:
+#
+# * Fish
+#
+# * Autojump
+# * Brave
+# * Chrome
 # * GIT Flow
 # * GIT Flow completion: https://github.com/bobthecow/git-flow-completion
-# * VLC 3
-# * MongoDB Compass
-# * Mysql Workbench
-# * Yarn
-# * NPM
-# * Starship
-# * NVM
-# * Vue CLI
-# * Textpander
-# * Chrome
-# * Insomnia
-# * Atom
-# * DBeaver
 # * Gnome apps + settings (workspace)
-#
-# * Ansible
-# * Terraform
-# * Tmux
-# * AWS
-# * Calibre
-# * Now
-# * VSCode
-# * Arduino
-# * Android studio
-# * dconf editor
-# * Filezilla
 # * Gnome tweaks
+# * Insomnia
+# * NPM
+# * NVM
+# * Starship
+# * Textpander
+# * VLC 3
+# * VScode
+# * Vue CLI
+# * Yarn
+# * dconf editor
+#
+#
+# * AWS
+# * Ansible
+# * Arduino
+# * Calibre
+# * DBeaver
+# * Filezilla
 # * Kubectl
+# * Mysql Workbench
+# * Now
+# * Robot 3T
+# * Terraform
 # * https://github.com/ggreer/the_silver_searcher
 #
-# Backup
+# Backup:
 #
+# * Brave
+# * Fish
+# * GPG key
 # * Insomnia
-# * Starship
-# * Papier (Chrome)
-# * Atom unsaved tab
-# * OS shortkey
 # * Kubectl
-# * Yarn
-# * NPM
-# * Firefox bookmarks
 # * MySQL Workbench connections
+# * NPM
+# * Noting
+# * OS shortkey
+# * SSH keys
+# * Starship
+# * VSCode unsaved tab
+# * Yarn
 
 # read https://www.ubuntupit.com/best-things-to-do-after-installing-ubuntu/
 # read https://sites.google.com/site/easylinuxtipsproject/3
@@ -98,16 +108,16 @@ SYSTEM_PACKAGES=$SYSTEM_PACKAGES'
   atom
   bash-completion
   curl
+  fonts-firacode
   git
   git-flow
-  tmux
   htop
-  fonts-firacode
+  insomnia
   powertop
+  preload
   tlp
   tlp-rdw
-  insomnia
-  preload'
+  tmux'
 
 sudo apt-get -y update \
   && sudo apt-get -y upgrade \
