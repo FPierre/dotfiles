@@ -7,9 +7,6 @@ disabled = false
 symbol = "➜"
 use_symbol_for_status = true
 
-[package]
-style = "bold green"
-
 [directory]
-truncation_length = 7
+truncation_length = 3
 truncate_to_repo = false
