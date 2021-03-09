@@ -1,37 +1,3 @@
-# Autojump
-# GIT Flow completion: https://github.com/bobthecow/git-flow-completion
-# OK Gnome apps + settings (workspace)
-# NPM
-# OK NVM
-# Textpander
-# OK VScode
-# Vue CLI
-# Yarn
-# OK dconf editor
-# AWS
-# Ansible
-# Kubectl
-# MySQL Workbench
-# Robot 3T
-# Terraform
-# https://github.com/ggreer/the_silver_searcher
-#
-# Backup:
-#
-# Brave
-# Fish
-# GPG key
-# Insomnia
-# Kubectl
-# MySQL Workbench connections
-# NPM
-# Noting
-# OS shortkey
-# SSH keys
-# Starship
-# VSCode unsaved tab
-# Yarn
-
 # Install nano syntax highlighting
 # https://www.if-not-true-then-false.com/2009/tuning-nano-text-editor-with-nanorc/
 # https://github.com/scopatz/nanorc
@@ -61,12 +27,6 @@ sudo tlp start
 # 127.0.0.1        rabbitmq
 
 #
-# Atom packages
-#
-
-apm install --packages-file ../atom/package-list.txt
-
-#
 # Yarn packages
 #
 
@@ -85,13 +45,6 @@ ln -sfv "${DOTFILES_DIR}/git/.gitconfig" "${HOME}/.gitconfig"
 
 # Starship
 ln -sfv "${DOTFILES_DIR}/starship/starship.toml" "${HOME}/.config/starship.toml"
-
-# Atom
-ln -sfv "${DOTFILES_DIR}/atom/config.cson" "${HOME}/.atom/config.cson"
-ln -sfv "${DOTFILES_DIR}/atom/keymap.cson" "${HOME}/.atom/keymap.cson"
-ln -sfv "${DOTFILES_DIR}/atom/styles.less" "${HOME}/.atom/styles.less"
-
-source "${HOME}/.bash_prompt"
 
 #
 # dconf
