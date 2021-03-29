@@ -4,9 +4,15 @@ add_newline = false
 disabled = false
 
 [character]
-symbol = "➜"
-use_symbol_for_status = true
+success_symbol = "[➜](bold green)"
+error_symbol = "[✖](bold red)"
 
 [directory]
 truncation_length = 3
 truncate_to_repo = false
+
+[gcloud]
+disabled = true
+
+[battery]
+disabled = true
