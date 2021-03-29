@@ -59,7 +59,7 @@ And:
 
 ```sh
 sudo apt update \
-  && sudo apt install \
+  && sudo apt install -y \
   autojump \
   brave-browser \
   code \
@@ -78,22 +78,31 @@ sudo apt update \
 flatpak install ca.desrt.dconf-editor com.slack.Slack
 ```
 
-[Install fnm](https://github.com/Schniz/fnm#using-a-script-macoslinux):
+[Install fnm](https://github.com/Schniz/fnm#using-a-script-macoslinux), Node.js and Yarn:
 
 ```sh
-curl -fsSL https://fnm.vercel.app/install | bash
+curl -fsSL https://fnm.vercel.app/install | bash \
+  && fnm install v14 \
+  && npm install -g yarn
 ```
 
-Then install Node.js v14 and Yarn:
+Install Yarn global packages:
 
 ```sh
-fnm install v14 \
-  && npm install -g yarn
+yarn global add carotte-cli fast-cli @vue/cli serve
+```
+
+[Robot 3T](https://gist.github.com/abdallahokasha/37911a64ad289487387e2d1a144604ae):
+
+```sh
+sudo rm -Rf /opt/robo3t/ && mkdir /opt/robo3t/ \
+  && sudo mv robo3t-1.4.3-linux-x86_64-122dbd9/* /opt/robo3t/ \
+  && sudo chmod +x /opt/robo3t/bin/robo3t
 ```
 
 [Zettlr](https://www.zettlr.com/download/deb)
 
-### Clone the repository
+### Clone this repository
 
 ```sh
 git clone https://github.com/FPierre/dotfiles.git ~/.dotfiles \
@@ -116,26 +125,77 @@ ln -sfv "$HOME/.dotfiles/config/vscode/keybindings.json" "$HOME/.config/Code/Use
 ln -sfv "$HOME/.dotfiles/config/vscode/snippets/jest-describe.json" "$HOME/.config/Code/User/snippets/jest-describe.json"
 ```
 
-* [Texpander](https://github.com/leehblue/texpander)
-* [GIT Flow completion](https://github.com/bobthecow/git-flow-completion)
+### Install devOps tools
 
-* AWS
-* Ansible
-* Kubectl
-* MySQL Workbench
-
-[Robot 3T](https://gist.github.com/abdallahokasha/37911a64ad289487387e2d1a144604ae):
+[Docker](https://docs.docker.com/engine/install/ubuntu) ([with post-installation](https://docs.docker.com/engine/install/linux-postinstall/)):
 
 ```sh
-sudo rm -Rf /opt/robo3t/ && mkdir /opt/robo3t/
-sudo mv robo3t-1.4.3-linux-x86_64-122dbd9/* /opt/robo3t/
-sudo chmod +x /opt/robo3t/bin/robo3t
+sudo apt install -y apt-transport-https ca-certificates curl gnupg lsb-release \
+  && curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg \
+  && echo \
+  "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
+  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 ```
 
+```sh
+sudo apt update \
+  && sudo apt install -y docker-ce docker-ce-cli containerd.io \
+  && sudo groupadd docker \
+  && sudo usermod -aG docker $USER \
+  && newgrp docker
+```
+
+```sh
+docker run hello-world
+```
+
+[AWS CLI](https://docs.aws.amazon.com/fr_fr/cli/latest/userguide/install-cliv2-linux.html):
+
+```sh
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" \
+  && unzip awscliv2.zip \
+  && sudo ./aws/install
+```
+
+```sh
+aws --version
+```
+
+[Google Cloud CLI](https://cloud.google.com/sdk/docs/install?hl=fr#deb) and Kubectl:
+
+```sh
+echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list \
+  && curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyring /usr/share/keyrings/cloud.google.gpg add - \
+  && sudo apt update \
+  && sudo apt install google-cloud-sdk kubectl
+```
+
+[Kubectl](https://kubernetes.io/fr/docs/tasks/tools/install-kubectl):
+
+```sh
+curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add - \
+  && echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee -a /etc/apt/sources.list.d/kubernetes.list
+  && sudo apt update \
+  && sudo apt install -y kubectl
+```
+
+[Helm](https://helm.sh/docs/intro/install/):
+
+```sh
+curl https://baltocdn.com/helm/signing.asc | sudo apt-key add - \
+  && sudo apt-get install apt-transport-https --yes \
+  && echo "deb https://baltocdn.com/helm/stable/debian/ all main" | sudo tee /etc/apt/sources.list.d/helm-stable-debian.list \
+  && sudo apt update \
+  && sudo apt install helm
+```
+
+* [Texpander](https://github.com/leehblue/texpander)
+* [GIT Flow completion](https://github.com/bobthecow/git-flow-completion)
+* Ansible
+* MySQL Workbench
 * Terraform
 * [The Silver Searcher](https://github.com/ggreer/the_silver_searcher)
 * Android Studio (shop flatpak)
-
 
 ### Restore Dconf Editor configuration
 
@@ -151,7 +211,6 @@ dconf load / < config/dconf/dconf-settings.ini
   * https://www.if-not-true-then-false.com/2009/tuning-nano-text-editor-with-nanorc/
   * https://github.com/scopatz/nanorc
 * Start TLP: `sudo tlp start`
-* Install Yarn global packages: `yarn global add carotte-cli fast-cli @vue/cli serve`
 
 ## Backup an installation
 
@@ -179,8 +238,9 @@ Copy GPG key:
 * Insomnia
 * Kubectl
 * Yarn `yarn global list`
-
 * [Brave](https://support.brave.com/hc/en-us/articles/360019782291-How-do-I-import-or-export-browsing-data-)
 * MySQL Workbench connections
 * NPM token
 * Starship
+* Config GCloud
+* Config AWS
