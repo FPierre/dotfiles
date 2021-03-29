@@ -6,10 +6,6 @@ abbr -a dockerc docker-compose
 # Start µ in shared env with `pierref` debug token
 abbr -a pierref "CAROTTE_DEBUG_TOKEN=pierref make run"
 
-# Start SSH tunnel to connect to SSH bastion
-abbr -a ssh-tunnel-up_OLD2 "ssh -L 3307:database-main-read.private-staging.playship.co:3306 -L 5673:rabbit.private-staging.playship.co:5672 pierre_flauder_cubyn_com@bastion-staging.playship.co/qsclgrnm"
-abbr -a ssh-tunnel-up_OLD "ssh -L 3307:db-staging.private.cubyn.com:3306 -L 5673:broker-staging.private.cubyn.com:5672 pierre_flauder_cubyn_com@bastion-prod.playship.co"
-
 abbr -a rabbitmq-up 'docker-compose -f ~/Workspace/infra/infra-docker-compose/datasources.yml up -d rabbitmq'
 abbr -a rabbitmq-down 'docker-compose -f ~/Workspace/infra/infra-docker-compose/datasources.yml stop rabbitmq'
 

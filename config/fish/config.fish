@@ -1,5 +1,5 @@
 # Remove welcome message
-set -g -x fish_greeting 'git add -p and k9s'
+set -g -x fish_greeting ''
 
 # One Dark theme
 if status is-interactive
