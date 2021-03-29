@@ -92,11 +92,14 @@ Install Yarn global packages:
 yarn global add carotte-cli fast-cli @vue/cli serve
 ```
 
-[Robot 3T](https://gist.github.com/abdallahokasha/37911a64ad289487387e2d1a144604ae):
+[Robo 3T](https://gist.github.com/abdallahokasha/37911a64ad289487387e2d1a144604ae):
+
+Download from the [website](https://robomongo.org/download)
 
 ```sh
-sudo rm -Rf /opt/robo3t/ && mkdir /opt/robo3t/ \
-  && sudo mv robo3t-1.4.3-linux-x86_64-122dbd9/* /opt/robo3t/ \
+sudo mkdir /opt/robo3t/ \
+  && tar -xvzf ~/Download/robo3t-1.4.3-linux-x86_64-48f7dfd.tar.gz \
+  && sudo mv robo3t-1.4.3-linux-x86_64-48f7dfd/* /opt/robo3t/ \
   && sudo chmod +x /opt/robo3t/bin/robo3t
 ```
 
