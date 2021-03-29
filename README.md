@@ -2,14 +2,16 @@
 
 ## New installation
 
-### Install Alacritty, Fish and GIT
+### Setup
+
+Install Alacritty, Fish and GIT:
 
 ```sh
 sudo add-apt-repository ppa:aslatter/ppa \
   && add-apt-repository ppa:fish-shell/release-3 \
   && add-apt-repository -y ppa:git-core/ppa \
-  && apt update \
-  && apt install alacritty fish git
+  && sudo apt update \
+  && sudo apt install alacritty fish git
 ```
 
 Set Fish as the [default shell](https://fishshell.com/docs/current/tutorial.html#switching-to-fish):
@@ -25,13 +27,6 @@ Then install [Fisher](https://github.com/jorgebucaran/fisher):
 
 ```sh
 curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
-```
-
-### Clone this repository
-
-```sh
-git clone https://github.com/FPierre/dotfiles.git ~/.dotfiles \
- && cd ~/.dotfiles
 ```
 
 ### Install others packages
@@ -55,9 +50,8 @@ And:
 
 ```sh
 sudo apt update \
-  && apt install \
+  && sudo apt install \
   brave-browser \
-  code \
   autojump \
   fonts-firacode \
   htop \
@@ -80,6 +74,27 @@ Then:
 ```sh
 fnm install v14 \
   && npm install -g yarn
+```
+
+### Clone the repository
+
+```sh
+git clone https://github.com/FPierre/dotfiles.git ~/.dotfiles \
+ && cd ~/.dotfiles
+```
+
+### Links to existing configurations
+
+```sh
+ln -sfv hosts /etc/hosts
+
+ln -sfv config/starship/starship.toml "${HOME}/.config/starship.toml"
+
+ln -sfv config/git/.gitconfig "${HOME}/.gitconfig"
+
+ln -sfv config/vscode/settings.json "${HOME}/.config/Code/User/settings.json"
+ln -sfv config/vscode/keybindings.json "${HOME}/.config/Code/User/keybindings.json"
+ln -sfv config/vscode/snippets/jest-describe.json "${HOME}/.config/Code/User//snippets/jest-describe.json"
 ```
 
 * [Insomnia](https://support.insomnia.rest/article/23-installation#linux)
@@ -105,6 +120,7 @@ sudo chmod +x /opt/robo3t/bin/robo3t
 * [The Silver Searcher](https://github.com/ggreer/the_silver_searcher)
 * Android Studio (shop flatpak)
 
+
 ### Restore Dconf Editor configuration
 
 [Load the configuration](https://askubuntu.com/a/1069446):
@@ -120,18 +136,6 @@ dconf load / < config/dconf/dconf-settings.ini
   * https://github.com/scopatz/nanorc
 * Start TLP: `sudo tlp start`
 * Install Yarn global packages: `yarn global add carotte-cli fast-cli @vue/cli serve`
-
-```sh
-ln -sfv hosts /etc/hosts
-
-ln -sfv config/starship/starship.toml "${HOME}/.config/starship.toml"
-
-ln -sfv config/git/.gitconfig "${HOME}/.gitconfig"
-
-ln -sfv config/vscode/settings.json "${HOME}/.config/Code/User/settings.json"
-ln -sfv config/vscode/keybindings.json "${HOME}/.config/Code/User/keybindings.json"
-ln -sfv config/vscode/snippets/jest-describe.json "${HOME}/.config/Code/User//snippets/jest-describe.json"
-```
 
 ## Backup an installation
 
