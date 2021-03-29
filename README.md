@@ -51,11 +51,12 @@ And:
 ```sh
 sudo apt update \
   && sudo apt install \
-  brave-browser \
   autojump \
+  brave-browser \
+  code \
   fonts-firacode \
-  htop \
   gnome-tweaks \
+  htop \
   powertop \
   preload \
   tlp \
@@ -64,7 +65,7 @@ sudo apt update \
 ```
 
 ```sh
-flatpak install com.visualstudio.code ca.desrt.dconf-editor
+flatpak install ca.desrt.dconf-editor
 ```
 
 [Install fnm](https://github.com/Schniz/fnm#using-a-script-macoslinux):
@@ -100,7 +101,7 @@ ln -sfv "$HOME/.dotfiles/config/git/.gitconfig" "$HOME/.gitconfig"
 
 ln -sfv "$HOME/.dotfiles/config/vscode/settings.json" "$HOME/.config/Code/User/settings.json"
 ln -sfv "$HOME/.dotfiles/config/vscode/keybindings.json" "$HOME/.config/Code/User/keybindings.json"
-ln -sfv "$HOME/.dotfiles/config/vscode/snippets/jest-describe.json" "$HOME/.config/Code/User//snippets/jest-describe.json"
+ln -sfv "$HOME/.dotfiles/config/vscode/snippets/jest-describe.json" "$HOME/.config/Code/User/snippets/jest-describe.json"
 ```
 
 * [Insomnia](https://support.insomnia.rest/article/23-installation#linux)
