@@ -65,7 +65,7 @@ sudo apt update \
 ```
 
 ```sh
-flatpak install ca.desrt.dconf-editor
+flatpak install ca.desrt.dconf-editor com.slack.Slack
 ```
 
 [Install fnm](https://github.com/Schniz/fnm#using-a-script-macoslinux):
@@ -80,6 +80,8 @@ Then install Node.js v14 and Yarn:
 fnm install v14 \
   && npm install -g yarn
 ```
+
+[Zettlr](https://www.zettlr.com/download/deb)
 
 ### Clone the repository
 
@@ -105,7 +107,6 @@ ln -sfv "$HOME/.dotfiles/config/vscode/snippets/jest-describe.json" "$HOME/.conf
 ```
 
 * [Insomnia](https://support.insomnia.rest/article/23-installation#linux)
-* Slack (shop flatpak)
 * [Texpander](https://github.com/leehblue/texpander)
 * [GIT Flow completion](https://github.com/bobthecow/git-flow-completion)
 
@@ -123,7 +124,6 @@ sudo chmod +x /opt/robo3t/bin/robo3t
 ```
 
 * Terraform
-* Vue CLI
 * [The Silver Searcher](https://github.com/ggreer/the_silver_searcher)
 * Android Studio (shop flatpak)
 
