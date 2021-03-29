@@ -149,6 +149,17 @@ sudo apt update \
 docker run hello-world
 ```
 
+Docker Compose:
+
+```sh
+sudo curl -L "https://github.com/docker/compose/releases/download/1.28.6/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose \
+  && sudo chmod +x /usr/local/bin/docker-compose
+```
+
+```sh
+docker-compose --version
+```
+
 [AWS CLI](https://docs.aws.amazon.com/fr_fr/cli/latest/userguide/install-cliv2-linux.html):
 
 ```sh
