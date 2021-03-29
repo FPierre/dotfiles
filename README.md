@@ -98,9 +98,10 @@ Download from the [website](https://robomongo.org/download)
 
 ```sh
 sudo mkdir /opt/robo3t/ \
-  && tar -xvzf ~/Download/robo3t-1.4.3-linux-x86_64-48f7dfd.tar.gz \
+  && tar -xvzf ~/Downloads/robo3t-1.4.3-linux-x86_64-48f7dfd.tar.gz \
   && sudo mv robo3t-1.4.3-linux-x86_64-48f7dfd/* /opt/robo3t/ \
   && sudo chmod +x /opt/robo3t/bin/robo3t
+  && rm -Rf robo3t-1.4.3-linux-x86_64-48f7dfd
 ```
 
 [Zettlr](https://www.zettlr.com/download/deb)
