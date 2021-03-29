@@ -104,7 +104,11 @@ sudo mkdir /opt/robo3t/ \
   && rm -Rf robo3t-1.4.3-linux-x86_64-48f7dfd
 ```
 
-[Zettlr](https://www.zettlr.com/download/deb)
+[Zettlr](https://www.zettlr.com/download/deb):
+
+```sh
+sudo dpki -i ~/Downloads/Zettlr-1.8.7-amd64.deb
+```
 
 ### Clone this repository
 
