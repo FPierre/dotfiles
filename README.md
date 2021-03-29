@@ -88,6 +88,8 @@ git clone https://github.com/FPierre/dotfiles.git ~/.dotfiles \
 ```sh
 ln -sfv hosts /etc/hosts
 
+ln -sfv config/alacritty/alacritty.yml "${HOME}/.config/alacritty/alacritty.yml"
+
 ln -sfv config/starship/starship.toml "${HOME}/.config/starship.toml"
 
 ln -sfv config/git/.gitconfig "${HOME}/.gitconfig"
