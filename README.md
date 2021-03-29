@@ -67,9 +67,13 @@ sudo apt update \
 flatpak install com.visualstudio.code ca.desrt.dconf-editor
 ```
 
-[Install fnm](https://github.com/Schniz/fnm#using-a-script-macoslinux)
+[Install fnm](https://github.com/Schniz/fnm#using-a-script-macoslinux):
 
-Then:
+```sh
+curl -fsSL https://fnm.vercel.app/install | bash
+```
+
+Then install Node.js v14 and Yarn:
 
 ```sh
 fnm install v14 \
@@ -86,17 +90,17 @@ git clone https://github.com/FPierre/dotfiles.git ~/.dotfiles \
 ### Links to existing configurations
 
 ```sh
-ln -sfv hosts /etc/hosts
+sudo ln -sfv config/hosts /etc/hosts
 
-ln -sfv config/alacritty/alacritty.yml "${HOME}/.config/alacritty/alacritty.yml"
+mkdir ~/.config/alacritty && ln -sfv "$HOME/.dotfiles/config/alacritty/alacritty.yml" "$HOME/.config/alacritty/alacritty.yml"
 
-ln -sfv config/starship/starship.toml "${HOME}/.config/starship.toml"
+ln -sfv "$HOME/.dotfiles/config/starship/starship.toml" "$HOME/.config/starship.toml"
 
-ln -sfv config/git/.gitconfig "${HOME}/.gitconfig"
+ln -sfv "$HOME/.dotfiles/config/git/.gitconfig" "$HOME/.gitconfig"
 
-ln -sfv config/vscode/settings.json "${HOME}/.config/Code/User/settings.json"
-ln -sfv config/vscode/keybindings.json "${HOME}/.config/Code/User/keybindings.json"
-ln -sfv config/vscode/snippets/jest-describe.json "${HOME}/.config/Code/User//snippets/jest-describe.json"
+ln -sfv "$HOME/.dotfiles/config/vscode/settings.json" "$HOME/.config/Code/User/settings.json"
+ln -sfv "$HOME/.dotfiles/config/vscode/keybindings.json" "$HOME/.config/Code/User/keybindings.json"
+ln -sfv "$HOME/.dotfiles/config/vscode/snippets/jest-describe.json" "$HOME/.config/Code/User//snippets/jest-describe.json"
 ```
 
 * [Insomnia](https://support.insomnia.rest/article/23-installation#linux)
