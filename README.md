@@ -29,6 +29,12 @@ Then install [Fisher](https://github.com/jorgebucaran/fisher):
 curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
 ```
 
+Add [theme](https://github.com/rkbk60/onedark-fish):
+
+```sh
+fisher add rkbk60/onedark-fish
+```
+
 ### Install others packages
 
 [Brave](https://brave.com/linux/#release-channel-installation):
@@ -149,6 +155,12 @@ ln -sfv "$HOME/.dotfiles/config/vscode/keybindings.json" "$HOME/.config/Code/Use
 ln -sfv "$HOME/.dotfiles/config/vscode/snippets/jest-describe.json" "$HOME/.config/Code/User/snippets/jest-describe.json"
 ```
 
+Install VSCode extensions:
+
+```sh
+cat config/vscode/extensions | xargs -n 1 code --install-extension
+```
+
 ### Install devOps tools
 
 [Docker](https://docs.docker.com/engine/install/ubuntu) ([with post-installation](https://docs.docker.com/engine/install/linux-postinstall/)):
@@ -228,6 +240,7 @@ curl https://baltocdn.com/helm/signing.asc | sudo apt-key add - \
 * [GIT Flow completion](https://github.com/bobthecow/git-flow-completion)
 * Ansible
 * MySQL Workbench
+* Kubectl completion
 * Terraform
 * [The Silver Searcher](https://github.com/ggreer/the_silver_searcher)
 * Android Studio (shop flatpak)
@@ -276,6 +289,11 @@ Copy GPG key:
 * [Brave](https://support.brave.com/hc/en-us/articles/360019782291-How-do-I-import-or-export-browsing-data-)
 * MySQL Workbench connections
 * NPM token
-* Starship
 * Config GCloud
 * Config AWS
+
+Backup VSCode extensions:
+
+```sh
+code --list-extensions >> config/vscode/extensions
+```
