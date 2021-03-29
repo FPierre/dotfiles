@@ -100,8 +100,24 @@ Download from the [website](https://robomongo.org/download)
 sudo mkdir /opt/robo3t/ \
   && tar -xvzf ~/Downloads/robo3t-1.4.3-linux-x86_64-48f7dfd.tar.gz \
   && sudo mv robo3t-1.4.3-linux-x86_64-48f7dfd/* /opt/robo3t/ \
-  && sudo chmod +x /opt/robo3t/bin/robo3t
+  && sudo chmod +x /opt/robo3t/bin/robo3t \
   && rm -Rf robo3t-1.4.3-linux-x86_64-48f7dfd
+```
+
+```sh
+wget https://dashboard.snapcraft.io/site_media/appmedia/2018/09/icon.png \
+  && sudo mv icon.png /opt/robo3t/ \
+  && sudo touch /usr/share/applications/robo3t.desktop \
+  && echo "[Desktop Entry]
+Encoding=UTF-8
+Type=Application
+Name=Robo3t
+Icon=/opt/robo3t/icon.png
+Exec="/opt/robo3t/bin/robo3t"
+Comment=Robo3t
+Categories=Development;
+Terminal=false
+StartupNotify=true" | sudo tee -a /usr/share/applications/robo3t.desktop
 ```
 
 [Zettlr](https://www.zettlr.com/download/deb):
