@@ -44,6 +44,15 @@ curl -s https://brave-browser-apt-release.s3.brave.com/brave-core.asc | sudo apt
 curl -fsSL https://starship.rs/install.sh | bash
 ```
 
+[Insomnia](https://support.insomnia.rest/article/156-installation):
+
+```sh
+echo "deb https://dl.bintray.com/getinsomnia/Insomnia /" \
+    | sudo tee -a /etc/apt/sources.list.d/insomnia.list \
+  && wget --quiet -O - https://insomnia.rest/keys/debian-public.key.asc \
+    | sudo apt-key add -
+```
+
 [Chrome](https://www.google.fr/chrome/?brand=FKPE&gclsrc=ds&gclsrc=ds)
 
 And:
@@ -57,6 +66,7 @@ sudo apt update \
   fonts-firacode \
   gnome-tweaks \
   htop \
+  insomnia \
   powertop \
   preload \
   tlp \
@@ -106,7 +116,6 @@ ln -sfv "$HOME/.dotfiles/config/vscode/keybindings.json" "$HOME/.config/Code/Use
 ln -sfv "$HOME/.dotfiles/config/vscode/snippets/jest-describe.json" "$HOME/.config/Code/User/snippets/jest-describe.json"
 ```
 
-* [Insomnia](https://support.insomnia.rest/article/23-installation#linux)
 * [Texpander](https://github.com/leehblue/texpander)
 * [GIT Flow completion](https://github.com/bobthecow/git-flow-completion)
 
