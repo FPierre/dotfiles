@@ -148,6 +148,9 @@ sudo ln -sfv config/hosts /etc/hosts
 
 mkdir ~/.config/alacritty && ln -sfv "$HOME/.dotfiles/config/alacritty/alacritty.yml" "$HOME/.config/alacritty/alacritty.yml"
 
+ln -sfv "$HOME/.dotfiles/config/fish/abbreviations.fish" "$HOME/.config/fish/abbreviations.fish"
+ln -sfv "$HOME/.dotfiles/config/fish/config.fish" "$HOME/.config/fish/config.fish"
+
 ln -sfv "$HOME/.dotfiles/config/starship/starship.toml" "$HOME/.config/starship.toml"
 
 ln -sfv "$HOME/.dotfiles/config/git/.gitconfig" "$HOME/.gitconfig"
@@ -160,7 +163,7 @@ ln -sfv "$HOME/.dotfiles/config/vscode/snippets/jest-describe.json" "$HOME/.conf
 Install VSCode extensions:
 
 ```sh
-cat config/vscode/extensions | xargs -n 1 code --install-extension
+cat config/vscode/extensions.txt | xargs -n 1 code --install-extension
 ```
 
 ### Install devOps tools
@@ -297,5 +300,5 @@ Copy GPG key:
 Backup VSCode extensions:
 
 ```sh
-code --list-extensions >> config/vscode/extensions
+code --list-extensions >> config/vscode/extensions.txt
 ```
