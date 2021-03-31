@@ -111,8 +111,8 @@ sudo mkdir /opt/robo3t/ \
 ```
 
 ```sh
-wget https://dashboard.snapcraft.io/site_media/appmedia/2018/09/icon.png \
-  && sudo mv icon.png /opt/robo3t/ \
+wget https://progsoft.net/images/robo-3t-icon-55d1a5cf3ee7281618c1c5f83d4c66fd55ed3309.png \
+  && sudo mv robo-3t-icon-55d1a5cf3ee7281618c1c5f83d4c66fd55ed3309.png /opt/robo3t/icon.png \
   && sudo touch /usr/share/applications/robo3t.desktop \
   && echo "[Desktop Entry]
 Encoding=UTF-8
