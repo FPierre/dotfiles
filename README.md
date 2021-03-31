@@ -32,8 +32,10 @@ curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
 Add [theme](https://github.com/rkbk60/onedark-fish):
 
 ```sh
-fisher add rkbk60/onedark-fish
+fisher install rkbk60/onedark-fish
 ```
+
+(Activation is done in another step)
 
 ### Install others packages
 
