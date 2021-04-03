@@ -1,16 +1,5 @@
-Gnome extensions
-
-
-#
-# dconf
-#
-
-# Center new windows
-# Set to: true
-# Path: /org/gnome/mutter/center-new-windows
-
-# Make alt+tab only switch on current workspace apps
-# https://superuser.com/questions/394376/how-to-prevent-gnome-shells-alttab-from-grouping-windows-from-similar-apps/860001#860001
-
-* Themes
 * Completions
+  !Docker
+* Gnome extensions
+* Dconf
+
