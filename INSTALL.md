@@ -135,8 +135,8 @@ Terminal=false
 StartupNotify=true" | sudo tee -a /usr/share/applications/robo3t.desktop
 ```
 
-[Zettlr](https://www.zettlr.com/download/deb):
 
+[Zettlr](https://www.zettlr.com/download/deb):
 ```sh
 sudo dpki -i ~/Downloads/Zettlr-1.8.7-amd64.deb
 ```
@@ -175,19 +175,13 @@ cat config/vscode/extensions.txt | xargs -n 1 code --install-extension
 
 ### Get CLI completions
 
+
 ```sh
-wget https://github.com/fish-shell/fish-shell/blob/master/share/completions/git.fish ~/.config/fish/completions \
-  && wget https://github.com/bobthecow/git-flow-completion/blob/master/git.fish ~/.config/fish/completions/git-flow.fish \
-  && wget https://github.com/evanlucas/fish-kubectl-completions/blob/master/completions/kubectl.fish ~/.config/fish/completions \
-  && wget https://github.com/fish-shell/fish-shell/blob/master/share/completions/ls.fish ~/.config/fish/completions \
-  && wget https://github.com/fish-shell/fish-shell/blob/master/share/completions/dconf.fish ~/.config/fish/completions \
-  && wget https://github.com/fish-shell/fish-shell/blob/master/share/completions/helm.fish ~/.config/fish/completions \
-  && wget https://github.com/fish-shell/fish-shell/blob/master/share/completions/jest.fish ~/.config/fish/completions \
-  && wget https://github.com/fish-shell/fish-shell/blob/master/share/completions/node.fish ~/.config/fish/completions \
-  && wget https://github.com/fish-shell/fish-shell/blob/master/share/completions/npm.fish ~/.config/fish/completions \
-  && wget https://github.com/fish-shell/fish-shell/blob/master/share/completions/serve.fish ~/.config/fish/completions \
-  && wget https://github.com/fish-shell/fish-shell/blob/master/share/completions/terraform.fish ~/.config/fish/completions \
-  && wget https://github.com/fish-shell/fish-shell/blob/master/share/completions/yarn.fish ~/.config/fish/completions
+wget -P ~/.config/fish/completions https://github.com/fish-shell/fish-shell/blob/master/share/completions/git.fish https://github.com/evanlucas/fish-kubectl-completions/blob/master/completions/kubectl.fish https://github.com/fish-shell/fish-shell/blob/master/share/completions/ls.fish https://github.com/fish-shell/fish-shell/blob/master/share/completions/dconf.fish https://github.com/fish-shell/fish-shell/blob/master/share/completions/helm.fish https://github.com/fish-shell/fish-shell/blob/master/share/completions/jest.fish https://github.com/fish-shell/fish-shell/blob/master/share/completions/node.fish https://github.com/fish-shell/fish-shell/blob/master/share/completions/npm.fish https://github.com/fish-shell/fish-shell/blob/master/share/completions/serve.fish https://github.com/fish-shell/fish-shell/blob/master/share/completions/terraform.fish https://github.com/fish-shell/fish-shell/blob/master/share/completions/yarn.fish
+```
+
+```sh
+wget -P ~/.config/fish/completions/git-flow.fish https://github.com/bobthecow/git-flow-completion/blob/master/git.fish
 ```
 
 ### Install devOps tools
