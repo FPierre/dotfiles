@@ -181,7 +181,7 @@ wget -P ~/.config/fish/completions https://github.com/fish-shell/fish-shell/blob
 ```
 
 ```sh
-wget -P ~/.config/fish/completions/git-flow.fish https://github.com/bobthecow/git-flow-completion/blob/master/git.fish
+wget -O git-flow.fish -P ~/.config/fish/completions https://github.com/bobthecow/git-flow-completion/blob/master/git.fish
 ```
 
 ### Install devOps tools
