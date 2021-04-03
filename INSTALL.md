@@ -88,6 +88,12 @@ sudo apt update \
 flatpak install ca.desrt.dconf-editor com.slack.Slack
 ```
 
+Start TLP:
+
+```sh
+sudo tlp start
+```
+
 ## Install Node.js environment
 
 [Install fnm](https://github.com/Schniz/fnm#using-a-script-macoslinux), Node.js and Yarn:
@@ -274,10 +280,31 @@ curl https://baltocdn.com/helm/signing.asc | sudo apt-key add - \
 dconf load / < config/dconf/dconf-settings.ini
 ```
 
+### OS configuration
+
+```sh
+gsettings set org.gnome.desktop.interface clock-format '24h'
+gsettings set org.gnome.desktop.interface clock-show-seconds false
+gsettings set org.gnome.desktop.interface clock-show-weekday true
+gsettings set org.gnome.desktop.interface document-font-name 'Roboto Slab 13'
+gsettings set org.gnome.desktop.interface enable-animations false
+gsettings set org.gnome.desktop.interface font-name 'DejaVu Sans 12'
+gsettings set org.gnome.desktop.interface gtk-theme 'Pop-dark'
+gsettings set org.gnome.desktop.interface monospace-font-name 'Fira Mono 13'
+gsettings set org.gnome.desktop.interface show-battery-percentage true
+```
+
+```sh
+gsettings set org.gnome.desktop.calendar show-weekdate true
+```
+
+```sh
+gsettings set org.gnome.desktop.privacy remember-recent-files false
+```
+
 ### To do
 
 * Install nano syntax highlighting
   * https://www.if-not-true-then-false.com/2009/tuning-nano-text-editor-with-nanorc/
   * https://github.com/scopatz/nanorc
-* Start TLP: `sudo tlp start`
-
+* Completion Docker
