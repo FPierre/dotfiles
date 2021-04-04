@@ -1,6 +1,6 @@
 # Install
 
-## Install Alacritty and Fish:
+## Install Alacritty and Fish
 
 ```sh
 sudo add-apt-repository ppa:aslatter/ppa \
@@ -342,7 +342,13 @@ gsettings set org.gnome.mutter dynamic-workspaces false
 gsettings set org.gnome.mutter edge-tiling true
 ```
 
-### Restore GPG
+### Restore SSH and GPG
+
+```sh
+cp /media/pierre/SanDisk\ 256Go/Backup/ssh/* ~/.ssh/
+sudo chmod 600 ~/.ssh/id_rsa ~/.ssh/config ~/.ssh/known_hosts
+sudo chmod 644 ~/.ssh/id_rsa.pub
+```
 
 ```sh
 gpg --import gpg.pub.asc
