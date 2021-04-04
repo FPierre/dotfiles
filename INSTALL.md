@@ -350,6 +350,8 @@ sudo chmod 600 ~/.ssh/id_rsa ~/.ssh/config ~/.ssh/known_hosts
 sudo chmod 644 ~/.ssh/id_rsa.pub
 ```
 
+(Copy the passphrase)
+
 ```sh
 gpg --import gpg.pub.asc
 gpg --import gpg.priv.asc

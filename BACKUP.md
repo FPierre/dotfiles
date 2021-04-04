@@ -22,7 +22,7 @@ cp ~/.ssh/* /media/pierre/SanDisk\ 256Go/Backup/ssh
 
 [Copy GPG key](https://serverfault.com/a/1040984):
 
-(Copy your passphrase)
+(Copy the passphrase)
 
 ```sh
 gpg --list-secret-keys
