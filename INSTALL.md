@@ -302,6 +302,33 @@ gsettings set org.gnome.desktop.calendar show-weekdate true
 gsettings set org.gnome.desktop.privacy remember-recent-files false
 ```
 
+```sh
+gsettings set org.gnome.desktop.search-providers disabled ['org.gnome.Contacts.desktop', 'org.gnome.Calculator.desktop', 'org.gnome.Calendar.desktop', 'org.gnome.seahorse.Application.desktop', 'org.gnome.Terminal.desktop']
+```
+
+```sh
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-down ['<Primary><Super>Down']
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-left ['<Primary><Super>Left']
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-right ['<Primary><Super>Right']
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-up ['<Primary><Super>Up']
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-down ['<Primary><Alt>Down']
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-left ['<Control><Alt>Left']
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-right ['<Control><Alt>Right']
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-up ['<Control><Alt>Up']
+gsettings set org.gnome.desktop.wm.keybindings switch-windows ['<Super>Tab', '<Alt>Tab']
+gsettings set org.gnome.desktop.wm.keybindings toggle-maximized ['<Alt>apostrophe']
+```
+
+```sh
+gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings ['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/']
+gsettings set org.gnome.settings-daemon.plugins.media-keys home ['<Primary><Alt>z']
+gsettings set org.gnome.settings-daemon.plugins.media-keys terminal ['<Primary><Alt>t']
+gsettings set org.gnome.settings-daemon.plugins.media-keys www ['<Primary><Alt>e']
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybindings.custom0 binding '<Primary><Alt>r'
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybindings.custom0 command '/usr/bin/code'
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybindings.custom0 name 'VSCode'
+```
+
 ### To do
 
 * Install nano syntax highlighting
