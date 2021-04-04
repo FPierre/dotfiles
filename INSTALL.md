@@ -336,6 +336,15 @@ gsettings set org.gnome.mutter dynamic-workspaces false
 gsettings set org.gnome.mutter edge-tiling true
 ```
 
+### Restore GPG
+
+```sh
+gpg --import gpg.pub.asc
+gpg --import gpg.priv.asc
+gpg --import gpg.sub_priv.asc
+gpg --import-ownertrust ownertrust.txt
+```
+
 ### To do
 
 * Install nano syntax highlighting
