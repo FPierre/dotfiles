@@ -94,6 +94,12 @@ Start TLP:
 sudo tlp start
 ```
 
+Configure Powertop:
+
+```sh
+sudo powertop
+```
+
 ## Install Node.js environment
 
 [Install fnm](https://github.com/Schniz/fnm#using-a-script-macoslinux), Node.js and Yarn:
