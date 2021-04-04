@@ -277,14 +277,6 @@ curl https://baltocdn.com/helm/signing.asc | sudo apt-key add - \
 * [The Silver Searcher](https://github.com/ggreer/the_silver_searcher)
 * Android Studio (shop flatpak)
 
-### Restore Dconf Editor configuration
-
-[Load the configuration](https://askubuntu.com/a/1069446):
-
-```sh
-dconf load / < config/dconf/dconf-settings.ini
-```
-
 ### OS configuration
 
 ```sh
@@ -320,7 +312,7 @@ gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-down "['<Prim
 gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-left "['<Control><Alt>Left']"
 gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-right "['<Control><Alt>Right']"
 gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-up "['<Control><Alt>Up']"
-gsettings set org.gnome.desktop.wm.keybindings switch-windows "['<Super>Tab', '<Alt>Tab']"
+gse ttings set org.gnome.desktop.wm.keybindings switch-windows "['<Super>Tab', '<Alt>Tab']"
 gsettings set org.gnome.desktop.wm.keybindings toggle-maximized "['<Alt>apostrophe']"
 ```
 
@@ -340,6 +332,8 @@ gsettings set org.gnome.mutter center-new-windows true
 gsettings set org.gnome.mutter dynamic-workspaces false
 gsettings set org.gnome.mutter edge-tiling true
 ```
+
+To move window to another workspace, it is possible their is a conflict with "Window > View split on left/right". Remove shortkey ctrl+command+left/right on them
 
 ### Restore SSH and GPG
 
