@@ -362,7 +362,7 @@ gpg --import-ownertrust ownertrust.txt
 
 Comment the locations to hide into:
 
-``sh
+```sh
 nano ~/.config/user-dirs.dirs
 ```
 
