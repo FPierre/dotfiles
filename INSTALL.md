@@ -187,13 +187,12 @@ cat config/vscode/extensions.txt | xargs -n 1 code --install-extension
 
 ### Get CLI completions
 
-
 ```sh
-wget -P ~/.config/fish/completions https://github.com/fish-shell/fish-shell/blob/master/share/completions/git.fish https://github.com/evanlucas/fish-kubectl-completions/blob/master/completions/kubectl.fish https://github.com/fish-shell/fish-shell/blob/master/share/completions/ls.fish https://github.com/fish-shell/fish-shell/blob/master/share/completions/dconf.fish https://github.com/fish-shell/fish-shell/blob/master/share/completions/helm.fish https://github.com/fish-shell/fish-shell/blob/master/share/completions/jest.fish https://github.com/fish-shell/fish-shell/blob/master/share/completions/node.fish https://github.com/fish-shell/fish-shell/blob/master/share/completions/npm.fish https://github.com/fish-shell/fish-shell/blob/master/share/completions/serve.fish https://github.com/fish-shell/fish-shell/blob/master/share/completions/terraform.fish https://github.com/fish-shell/fish-shell/blob/master/share/completions/yarn.fish
+wget -P ~/.config/fish/completions https://raw.githubusercontent.com/fish-shell/fish-shell/master/share/completions/git.fish https://raw.githubusercontent.com/evanlucas/fish-kubectl-completions/master/completions/kubectl.fish https://raw.githubusercontent.com/fish-shell/fish-shell/master/share/completions/ls.fish https://raw.githubusercontent.com/fish-shell/fish-shell/master/share/completions/dconf.fish https://raw.githubusercontent.com/fish-shell/fish-shell/master/share/completions/helm.fish https://raw.githubusercontent.com/fish-shell/fish-shell/master/share/completions/jest.fish https://raw.githubusercontent.com/fish-shell/fish-shell/master/share/completions/node.fish https://raw.githubusercontent.com/fish-shell/fish-shell/master/share/completions/npm.fish https://raw.githubusercontent.com/fish-shell/fish-shell/master/share/completions/serve.fish https://raw.githubusercontent.com/fish-shell/fish-shell/master/share/completions/terraform.fish https://raw.githubusercontent.com/fish-shell/fish-shell/master/share/completions/yarn.fish
 ```
 
 ```sh
-wget -O git-flow.fish -P ~/.config/fish/completions https://github.com/bobthecow/git-flow-completion/blob/master/git.fish
+wget -O git-flow.fish -P ~/.config/fish/completions https://raw.githubusercontent.com/bobthecow/git-flow-completion/master/git.fish
 ```
 
 ### Install devOps tools
@@ -201,7 +200,7 @@ wget -O git-flow.fish -P ~/.config/fish/completions https://github.com/bobthecow
 [Docker](https://docs.docker.com/engine/install/ubuntu) ([with post-installation](https://docs.docker.com/engine/install/linux-postinstall/)):
 
 ```sh
-sudo apt install -y apt-transport-https ca-certificates curl gnupg lsb-release \
+sudo apt install -y gnupg lsb-release \
   && curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg \
   && echo \
   "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
@@ -357,6 +356,18 @@ gpg --import gpg.pub.asc
 gpg --import gpg.priv.asc
 gpg --import gpg.sub_priv.asc
 gpg --import-ownertrust ownertrust.txt
+```
+
+### Customize Nautilus sidebar
+
+Comment the locations to hide into:
+
+``sh
+nano ~/.config/user-dirs.dirs
+```
+
+```sh
+echo "enabled=false" > ~/.config/user-dirs.conf
 ```
 
 ### To do
