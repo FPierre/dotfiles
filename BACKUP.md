@@ -16,7 +16,24 @@ Copy Zettler:
 
 Copy SSH keys:
 
-Copy GPG key:
+```sh
+cp ~/.ssh/* /media/pierre/SanDisk\ 256Go/Backup/ssh
+```
+
+[Copy GPG key](https://serverfault.com/a/1040984):
+
+(Copy your passphrase)
+
+```sh
+gpg --list-secret-keys
+```
+
+```sh
+gpg --export --armor "Pierre Flauder" > gpg.pub.asc
+gpg --export-secret-keys --armor "Pierre Flauder" > gpg.priv.asc
+gpg --export-secret-subkeys --armor "Pierre Flauder" > gpg.sub_priv.asc
+gpg --export-ownertrust > ownertrust.txt
+```
 
 * VSCode unsaved tab
 * Fish `fisher ls`
