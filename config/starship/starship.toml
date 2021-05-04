@@ -11,6 +11,12 @@ error_symbol = "[✖](bold red)"
 truncation_length = 3
 truncate_to_repo = false
 
+[nodejs]
+symbol = "⬢ "
+
+[package]
+display_private = true
+
 [gcloud]
 disabled = true
 
