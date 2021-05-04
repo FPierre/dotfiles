@@ -109,6 +109,14 @@ curl -fsSL https://fnm.vercel.app/install | bash \
   && npm install -g yarn
 ```
 
+```sh
+# ~/.config/fish/conf.d/fnm.fish
+
+# fnm
+set PATH /home/pierre/.fnm $PATH
+fnm env --use-on-cd | source
+```
+
 Install Yarn global packages:
 
 ```sh
