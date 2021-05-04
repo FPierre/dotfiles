@@ -25,6 +25,7 @@ starship init fish | source
 # if test -f /home/pierre/.autojump/share/autojump/autojump.fish
 #   . /home/pierre/.autojump/share/autojump/autojump.fish
 # end
+. /usr/share/autojump/autojump.fish
 
 # MySQL
 # set -gx SQL_PORT 3306

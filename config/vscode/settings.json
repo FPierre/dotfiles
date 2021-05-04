@@ -47,7 +47,7 @@
   "search.useGlobalIgnoreFiles": true,
   "telemetry.enableCrashReporter": false,
   "telemetry.enableTelemetry": false,
-  "workbench.colorTheme": "One Dark Pro",
+  "workbench.colorTheme": "Solarized Light",
   "workbench.editor.enablePreviewFromQuickOpen": false,
   "workbench.list.openMode": "doubleClick",
   "workbench.startupEditor": "newUntitledFile",

@@ -74,6 +74,7 @@ sudo apt update \
   code \
   fonts-firacode \
   git \
+  git-flow \
   gnome-tweaks \
   htop \
   insomnia \
@@ -202,7 +203,8 @@ wget -P ~/.config/fish/completions https://raw.githubusercontent.com/fish-shell/
 ```
 
 ```sh
-wget -O git-flow.fish -P ~/.config/fish/completions https://raw.githubusercontent.com/bobthecow/git-flow-completion/master/git.fish
+wget -O ~/.config/fish/completions/git-flow.fish https://raw.githubusercontent.com/bobthecow/git-flow-comp
+letion/master/git.fish
 ```
 
 ### Install devOps tools
