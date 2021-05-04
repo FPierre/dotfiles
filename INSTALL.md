@@ -71,6 +71,7 @@ sudo apt update \
   && sudo apt install -y \
   autojump \
   brave-browser \
+  code \
   fonts-firacode \
   git \
   gnome-tweaks \
@@ -84,8 +85,10 @@ sudo apt update \
 ```
 
 ```sh
-flatpak install com.visualstudio.code ca.desrt.dconf-editor com.slack.Slack
+flatpak install ca.desrt.dconf-editor com.slack.Slack
 ```
+
+(VScode not installed with Flatpak due to the path mess it introduce)
 
 Start TLP:
 
