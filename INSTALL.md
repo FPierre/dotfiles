@@ -230,6 +230,8 @@ sudo apt update \
   && newgrp docker
 ```
 
+A restart is required to make the changes effective
+
 Docker Compose:
 
 ```sh
