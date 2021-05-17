@@ -78,6 +78,8 @@ sudo apt update \
   gnome-tweaks \
   htop \
   insomnia \
+  mysql-client \
+  mysql-server \
   powertop \
   preload \
   tlp \
@@ -179,6 +181,7 @@ sudo ln -sfv config/hosts /etc/hosts
 mkdir ~/.config/alacritty && ln -sfv "$HOME/.dotfiles/config/alacritty/alacritty.yml" "$HOME/.config/alacritty/alacritty.yml"
 
 ln -sfv "$HOME/.dotfiles/config/fish/abbreviations.fish" "$HOME/.config/fish/abbreviations.fish"
+source ~/.config/fish/abbreviations.fish
 ln -sfv "$HOME/.dotfiles/config/fish/config.fish" "$HOME/.config/fish/config.fish"
 
 ln -sfv "$HOME/.dotfiles/config/starship/starship.toml" "$HOME/.config/starship.toml"
@@ -216,9 +219,7 @@ letion/master/git.fish
 ```sh
 sudo apt install -y gnupg lsb-release \
   && curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg \
-  && echo \
-  "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
-  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+  && echo "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu "(lsb_release -cs)" stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 ```
 
 ```sh
@@ -229,14 +230,10 @@ sudo apt update \
   && newgrp docker
 ```
 
-```sh
-docker run hello-world
-```
-
 Docker Compose:
 
 ```sh
-sudo curl -L "https://github.com/docker/compose/releases/download/1.28.6/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose \
+sudo curl -L "https://github.com/docker/compose/releases/download/1.28.6/docker-compose-"(uname -s)"-"(uname -m)"" -o /usr/local/bin/docker-compose \
   && sudo chmod +x /usr/local/bin/docker-compose
 ```
 
