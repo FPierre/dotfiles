@@ -79,7 +79,6 @@ sudo apt update \
   htop \
   insomnia \
   mysql-client \
-  mysql-server \
   powertop \
   preload \
   tlp \
@@ -91,7 +90,8 @@ sudo apt update \
 flatpak install ca.desrt.dconf-editor com.slack.Slack
 ```
 
-(VScode not installed with Flatpak due to the path mess it introduce)
+- VScode not installed with Flatpak due to the path mess it introduce
+- Docker over MySQL server package
 
 Start TLP:
 
@@ -176,7 +176,7 @@ git clone https://github.com/FPierre/dotfiles.git ~/.dotfiles \
 ### Links to existing configurations
 
 ```sh
-sudo ln -sfv config/hosts /etc/hosts
+sudo ln -sfv "$HOME/.dotfiles/config/hosts" /etc/hosts
 
 mkdir ~/.config/alacritty && ln -sfv "$HOME/.dotfiles/config/alacritty/alacritty.yml" "$HOME/.config/alacritty/alacritty.yml"
 

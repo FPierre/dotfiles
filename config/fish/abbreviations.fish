@@ -24,4 +24,7 @@ abbr -a mysql-down 'docker-compose -f ~/Workspace/infra/infra-docker-compose/dat
 abbr -a mysql-up-production '/opt/cloud_sql_proxy -instances=infra-195110:europe-west3:production-6=tcp:33061 -credential_file=/home/pierre/.cloudsql-credentials.json'
 abbr -a mysql-up-bi '/opt/cloud_sql_proxy -instances=infra-195110:europe-west3:bi-prod-1=tcp:33062 -credential_file=/home/pierre/.cloudsql-credentials.json'
 
+abbr -a postgres-up 'docker-compose -f ~/Workspace/infra/infra-docker-compose/datasources.yml up -d postgres'
+abbr -a postgres-down 'docker-compose -f ~/Workspace/infra/infra-docker-compose/datasources.yml stop postres'
+
 abbr -a npm-pre-publish "npm pack && tar -xvzf *.tgz"
