@@ -28,3 +28,5 @@ abbr -a postgres-up 'docker-compose -f ~/Workspace/infra/infra-docker-compose/da
 abbr -a postgres-down 'docker-compose -f ~/Workspace/infra/infra-docker-compose/datasources.yml stop postres'
 
 abbr -a npm-pre-publish "npm pack && tar -xvzf *.tgz"
+
+abbr -a terraform012 "/opt/terraform-0-12-29/terraform"

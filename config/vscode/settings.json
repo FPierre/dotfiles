@@ -80,5 +80,6 @@
       "overviewRulerColor": "rgba(240,98,146,0.8)"
     }
   ],
-  "window.zoomLevel": 0.5
+  "window.zoomLevel": 0.5,
+  "editor.multiCursorModifier": "ctrlCmd"
 }

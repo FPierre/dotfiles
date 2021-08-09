@@ -2,6 +2,10 @@
 127.0.0.1       elasticsearch-app-sandbox-master
 127.0.0.1       elasticsearch-app-production-master
 127.0.0.1       mysql
+127.0.0.1       postgres
 127.0.0.1       rabbitmq
 127.0.0.1       sftp
 127.0.0.1       elasticsearch
+
+# https://blog.cpming.top/p/jetbrains-ide-activation-code
+1.2.3.4         account.jetbrains.com

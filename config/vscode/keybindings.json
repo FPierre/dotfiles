@@ -43,5 +43,13 @@
   {
     "key": "ctrl+k ctrl+pagedown",
     "command": "-workbench.action.nextEditorInGroup"
+  },
+  {
+    "key": "ctrl+shift+=",
+    "command": "-workbench.action.zoomIn"
+  },
+  {
+    "key": "ctrl+=",
+    "command": "-workbench.action.zoomIn"
   }
 ]

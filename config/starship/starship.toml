@@ -9,7 +9,6 @@ error_symbol = "[✖](bold red)"
 
 [directory]
 truncation_length = 3
-truncate_to_repo = false
 
 [nodejs]
 symbol = "⬢ "

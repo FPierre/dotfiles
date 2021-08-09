@@ -72,6 +72,7 @@ sudo apt update \
   autojump \
   brave-browser \
   code \
+  exa \
   fonts-firacode \
   git \
   git-flow \
@@ -81,6 +82,7 @@ sudo apt update \
   mysql-client \
   powertop \
   preload \
+  ripgrep \
   tlp \
   tlp-rdw \
   vlc
@@ -121,6 +123,10 @@ curl -fsSL https://fnm.vercel.app/install | bash \
 # fnm
 set PATH /home/pierre/.fnm $PATH
 fnm env --use-on-cd | source
+```
+
+```sh
+fnm completions --shell fish > ~/.config/fish/completions/fnm.fish
 ```
 
 Install Yarn global packages:
@@ -183,6 +189,9 @@ mkdir ~/.config/alacritty && ln -sfv "$HOME/.dotfiles/config/alacritty/alacritty
 ln -sfv "$HOME/.dotfiles/config/fish/abbreviations.fish" "$HOME/.config/fish/abbreviations.fish"
 source ~/.config/fish/abbreviations.fish
 ln -sfv "$HOME/.dotfiles/config/fish/config.fish" "$HOME/.config/fish/config.fish"
+ln -sfv "$HOME/.dotfiles/config/fish/config.fish" "$HOME/.config/fish/config.fish"
+ln -sfv "$HOME/.dotfiles/config/fish/functions/c.fish" "$HOME/.config/fish/functions/c.fish"
+ln -sfv "$HOME/.dotfiles/config/fish/functions/ls.fish" "$HOME/.config/fish/functions/ls.fish"
 
 ln -sfv "$HOME/.dotfiles/config/starship/starship.toml" "$HOME/.config/starship.toml"
 
@@ -203,6 +212,8 @@ cat config/vscode/extensions.txt | xargs -n 1 code --install-extension
 
 ### Get CLI completions
 
+[Source](https://github.com/fish-shell/fish-shell/tree/master/share/completions)
+
 ```sh
 wget -P ~/.config/fish/completions https://raw.githubusercontent.com/fish-shell/fish-shell/master/share/completions/git.fish https://raw.githubusercontent.com/evanlucas/fish-kubectl-completions/master/completions/kubectl.fish https://raw.githubusercontent.com/fish-shell/fish-shell/master/share/completions/ls.fish https://raw.githubusercontent.com/fish-shell/fish-shell/master/share/completions/dconf.fish https://raw.githubusercontent.com/fish-shell/fish-shell/master/share/completions/helm.fish https://raw.githubusercontent.com/fish-shell/fish-shell/master/share/completions/jest.fish https://raw.githubusercontent.com/fish-shell/fish-shell/master/share/completions/node.fish https://raw.githubusercontent.com/fish-shell/fish-shell/master/share/completions/npm.fish https://raw.githubusercontent.com/fish-shell/fish-shell/master/share/completions/serve.fish https://raw.githubusercontent.com/fish-shell/fish-shell/master/share/completions/terraform.fish https://raw.githubusercontent.com/fish-shell/fish-shell/master/share/completions/yarn.fish
 ```
@@ -211,6 +222,8 @@ wget -P ~/.config/fish/completions https://raw.githubusercontent.com/fish-shell/
 wget -O ~/.config/fish/completions/git-flow.fish https://raw.githubusercontent.com/bobthecow/git-flow-comp
 letion/master/git.fish
 ```
+
+[For ripgrep](https://github.com/BurntSushi/ripgrep/blob/master/FAQ.md#does-ripgrep-have-support-for-shell-auto-completion)
 
 ### Install devOps tools
 
@@ -264,15 +277,6 @@ echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.clou
   && sudo apt install google-cloud-sdk kubectl
 ```
 
-[Kubectl](https://kubernetes.io/fr/docs/tasks/tools/install-kubectl):
-
-```sh
-curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add - \
-  && echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee -a /etc/apt/sources.list.d/kubernetes.list
-  && sudo apt update \
-  && sudo apt install -y kubectl
-```
-
 [Helm](https://helm.sh/docs/intro/install/):
 
 ```sh
@@ -286,11 +290,19 @@ curl https://baltocdn.com/helm/signing.asc | sudo apt-key add - \
 * [Texpander](https://github.com/leehblue/texpander)
 * Ansible
 * MySQL Workbench
-* Terraform
-* [The Silver Searcher](https://github.com/ggreer/the_silver_searcher)
+* [Terraform](https://www.terraform.io/downloads.html)
+* [tfswitch](https://tfswitch.warrensbox.com/Install)
+* [Ripgrep](https://github.com/BurntSushi/ripgrep)
 * Android Studio (shop flatpak)
 
 ### OS configuration
+
+[Make Alt+tab only switch in the current workspace](https://coderwall.com/p/m5mhoq/gnome-3-how-to-alt-tab-windows-on-current-workspace-only) and [ungroup](https://superuser.com/questions/394376/how-to-prevent-gnome-shells-alttab-from-grouping-windows-from-similar-apps/860001#860001):
+
+```sh
+gsettings set org.gnome.desktop.wm.keybindings switch-applications "[]"
+gsettings set org.gnome.desktop.wm.keybindings switch-windows "['<Alt>Tab']"
+```
 
 ```sh
 gsettings set org.gnome.desktop.interface clock-format '24h'
@@ -325,7 +337,6 @@ gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-down "['<Prim
 gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-left "['<Control><Alt>Left']"
 gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-right "['<Control><Alt>Right']"
 gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-up "['<Control><Alt>Up']"
-gse ttings set org.gnome.desktop.wm.keybindings switch-windows "['<Super>Tab', '<Alt>Tab']"
 gsettings set org.gnome.desktop.wm.keybindings toggle-maximized "['<Alt>apostrophe']"
 ```
 
@@ -365,6 +376,8 @@ gpg --import gpg.sub_priv.asc
 gpg --import-ownertrust ownertrust.txt
 ```
 
+**Do not forget to add into ~/.ssh/config the private configuration to connect to Cubyn's bastion**
+
 ### Customize Nautilus sidebar
 
 Comment the locations to hide into:
@@ -383,3 +396,29 @@ echo "enabled=false" > ~/.config/user-dirs.conf
   * https://www.if-not-true-then-false.com/2009/tuning-nano-text-editor-with-nanorc/
   * https://github.com/scopatz/nanorc
 * Completion Docker
+
+## Issues
+
+### Screen flicker on battery
+
+```sh
+sudo nano /boot/efi/loader/entries/Pop_OS-current.conf
+```
+
+Append `i915.enable_psr=0` to the `options root=UUID...` line. It should looks like:
+
+```sh
+options root=UUID=2c315166-0d44-429d-ae29-d04b845dd9ad ro quiet loglevel=0 systemd.show_status=false splash i915.enable_psr=0
+```
+
+```sh
+sudo bootctl update
+```
+
+Then reboot
+
+Sources:
+
+* https://www.dell.com/community/Linux-General/XPS-13-7390-Ubuntu-Screen-flickering/td-p/7430121/page/3
+* https://wiki.archlinux.org/title/Dell_XPS_13_(9310)#Random_Hangs_on_i915
+* https://gitlab.com/risingprismtv/single-gpu-passthrough/-/wikis/2)-Editing-GRUB

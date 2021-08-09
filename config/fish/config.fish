@@ -27,11 +27,19 @@ starship init fish | source
 # end
 . /usr/share/autojump/autojump.fish
 
-# MySQL
-# set -gx SQL_PORT 3306
+# MySQL Docker (through Docker compose config)
+set -gx SQL_PORT 3306
 
 # Yarn
-# set -gx PATH $PATH:/usr/bin/yarn
+# Declare global bin path
+# Found with: yarn global bin
+set -gx PATH $PATH:/home/pierre/.yarn/bin
+
+# Terraform
+set -gx PATH $PATH:/opt/terraform
+
+# tfswitch
+set -gx PATH $PATH:/opt/tfswitch
 
 # Java
 # set -gx JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64
