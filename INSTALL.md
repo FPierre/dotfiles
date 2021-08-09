@@ -70,6 +70,7 @@ And:
 sudo apt update \
   && sudo apt install -y \
   autojump \
+  bat \
   brave-browser \
   code \
   exa \
@@ -88,12 +89,14 @@ sudo apt update \
   vlc
 ```
 
+[Obsidian](https://obsidian.md/)
+
 ```sh
 flatpak install ca.desrt.dconf-editor com.slack.Slack
 ```
 
 - VScode not installed with Flatpak due to the path mess it introduce
-- Docker over MySQL server package
+- Docker over APT package for MySQL server
 
 Start TLP:
 
@@ -164,12 +167,6 @@ Comment=Robo3t
 Categories=Development;
 Terminal=false
 StartupNotify=true" | sudo tee -a /usr/share/applications/robo3t.desktop
-```
-
-
-[Zettlr](https://www.zettlr.com/download/deb):
-```sh
-sudo dpki -i ~/Downloads/Zettlr-1.8.7-amd64.deb
 ```
 
 ### Clone this repository
