@@ -50,3 +50,6 @@ set -gx PATH $PATH:/opt/tfswitch
 
 # Helm
 # set -gx PATH $PATH:/opt/helm
+
+# Camunda Modeler
+set -gx PATH $PATH:/opt/camunda
