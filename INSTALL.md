@@ -88,7 +88,7 @@ sudo apt update \
 ```
 
 - VScode not installed with Flatpak due to the path mess it introduce
-- Docker over `apt` for MySQL server
+- Docker over `apt` for MySQL server and PostgreSQL
 
 [TablePlus](https://tableplus.com/blog/2019/10/tableplus-linux-installation.html):
 
