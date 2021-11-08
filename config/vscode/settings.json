@@ -41,12 +41,9 @@
   "files.hotExit": "onExitAndWindowClose",
   "files.insertFinalNewline": true,
   "files.trimTrailingWhitespace": true,
-  "prettier.packageManager": "yarn",
   "prettier.requireConfig": true,
   "prettier.useEditorConfig": false,
   "search.useGlobalIgnoreFiles": true,
-  "telemetry.enableCrashReporter": false,
-  "telemetry.enableTelemetry": false,
   "workbench.colorTheme": "Solarized Light",
   "workbench.editor.enablePreviewFromQuickOpen": false,
   "workbench.list.openMode": "doubleClick",
@@ -54,8 +51,6 @@
   "workbench.tree.indent": 20,
   "workbench.editor.enablePreview": false,
   "typescript.updateImportsOnFileMove.enabled": "always",
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.formatOnSave": true,
   "[markdown]": {
     "editor.minimap.enabled": false
   },
@@ -81,5 +76,9 @@
     }
   ],
   "editor.multiCursorModifier": "ctrlCmd",
-  "window.zoomLevel": 0.5
+  "window.zoomLevel": 0.5,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "editor.bracketPairColorization.enabled": true,
+  "telemetry.telemetryLevel": "off"
 }

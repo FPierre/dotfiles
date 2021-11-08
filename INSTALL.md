@@ -2,7 +2,7 @@
 
 ## Install Alacritty and Fish
 
-```sh
+ ```sh
 sudo add-apt-repository ppa:aslatter/ppa \
   && add-apt-repository ppa:fish-shell/release-3 \
   && sudo apt update \
@@ -34,11 +34,10 @@ fisher install rkbk60/onedark-fish
 
 ## Install others packages
 
-[Brave](https://brave.com/linux/#release-channel-installation):
+GIT:
 
 ```sh
-curl -s https://brave-browser-apt-release.s3.brave.com/brave-core.asc | sudo apt-key --keyring /etc/apt/trusted.gpg.d/brave-browser-release.gpg add - \
-  && echo "deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main" | sudo tee /etc/apt/sources.list.d/brave-browser-release.list
+sudo add-apt-repository -y ppa:git-core/ppa
 ```
 
 [Starship](https://starship.rs/guide/#%F0%9F%9A%80-installation):
@@ -46,6 +45,15 @@ curl -s https://brave-browser-apt-release.s3.brave.com/brave-core.asc | sudo apt
 ```sh
 curl -fsSL https://starship.rs/install.sh | bash
 ```
+
+[Brave](https://brave.com/linux/#release-channel-installation):
+
+```sh
+curl -s https://brave-browser-apt-release.s3.brave.com/brave-core.asc | sudo apt-key --keyring /etc/apt/trusted.gpg.d/brave-browser-release.gpg add - \
+  && echo "deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main" | sudo tee /etc/apt/sources.list.d/brave-browser-release.list
+```
+
+[Chrome](https://www.google.fr/chrome/?brand=FKPE&gclsrc=ds&gclsrc=ds)
 
 [Insomnia](https://support.insomnia.rest/article/156-installation):
 
@@ -55,14 +63,6 @@ echo "deb https://dl.bintray.com/getinsomnia/Insomnia /" \
   && wget --quiet -O - https://insomnia.rest/keys/debian-public.key.asc \
     | sudo apt-key add -
 ```
-
-GIT:
-
-```sh
-sudo add-apt-repository -y ppa:git-core/ppa
-```
-
-[Chrome](https://www.google.fr/chrome/?brand=FKPE&gclsrc=ds&gclsrc=ds)
 
 And:
 
@@ -84,19 +84,38 @@ sudo apt update \
   powertop \
   preload \
   ripgrep \
-  tlp \
-  tlp-rdw \
   vlc
 ```
 
-[Obsidian](https://obsidian.md/)
+- VScode not installed with Flatpak due to the path mess it introduce
+- Docker over `apt` for MySQL server
+
+[TablePlus](https://tableplus.com/blog/2019/10/tableplus-linux-installation.html):
 
 ```sh
-flatpak install ca.desrt.dconf-editor com.slack.Slack
+wget -qO - http://deb.tableplus.com/apt.tableplus.com.gpg.key | sudo apt-key add -\
+  && sudo add-apt-repository "deb [arch=amd64] https://deb.tableplus.com/debian tableplus main" \
+  && sudo apt update \
+  && apt install tableplus
 ```
 
-- VScode not installed with Flatpak due to the path mess it introduce
-- Docker over APT package for MySQL server
+[Espanso](https://espanso.org/docs/install/linux) and [Modulo](https://espanso.org/docs/install/linux#installing-modulo):
+
+```sh
+wget https://github.com/federico-terzi/espanso/releases/download/v0.7.3/espanso-debian-amd64.deb \
+  && sudo apt install ./espanso-debian-amd64.deb \
+  && espanso start
+```
+
+```sh
+sudo wget https://github.com/federico-terzi/modulo/releases/latest/download/modulo-x86_64.AppImage -O $HOME/opt/modulo.AppImage \
+  && chmod u+x $HOME/opt/modulo.AppImage \
+  && ln -s $HOME/opt/modulo.AppImage /usr/bin/modulo
+```
+
+```sh
+flatpak install ca.desrt.dconf-editor com.slack.Slack md.obsidian.Obsidian
+```
 
 Start TLP:
 
@@ -116,7 +135,7 @@ sudo powertop
 
 ```sh
 curl -fsSL https://fnm.vercel.app/install | bash \
-  && fnm install v14 \
+  && fnm install v16 \
   && npm install -g yarn
 ```
 
@@ -138,42 +157,11 @@ Install Yarn global packages:
 yarn global add carotte-cli fast-cli @vue/cli serve
 ```
 
-## Install dev tools
-
-
-[Robo 3T](https://gist.github.com/abdallahokasha/37911a64ad289487387e2d1a144604ae):
-
-Download from the [website](https://robomongo.org/download)
-
-```sh
-sudo mkdir /opt/robo3t/ \
-  && tar -xvzf ~/Downloads/robo3t-1.4.3-linux-x86_64-48f7dfd.tar.gz \
-  && sudo mv robo3t-1.4.3-linux-x86_64-48f7dfd/* /opt/robo3t/ \
-  && sudo chmod +x /opt/robo3t/bin/robo3t \
-  && rm -Rf robo3t-1.4.3-linux-x86_64-48f7dfd
-```
-
-```sh
-wget https://progsoft.net/images/robo-3t-icon-55d1a5cf3ee7281618c1c5f83d4c66fd55ed3309.png \
-  && sudo mv robo-3t-icon-55d1a5cf3ee7281618c1c5f83d4c66fd55ed3309.png /opt/robo3t/icon.png \
-  && sudo touch /usr/share/applications/robo3t.desktop \
-  && echo "[Desktop Entry]
-Encoding=UTF-8
-Type=Application
-Name=Robo3t
-Icon=/opt/robo3t/icon.png
-Exec="/opt/robo3t/bin/robo3t"
-Comment=Robo3t
-Categories=Development;
-Terminal=false
-StartupNotify=true" | sudo tee -a /usr/share/applications/robo3t.desktop
-```
-
 ### Clone this repository
 
 ```sh
 git clone https://github.com/FPierre/dotfiles.git ~/.dotfiles \
- && cd ~/.dotfiles
+  && cd ~/.dotfiles
 ```
 
 ### Links to existing configurations
@@ -183,12 +171,14 @@ sudo ln -sfv "$HOME/.dotfiles/config/hosts" /etc/hosts
 
 mkdir ~/.config/alacritty && ln -sfv "$HOME/.dotfiles/config/alacritty/alacritty.yml" "$HOME/.config/alacritty/alacritty.yml"
 
+ln -sfv "$HOME/.dotfiles/config/espanso/default.yml" "$HOME/.config/espanso/default.yml"
+
 ln -sfv "$HOME/.dotfiles/config/fish/abbreviations.fish" "$HOME/.config/fish/abbreviations.fish"
 source ~/.config/fish/abbreviations.fish
 ln -sfv "$HOME/.dotfiles/config/fish/config.fish" "$HOME/.config/fish/config.fish"
-ln -sfv "$HOME/.dotfiles/config/fish/config.fish" "$HOME/.config/fish/config.fish"
 ln -sfv "$HOME/.dotfiles/config/fish/functions/c.fish" "$HOME/.config/fish/functions/c.fish"
 ln -sfv "$HOME/.dotfiles/config/fish/functions/ls.fish" "$HOME/.config/fish/functions/ls.fish"
+ln -sfv "$HOME/.dotfiles/config/fish/functions/bat.fish" "$HOME/.config/fish/functions/bat.fish"
 
 ln -sfv "$HOME/.dotfiles/config/starship/starship.toml" "$HOME/.config/starship.toml"
 

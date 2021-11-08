@@ -1,6 +1,10 @@
 # Remove welcome message
 set -g -x fish_greeting ''
 
+# Unbind CTRL+D that exit the terminal
+# https://github.com/fish-shell/fish-shell/issues/5593
+bind \cd true
+
 # One Dark theme
 if status is-interactive
   set -l onedark_options '-b'
@@ -53,3 +57,10 @@ set -gx PATH $PATH:/opt/tfswitch
 
 # Camunda Modeler
 set -gx PATH $PATH:/opt/camunda
+
+# Cloud SQL proxy
+set -gx PATH $PATH:/usr/lib/google-cloud-sdk/bin
+
+# Fly.io
+set -gx FLYCTL_INSTALL /home/pierre/.fly
+set -gx PATH $PATH:$FLYCTL_INSTALL/bin

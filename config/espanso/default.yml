@@ -1,0 +1,90 @@
+# espanso configuration file
+
+# This is the default configuration file, change it as you like it
+# You can refer to the official documentation:
+# https://espanso.org/docs/
+
+toggle_key: OFF
+
+# Matches are the substitution rules, when you type the "trigger" string
+# it gets replaced by the "replace" string.
+matches:
+  - trigger: ":12ft"
+    replace: "https://12ft.io/"
+
+  - trigger: ":changelog"
+    replace: "https://keepachangelog.com/en/1.0.0/"
+
+  - trigger: ":shipperId"
+    replace: "651063395"
+
+  - trigger: ":godId"
+    replace: "651063394"
+
+  - triggers: [":warning", ":danger"]
+    replace: "⚠️"
+
+  - trigger: ":brain"
+    replace: "🧠"
+
+  - trigger: ":fire"
+    replace: "🔥"
+
+  - trigger: ":thinking"
+    replace: "🤔"
+
+  - trigger: ":rocket"
+    replace: "🚀"
+
+  - triggers: [":carrot", ":carotte"]
+    replace: "🥕"
+
+  - trigger: ":rabbit"
+    replace: "🐇"
+
+  - triggers: [":light", ":event"]
+    replace: "⚡"
+
+  - triggers: [":+1"]
+    replace: "👍"
+
+  - triggers: [":-1"]
+    replace: "👎"
+
+  - trigger: ":check"
+    replace: "✅"
+
+  - trigger: ":cross"
+    replace: "❌"
+
+  - trigger: ":lambda"
+    replace: "λ"
+
+  - trigger: ":uuid"
+    replace: "{{output}}"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: "uuidgen"
+
+  - trigger: ":round2"
+    replace: "Round 2 - Fit Values Cubyn - x "
+
+  # Dates
+  - trigger: ":date"
+    replace: "{{mydate}}"
+    vars:
+      - name: mydate
+        type: date
+        params:
+          format: "%m/%d/%Y"
+
+  # Shell commands
+  - trigger: ":shell"
+    replace: "{{output}}"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: "echo Hello from your shell"

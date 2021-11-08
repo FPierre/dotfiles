@@ -1,5 +1,7 @@
 # Backup
 
+## TODO
+
 Dconf:
 
 ```sh
@@ -12,7 +14,7 @@ dconf dump / > ~/.dotfiles/config/dconf/dconf-settings.ini
 sync -rv --exclude=node_modules --exclude=env ~/Workspace /<DESTINATION>
 ```
 
-Copy Zettler:
+Push updates from `~/Documents/Obsidian`
 
 Copy SSH keys:
 
@@ -42,7 +44,6 @@ gpg --export-ownertrust > ownertrust.txt
 * Kubectl
 * Yarn `yarn global list`
 * [Brave](https://support.brave.com/hc/en-us/articles/360019782291-How-do-I-import-or-export-browsing-data-)
-* MySQL Workbench connections
 * NPM token
 * Config GCloud
 * Config AWS

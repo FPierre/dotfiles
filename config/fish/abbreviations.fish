@@ -1,6 +1,8 @@
 abbr -a exti exit
 abbr -a gti git
 
+abbr -a bat batcat
+
 abbr -a dockerc docker-compose
 
 # Start µ in shared env with `pierref` debug token
@@ -15,8 +17,9 @@ abbr -a elasticsearch-down 'docker-compose -f ~/Workspace/infra/infra-docker-com
 abbr -a sftp-up 'docker-compose -f ~/Workspace/infra/infra-docker-compose/datasources.yml up -d sftp'
 abbr -a sftp-down 'docker-compose -f ~/Workspace/infra/infra-docker-compose/datasources.yml stop sftp'
 
-abbr -a staging "gcloud container clusters get-credentials staging --zone europe-west1-b --project staging2-284609"
-abbr -a production "gcloud beta container clusters get-credentials production --region europe-west3 --project infra-195110"
+abbr -a staging "gcloud container clusters get-credentials staging --zone=europe-west1-b --project=staging2-284609"
+abbr -a production "gcloud container clusters get-credentials production --region=europe-west3 --project=infra-195110"
+abbr -a staging-wh "gcloud container clusters get-credentials staging-warehouse --region=europe-west1 --project=staging2-284609"
 
 abbr -a mysql-up 'docker-compose -f ~/Workspace/infra/infra-docker-compose/datasources.yml up -d mysql'
 abbr -a mysql-down 'docker-compose -f ~/Workspace/infra/infra-docker-compose/datasources.yml stop mysql'

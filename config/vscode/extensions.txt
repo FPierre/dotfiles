@@ -2,8 +2,7 @@ dbaeumer.vscode-eslint
 esbenp.prettier-vscode
 hashicorp.terraform
 humao.rest-client
-IgorSbitnev.error-gutters
-ms-vscode.cpptools
+ms-vsliveshare.vsliveshare
 octref.vetur
 oderwat.indent-rainbow
 Tyriar.sort-lines
