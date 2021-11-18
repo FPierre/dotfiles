@@ -36,6 +36,9 @@ matches:
   - trigger: ":rocket"
     replace: "🚀"
 
+  - trigger: ":scooter"
+    replace: "🛴"
+
   - triggers: [":carrot", ":carotte"]
     replace: "🥕"
 

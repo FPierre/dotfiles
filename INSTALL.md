@@ -206,8 +206,7 @@ wget -P ~/.config/fish/completions https://raw.githubusercontent.com/fish-shell/
 ```
 
 ```sh
-wget -O ~/.config/fish/completions/git-flow.fish https://raw.githubusercontent.com/bobthecow/git-flow-comp
-letion/master/git.fish
+wget -O ~/.config/fish/completions/git-flow.fish https://raw.githubusercontent.com/bobthecow/git-flow-completion/master/git.fish
 ```
 
 [For ripgrep](https://github.com/BurntSushi/ripgrep/blob/master/FAQ.md#does-ripgrep-have-support-for-shell-auto-completion)
