@@ -96,7 +96,7 @@ sudo apt update \
 wget -qO - http://deb.tableplus.com/apt.tableplus.com.gpg.key | sudo apt-key add -\
   && sudo add-apt-repository "deb [arch=amd64] https://deb.tableplus.com/debian tableplus main" \
   && sudo apt update \
-  && apt install tableplus
+  && sudo apt install tableplus
 ```
 
 [Espanso](https://espanso.org/docs/install/linux) and [Modulo](https://espanso.org/docs/install/linux#installing-modulo):
