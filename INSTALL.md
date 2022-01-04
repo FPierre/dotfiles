@@ -91,7 +91,6 @@ sudo apt update \
 - VScode is not installed with Flatpak due to the path mess it introduce
 - MySQL server and PostgreSQL via Docker (over `apt`) 
 
-https://espanso.org/docs/install/linux
 [Espanso](https://espanso.org/docs/install/linux) and [Modulo](https://espanso.org/docs/install/linux#installing-modulo):
 
 ```sh
@@ -406,4 +405,3 @@ Sources:
 * https://www.dell.com/community/Linux-General/XPS-13-7390-Ubuntu-Screen-flickering/td-p/7430121/page/3
 * https://wiki.archlinux.org/title/Dell_XPS_13_(9310)#Random_Hangs_on_i915
 * https://gitlab.com/risingprismtv/single-gpu-passthrough/-/wikis/2)-Editing-GRUB
-
