@@ -24,14 +24,6 @@ Then install [Fisher](https://github.com/jorgebucaran/fisher):
 curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
 ```
 
-Add [theme](https://github.com/rkbk60/onedark-fish):
-
-```sh
-fisher install rkbk60/onedark-fish
-```
-
-(Activation is done in another step)
-
 ## Install others packages
 
 GIT:
@@ -53,7 +45,7 @@ curl -s https://brave-browser-apt-release.s3.brave.com/brave-core.asc | sudo apt
   && echo "deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main" | sudo tee /etc/apt/sources.list.d/brave-browser-release.list
 ```
 
-[Chrome](https://www.google.fr/chrome/?brand=FKPE&gclsrc=ds&gclsrc=ds)
+[Chrome](https://www.google.fr/chrome/index.html)
 
 [Insomnia](https://support.insomnia.rest/article/156-installation):
 
@@ -63,6 +55,14 @@ echo "deb https://dl.bintray.com/getinsomnia/Insomnia /" \
   && wget --quiet -O - https://insomnia.rest/keys/debian-public.key.asc \
     | sudo apt-key add -
 ```
+
+[TablePlus](https://tableplus.com/blog/2019/10/tableplus-linux-installation.html):
+
+```sh
+wget -qO - http://deb.tableplus.com/apt.tableplus.com.gpg.key | sudo apt-key add - \
+  && sudo add-apt-repository "deb [arch=amd64] https://deb.tableplus.com/debian/21 tableplus main"
+```
+
 
 And:
 
@@ -84,21 +84,14 @@ sudo apt update \
   powertop \
   preload \
   ripgrep \
+  tableplus \
   vlc
 ```
 
-- VScode not installed with Flatpak due to the path mess it introduce
-- Docker over `apt` for MySQL server and PostgreSQL
+- VScode is not installed with Flatpak due to the path mess it introduce
+- MySQL server and PostgreSQL via Docker (over `apt`) 
 
-[TablePlus](https://tableplus.com/blog/2019/10/tableplus-linux-installation.html):
-
-```sh
-wget -qO - http://deb.tableplus.com/apt.tableplus.com.gpg.key | sudo apt-key add -\
-  && sudo add-apt-repository "deb [arch=amd64] https://deb.tableplus.com/debian tableplus main" \
-  && sudo apt update \
-  && apt install tableplus
-```
-
+https://espanso.org/docs/install/linux
 [Espanso](https://espanso.org/docs/install/linux) and [Modulo](https://espanso.org/docs/install/linux#installing-modulo):
 
 ```sh
@@ -202,7 +195,18 @@ cat config/vscode/extensions.txt | xargs -n 1 code --install-extension
 [Source](https://github.com/fish-shell/fish-shell/tree/master/share/completions)
 
 ```sh
-wget -P ~/.config/fish/completions https://raw.githubusercontent.com/fish-shell/fish-shell/master/share/completions/git.fish https://raw.githubusercontent.com/evanlucas/fish-kubectl-completions/master/completions/kubectl.fish https://raw.githubusercontent.com/fish-shell/fish-shell/master/share/completions/ls.fish https://raw.githubusercontent.com/fish-shell/fish-shell/master/share/completions/dconf.fish https://raw.githubusercontent.com/fish-shell/fish-shell/master/share/completions/helm.fish https://raw.githubusercontent.com/fish-shell/fish-shell/master/share/completions/jest.fish https://raw.githubusercontent.com/fish-shell/fish-shell/master/share/completions/node.fish https://raw.githubusercontent.com/fish-shell/fish-shell/master/share/completions/npm.fish https://raw.githubusercontent.com/fish-shell/fish-shell/master/share/completions/serve.fish https://raw.githubusercontent.com/fish-shell/fish-shell/master/share/completions/terraform.fish https://raw.githubusercontent.com/fish-shell/fish-shell/master/share/completions/yarn.fish
+wget -P ~/.config/fish/completions \
+  https://raw.githubusercontent.com/fish-shell/fish-shell/master/share/completions/git.fish \
+  https://raw.githubusercontent.com/evanlucas/fish-kubectl-completions/master/completions/kubectl.fish \
+  https://raw.githubusercontent.com/fish-shell/fish-shell/master/share/completions/ls.fish \
+  https://raw.githubusercontent.com/fish-shell/fish-shell/master/share/completions/dconf.fish \
+  https://raw.githubusercontent.com/fish-shell/fish-shell/master/share/completions/helm.fish \
+  https://raw.githubusercontent.com/fish-shell/fish-shell/master/share/completions/jest.fish \
+  https://raw.githubusercontent.com/fish-shell/fish-shell/master/share/completions/node.fish \
+  https://raw.githubusercontent.com/fish-shell/fish-shell/master/share/completions/npm.fish \
+  https://raw.githubusercontent.com/fish-shell/fish-shell/master/share/completions/serve.fish \
+  https://raw.githubusercontent.com/fish-shell/fish-shell/master/share/completions/terraform.fish \
+  https://raw.githubusercontent.com/fish-shell/fish-shell/master/share/completions/yarn.fish
 ```
 
 ```sh
@@ -273,12 +277,9 @@ curl https://baltocdn.com/helm/signing.asc | sudo apt-key add - \
   && sudo apt install helm
 ```
 
-* [Texpander](https://github.com/leehblue/texpander)
 * Ansible
-* MySQL Workbench
 * [Terraform](https://www.terraform.io/downloads.html)
 * [tfswitch](https://tfswitch.warrensbox.com/Install)
-* [Ripgrep](https://github.com/BurntSushi/ripgrep)
 * Android Studio (shop flatpak)
 
 ### OS configuration
@@ -291,8 +292,6 @@ gsettings set org.gnome.desktop.wm.keybindings switch-windows "['<Alt>Tab']"
 ```
 
 ```sh
-gsettings set org.gnome.desktop.interface clock-format '24h'
-gsettings set org.gnome.desktop.interface clock-show-seconds false
 gsettings set org.gnome.desktop.interface clock-show-weekday true
 gsettings set org.gnome.desktop.interface document-font-name 'Roboto Slab 13'
 gsettings set org.gnome.desktop.interface enable-animations false
@@ -340,7 +339,6 @@ gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/or
 gsettings set org.gnome.mutter attach-modal-dialogs false
 gsettings set org.gnome.mutter center-new-windows true
 gsettings set org.gnome.mutter dynamic-workspaces false
-gsettings set org.gnome.mutter edge-tiling true
 ```
 
 To move window to another workspace, it is possible their is a conflict with "Window > View split on left/right". Remove shortkey ctrl+command+left/right on them
@@ -408,3 +406,4 @@ Sources:
 * https://www.dell.com/community/Linux-General/XPS-13-7390-Ubuntu-Screen-flickering/td-p/7430121/page/3
 * https://wiki.archlinux.org/title/Dell_XPS_13_(9310)#Random_Hangs_on_i915
 * https://gitlab.com/risingprismtv/single-gpu-passthrough/-/wikis/2)-Editing-GRUB
+

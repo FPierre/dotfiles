@@ -74,7 +74,25 @@ matches:
   - trigger: ":round2"
     replace: "Round 2 - Fit Values Cubyn - x "
 
-  # Dates
+  - trigger: ":commit"
+    form: |
+      {{choices}}
+    form_fields:
+      choices:
+        type: list
+        values:
+          - "build:"
+          - "chore:"
+          - "ci:"
+          - "docs:"
+          - "feat:"
+          - "fix:"
+          - "perf:"
+          - "refactor:"
+          - "revert:"
+          - "style:"
+          - "test:"
+
   - trigger: ":date"
     replace: "{{mydate}}"
     vars:
@@ -83,7 +101,6 @@ matches:
         params:
           format: "%m/%d/%Y"
 
-  # Shell commands
   - trigger: ":shell"
     replace: "{{output}}"
     vars:
