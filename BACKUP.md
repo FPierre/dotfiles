@@ -11,7 +11,7 @@ dconf dump / > ~/.dotfiles/config/dconf/dconf-settings.ini
 [Copy projects without `node_modules/`](https://unix.stackexchange.com/a/345001):
 
 ```sh
-sync -rv --exclude=node_modules --exclude=env ~/Workspace /<DESTINATION>
+rsync -rv --exclude=node_modules --exclude=env ~/Workspace /<DESTINATION>
 ```
 
 Push updates from `~/Documents/Obsidian`
