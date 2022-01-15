@@ -37,6 +37,7 @@ gpg --export-secret-subkeys --armor "Pierre Flauder" > gpg.sub_priv.asc
 gpg --export-ownertrust > ownertrust.txt
 ```
 
+- Config Shortkeys (Chrome extension)
 - Config TablePlus
 - Config MySQL Workbench
 - VSCode unsaved tab
