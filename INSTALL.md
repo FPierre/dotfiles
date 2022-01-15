@@ -50,10 +50,8 @@ curl -s https://brave-browser-apt-release.s3.brave.com/brave-core.asc | sudo apt
 [Insomnia](https://support.insomnia.rest/article/156-installation):
 
 ```sh
-echo "deb https://dl.bintray.com/getinsomnia/Insomnia /" \
-    | sudo tee -a /etc/apt/sources.list.d/insomnia.list \
-  && wget --quiet -O - https://insomnia.rest/keys/debian-public.key.asc \
-    | sudo apt-key add -
+echo "deb [trusted=yes arch=amd64] https://download.konghq.com/insomnia-ubuntu/ default all" \
+  | sudo tee -a /etc/apt/sources.list.d/insomnia.list
 ```
 
 [TablePlus](https://tableplus.com/blog/2019/10/tableplus-linux-installation.html):
