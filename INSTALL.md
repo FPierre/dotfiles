@@ -4,7 +4,7 @@
 
  ```sh
 sudo add-apt-repository ppa:aslatter/ppa \
-  && add-apt-repository ppa:fish-shell/release-3 \
+  && sudo add-apt-repository ppa:fish-shell/release-3 \
   && sudo apt update \
   && sudo apt install alacritty fish
 ```
