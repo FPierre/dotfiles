@@ -83,6 +83,8 @@ sudo apt update \
   preload \
   ripgrep \
   tableplus \
+  tlp \
+  tlp-rdw \
   vlc
 ```
 
