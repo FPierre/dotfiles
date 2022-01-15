@@ -179,8 +179,6 @@ ln -sfv "$HOME/.dotfiles/config/git/.gitconfig" "$HOME/.gitconfig"
 ln -sfv "$HOME/.dotfiles/config/vscode/settings.json" "$HOME/.config/Code/User/settings.json"
 ln -sfv "$HOME/.dotfiles/config/vscode/keybindings.json" "$HOME/.config/Code/User/keybindings.json"
 ln -sfv "$HOME/.dotfiles/config/vscode/snippets/jest-describe.json" "$HOME/.config/Code/User/snippets/jest-describe.json"
-
-ln -sfv "$HOME/.dotfiles/config/zettlr/config.json" "$HOME/.config/Zettlr/config.json"
 ```
 
 Install VSCode extensions:
