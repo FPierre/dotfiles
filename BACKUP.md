@@ -37,16 +37,18 @@ gpg --export-secret-subkeys --armor "Pierre Flauder" > gpg.sub_priv.asc
 gpg --export-ownertrust > ownertrust.txt
 ```
 
-* VSCode unsaved tab
-* Fish `fisher ls`
-* OS shortkey
-* Insomnia
-* Kubectl
-* Yarn `yarn global list`
-* [Brave](https://support.brave.com/hc/en-us/articles/360019782291-How-do-I-import-or-export-browsing-data-)
-* NPM token
-* Config GCloud
-* Config AWS
+- Config TablePlus
+- Config MySQL Workbench
+- VSCode unsaved tab
+- Fish `fisher ls`
+- OS shortkey
+- Insomnia
+- Kubectl
+- Yarn `yarn global list`
+- [Brave](https://support.brave.com/hc/en-us/articles/360019782291-How-do-I-import-or-export-browsing-data-)
+- NPM token
+- Config GCloud
+- Config AWS
 
 Backup VSCode extensions:
 
