@@ -341,9 +341,10 @@ To move window to another workspace, it is possible their is a conflict with "Wi
 ### Restore SSH and GPG
 
 ```sh
-cp /media/pierre/SanDisk\ 256Go/Backup/ssh/* ~/.ssh/
-sudo chmod 600 ~/.ssh/id_rsa ~/.ssh/config ~/.ssh/known_hosts
-sudo chmod 644 ~/.ssh/id_rsa.pub
+mkdir ~/.ssh \
+  && cp /media/pierre/SanDisk\ 256Go/Backup/ssh/* ~/.ssh/ \
+  && sudo chmod 600 ~/.ssh/id_rsa ~/.ssh/config ~/.ssh/known_hosts \
+  && sudo chmod 644 ~/.ssh/id_rsa.pub
 ```
 
 (Copy the passphrase)
