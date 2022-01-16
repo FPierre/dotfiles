@@ -61,7 +61,6 @@ wget -qO - http://deb.tableplus.com/apt.tableplus.com.gpg.key | sudo apt-key add
   && sudo add-apt-repository "deb [arch=amd64] https://deb.tableplus.com/debian/21 tableplus main"
 ```
 
-
 And:
 
 ```sh
@@ -350,10 +349,10 @@ mkdir ~/.ssh \
 (Copy the passphrase)
 
 ```sh
-gpg --import gpg.pub.asc
-gpg --import gpg.priv.asc
-gpg --import gpg.sub_priv.asc
-gpg --import-ownertrust ownertrust.txt
+gpg --import /media/pierre/SanDisk\ 256Go/Backup/gpg/gpg.pub.asc
+gpg --import /media/pierre/SanDisk\ 256Go/Backup/gpg/gpg.priv.asc
+gpg --import /media/pierre/SanDisk\ 256Go/Backup/gpg/gpg.sub_priv.asc
+gpg --import-ownertrust /media/pierre/SanDisk\ 256Go/Backup/gpg/ownertrust.txt
 ```
 
 **Do not forget to add into ~/.ssh/config the private configuration to connect to Cubyn's bastion**
