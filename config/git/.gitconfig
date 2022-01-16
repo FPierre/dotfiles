@@ -15,4 +15,4 @@
   me = merge
   fe = fetch --all -p
 [pull]
-	rebase = false
+  rebase = false
