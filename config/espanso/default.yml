@@ -11,58 +11,40 @@ toggle_key: OFF
 matches:
   - trigger: ":12ft"
     replace: "https://12ft.io/"
-
   - trigger: ":changelog"
     replace: "https://keepachangelog.com/en/1.0.0/"
-
   - trigger: ":shipperId"
     replace: "651063395"
-
   - trigger: ":godId"
     replace: "651063394"
-
   - triggers: [":warning", ":danger"]
     replace: "⚠️"
-
+  - trigger: ":check"
+    replace: "✔️"
   - trigger: ":brain"
     replace: "🧠"
-
   - trigger: ":fire"
     replace: "🔥"
-
   - trigger: ":thinking"
     replace: "🤔"
-
   - trigger: ":rocket"
     replace: "🚀"
-
-  - trigger: ":scooter"
-    replace: "🛴"
-
   - triggers: [":carrot", ":carotte"]
     replace: "🥕"
-
   - trigger: ":rabbit"
     replace: "🐇"
-
   - triggers: [":light", ":event"]
     replace: "⚡"
-
   - triggers: [":+1"]
     replace: "👍"
-
   - triggers: [":-1"]
     replace: "👎"
-
   - trigger: ":check"
     replace: "✅"
-
   - trigger: ":cross"
     replace: "❌"
-
   - trigger: ":lambda"
     replace: "λ"
-
   - trigger: ":uuid"
     replace: "{{output}}"
     vars:
@@ -70,10 +52,6 @@ matches:
         type: shell
         params:
           cmd: "uuidgen"
-
-  - trigger: ":round2"
-    replace: "Round 2 - Fit Values Cubyn - x "
-
   - trigger: ":commit"
     form: |
       {{choices}}
@@ -92,19 +70,3 @@ matches:
           - "revert:"
           - "style:"
           - "test:"
-
-  - trigger: ":date"
-    replace: "{{mydate}}"
-    vars:
-      - name: mydate
-        type: date
-        params:
-          format: "%m/%d/%Y"
-
-  - trigger: ":shell"
-    replace: "{{output}}"
-    vars:
-      - name: output
-        type: shell
-        params:
-          cmd: "echo Hello from your shell"
