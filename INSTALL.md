@@ -84,6 +84,7 @@ sudo apt update \
   tableplus \
   tlp \
   tlp-rdw \
+  uuid \
   vlc
 ```
 
