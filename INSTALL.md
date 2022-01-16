@@ -261,6 +261,16 @@ echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.clou
   && sudo apt install google-cloud-sdk kubectl
 ```
 
+[Kubectx and Kubens](https://github.com/ahmetb/kubectx#manual-installation-macos-and-linux):
+
+```sh
+sudo git clone https://github.com/ahmetb/kubectx /opt/kubectx \
+  && sudo ln -s /opt/kubectx/kubectx /usr/local/bin/kubectx \
+  && sudo ln -s /opt/kubectx/kubens /usr/local/bin/kubens \
+  && ln -s /opt/kubectx/completion/kubectx.fish ~/.config/fish/completions/ \
+  && ln -s /opt/kubectx/completion/kubens.fish ~/.config/fish/completions/
+```
+
 [Helm](https://helm.sh/docs/intro/install/):
 
 ```sh
