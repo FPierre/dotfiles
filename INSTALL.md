@@ -152,7 +152,7 @@ yarn global add carotte-cli fast-cli @vue/cli serve
 ### Clone this repository
 
 ```sh
-git clone https://github.com/FPierre/dotfiles.git ~/.dotfiles \
+git clone git@github.com:FPierre/dotfiles.git ~/.dotfiles \
   && cd ~/.dotfiles
 ```
 
