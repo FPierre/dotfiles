@@ -85,7 +85,7 @@ sudo apt update \
   htop \
   insomnia \
   mysql-client \
-  postgresql-client-12 \
+  postgresql-client-13 \
   powertop \
   preload \
   ripgrep \
