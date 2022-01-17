@@ -61,6 +61,13 @@ wget -qO - http://deb.tableplus.com/apt.tableplus.com.gpg.key | sudo apt-key add
   && sudo add-apt-repository "deb [arch=amd64] https://deb.tableplus.com/debian/21 tableplus main"
 ```
 
+[PostgreSQL client](https://www.postgresql.org/download/linux/ubuntu/):
+
+```sh
+sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt '(lsb_release -cs)'-pgdg main" > /etc/apt/sources.list.d/pgdg.list' \
+  wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+```
+
 And:
 
 ```sh
@@ -78,6 +85,7 @@ sudo apt update \
   htop \
   insomnia \
   mysql-client \
+  postgresql-client-12 \
   powertop \
   preload \
   ripgrep \
