@@ -374,6 +374,10 @@ gpg --import-ownertrust /media/pierre/SanDisk\ 256Go/Backup/gpg/ownertrust.txt
 
 **Do not forget to add into ~/.ssh/config the private configuration to connect to Cubyn's bastion**
 
+### Use DNS 1.1.1.1
+
+[Installation](https://1.1.1.1/fr/)
+
 ### Customize Nautilus sidebar
 
 Comment the locations to hide into:
