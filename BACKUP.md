@@ -37,10 +37,10 @@ gpg --export-secret-subkeys --armor "Pierre Flauder" > gpg.sub_priv.asc
 gpg --export-ownertrust > ownertrust.txt
 ```
 
+- Dotfiles folder
 - Config Espanso
-- Config Shortkeys (Chrome extension)
+- Config Shortkeys (Chrome/Brave extension)
 - Config TablePlus
-- Config MySQL Workbench
 - VSCode unsaved tab
 - Fish `fisher ls`
 - OS shortkey

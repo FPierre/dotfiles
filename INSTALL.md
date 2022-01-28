@@ -61,6 +61,13 @@ wget -qO - http://deb.tableplus.com/apt.tableplus.com.gpg.key | sudo apt-key add
   && sudo add-apt-repository "deb [arch=amd64] https://deb.tableplus.com/debian/21 tableplus main"
 ```
 
+[PostgreSQL client](https://www.postgresql.org/download/linux/ubuntu/):
+
+```sh
+sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt '(lsb_release -cs)'-pgdg main" > /etc/apt/sources.list.d/pgdg.list' \
+  wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+```
+
 And:
 
 ```sh
@@ -78,6 +85,7 @@ sudo apt update \
   htop \
   insomnia \
   mysql-client \
+  postgresql-client-13 \
   powertop \
   preload \
   ripgrep \
@@ -231,7 +239,7 @@ A restart is required to make the changes effective
 Docker Compose:
 
 ```sh
-sudo curl -L "https://github.com/docker/compose/releases/download/1.28.6/docker-compose-"(uname -s)"-"(uname -m)"" -o /usr/local/bin/docker-compose \
+sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-"(uname -s)"-"(uname -m)"" -o /usr/local/bin/docker-compose \
   && sudo chmod +x /usr/local/bin/docker-compose
 ```
 
@@ -380,6 +388,10 @@ gpg --import-ownertrust /media/pierre/SanDisk\ 256Go/Backup/gpg/ownertrust.txt
 ```
 
 **Do not forget to add into ~/.ssh/config the private configuration to connect to Cubyn's bastion**
+
+### Use DNS 1.1.1.1
+
+[Installation](https://1.1.1.1/fr/)
 
 ### Customize Nautilus sidebar
 
