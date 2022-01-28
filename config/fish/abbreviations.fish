@@ -35,4 +35,5 @@ abbr -a zeebe-down 'docker-compose -f ~/Workspace/infra/infra-docker-compose/cam
 
 abbr -a npm-pre-publish "npm pack && tar -xvzf *.tgz"
 
-abbr -a terraform012 "/opt/terraform-0-12-29/terraform"
+# abbr -a terraform012 "/opt/terraform-0-12-29/terraform"
+

@@ -23,9 +23,6 @@ set -gx SQL_PORT 3306
 # Found with: yarn global bin
 set -gx PATH $PATH:/home/pierre/.yarn/bin
 
-# Terraform
-set -gx PATH $PATH:/opt/terraform
-
 # tfswitch
 set -gx PATH $PATH:/opt/tfswitch
 
@@ -36,18 +33,15 @@ set -gx PATH $PATH:/opt/tfswitch
 # Android studio
 # set -gx ANDROID_HOME /home/pierre/Workspace/mobile/Android/Sdk
 
-# Helm
-# set -gx PATH $PATH:/opt/helm
-
 # Camunda Modeler
-set -gx PATH $PATH:/opt/camunda
+set -gx PATH $PATH:/opt/camunda-modeler
 
 # Cloud SQL proxy
-set -gx PATH $PATH:/usr/lib/google-cloud-sdk/bin
+#set -gx PATH $PATH:/usr/lib/google-cloud-sdk/bin
 
 # Fly.io
-set -gx FLYCTL_INSTALL /home/pierre/.fly
-set -gx PATH $PATH:$FLYCTL_INSTALL/bin
+#set -gx FLYCTL_INSTALL /home/pierre/.fly
+#set -gx PATH $PATH:$FLYCTL_INSTALL/bin
 
 # Modulo
 set -gx PATH $PATH:/opt/modulo/modulo.AppImage

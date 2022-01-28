@@ -16,3 +16,5 @@
   fe = fetch --all -p
 [pull]
   rebase = false
+[push]
+	default = current

@@ -51,9 +51,6 @@
   "workbench.tree.indent": 20,
   "workbench.editor.enablePreview": false,
   "typescript.updateImportsOnFileMove.enabled": "always",
-  "[markdown]": {
-    "editor.minimap.enabled": false
-  },
   "todohighlight.isCaseSensitive": false,
   "todohighlight.keywords": [
     {
@@ -83,5 +80,6 @@
   "telemetry.telemetryLevel": "off",
   "liveshare.languages.allowGuestCommandControl": true,
   "rest-client.enableTelemetry": false,
-  "rest-client.previewResponsePanelTakeFocus": false
+  "rest-client.previewResponsePanelTakeFocus": false,
+  "editor.minimap.enabled": false
 }

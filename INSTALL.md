@@ -88,7 +88,7 @@ sudo apt update \
 ```
 
 - VScode is not installed with Flatpak due to the path mess it introduce
-- MySQL server and PostgreSQL via Docker (over `apt`) 
+- MySQL server and PostgreSQL via Docker (over `apt`)
 
 [Espanso](https://espanso.org/docs/install/linux) and [Modulo](https://espanso.org/docs/install/linux#installing-modulo):
 
@@ -280,9 +280,24 @@ curl https://baltocdn.com/helm/signing.asc | sudo apt-key add - \
   && sudo apt install helm
 ```
 
+ [Terraform](https://www.terraform.io/downloads):
+
+```sh
+curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add - \
+  && sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com "(lsb_release -cs)" main" \
+  && sudo apt update && sudo apt install terraform
+```
+
+[tfswitch](https://tfswitch.warrensbox.com/Install/#linux):
+
+```sh
+wget https://raw.githubusercontent.com/warrensbox/terraform-switcher/release/install.sh \
+  && chmod 755 install.sh \
+  && sudo mkdir /opt/tfswitch \
+  && sudo ./install.sh -b /opt/tfswitch
+```
+
 * Ansible
-* [Terraform](https://www.terraform.io/downloads.html)
-* [tfswitch](https://tfswitch.warrensbox.com/Install)
 * Android Studio (shop flatpak)
 
 ### OS configuration
