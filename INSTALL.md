@@ -1,5 +1,15 @@
 # Install
 
+## Dell XPS 13 notes
+
+- F2: BIOS
+- F12: boot menu
+
+Boot on right USB port:
+1. Disable UEFI in the BIOS
+2. Go to boot menu
+3. Select UEFI Mass Storage XXX 2 (USB icon)
+
 ## Install Alacritty and Fish
 
  ```sh
