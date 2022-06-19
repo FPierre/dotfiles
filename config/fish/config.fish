@@ -15,9 +15,6 @@ starship init fish | source
 # end
 . /usr/share/autojump/autojump.fish
 
-# MySQL Docker (through Docker compose config)
-set -gx SQL_PORT 3306
-
 # Yarn
 # Declare global bin path
 # Found with: yarn global bin
@@ -51,3 +48,7 @@ set -gx PATH $PATH:/opt/kubectx
 
 # kubens
 set -gx PATH $PATH:/opt/kubens
+
+# Encore
+set ENCORE_INSTALL /home/pierre/.encore
+set -gx PATH $ENCORE_INSTALL/bin:$PATH

@@ -201,7 +201,6 @@ cat config/vscode/extensions.txt | xargs -n 1 code --install-extension
 ```sh
 wget -P ~/.config/fish/completions \
   https://raw.githubusercontent.com/fish-shell/fish-shell/master/share/completions/git.fish \
-  https://raw.githubusercontent.com/evanlucas/fish-kubectl-completions/master/completions/kubectl.fish \
   https://raw.githubusercontent.com/fish-shell/fish-shell/master/share/completions/ls.fish \
   https://raw.githubusercontent.com/fish-shell/fish-shell/master/share/completions/helm.fish \
   https://raw.githubusercontent.com/fish-shell/fish-shell/master/share/completions/node.fish \

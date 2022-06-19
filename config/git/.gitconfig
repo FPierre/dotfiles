@@ -18,3 +18,5 @@
   rebase = false
 [push]
 	default = current
+[init]
+	defaultBranch = main

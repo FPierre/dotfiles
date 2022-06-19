@@ -1,3 +1,3 @@
 function c
-  /usr/bin/code "$PWD/$argv"
+  /usr/bin/code --no-sandbox "$PWD/$argv"
 end

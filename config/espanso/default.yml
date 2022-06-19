@@ -11,7 +11,7 @@ toggle_key: OFF
 matches:
   - trigger: ":12ft"
     replace: "https://12ft.io/"
-  - trigger: ":changelog"
+  - triggers: [":changelog", ":release"]
     replace: "https://keepachangelog.com/en/1.0.0/"
   - trigger: ":shipperId"
     replace: "651063395"
@@ -33,6 +33,8 @@ matches:
     replace: "🥕"
   - trigger: ":rabbit"
     replace: "🐇"
+  - trigger: ":infinite"
+    replace: "∞"
   - triggers: [":light", ":event"]
     replace: "⚡"
   - triggers: [":+1"]
@@ -45,6 +47,17 @@ matches:
     replace: "❌"
   - trigger: ":lambda"
     replace: "λ"
+  - trigger: ":fr"
+    replace: "🇫🇷"
+  - trigger: ":en"
+    replace: "🇬🇧"
+  - trigger: ":timestamp"
+    replace: "{{output}}"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: "date '+%s'"
   - trigger: ":uuid"
     replace: "{{output}}"
     vars:
@@ -67,6 +80,7 @@ matches:
           - "fix:"
           - "perf:"
           - "refactor:"
+          - "release:"
           - "revert:"
           - "style:"
           - "test:"
