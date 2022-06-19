@@ -40,7 +40,7 @@ gpg --export-ownertrust > ownertrust.txt
 - Dotfiles folder
 - Config Espanso
 - Config Shortkeys (Chrome/Brave extension)
-- Config TablePlus
+- Config TablePlus (`~/.tableplus/settings/connections.json`, `~/.tableplus/queries/`)
 - VSCode unsaved tab
 - Fish `fisher ls`
 - OS shortkey
