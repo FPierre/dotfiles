@@ -17,6 +17,12 @@ matches:
     replace: "651063395"
   - trigger: ":godId"
     replace: "651063394"
+  - triggers: [":automatedId", ":automated-wh"]
+    replace: "35000000"
+  - triggers: [":manualId", ":manual-wh"]
+    replace: "3628042"
+  - triggers: [":spainId", ":span-wh"]
+    replace: "193543585"
   - triggers: [":warning", ":danger"]
     replace: "⚠️"
   - trigger: ":check"
@@ -84,3 +90,4 @@ matches:
           - "revert:"
           - "style:"
           - "test:"
+

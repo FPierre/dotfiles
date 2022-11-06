@@ -1,6 +1,6 @@
 # ⚠️ comment a line does not disable it in the autocompletion
 
-# Port forward staging RabbitMQ: kubectl port-forward -n rabbitmq service/rabbitmq 5675:5672
+abbr -a python python2.7
 
 abbr -a exti exit
 abbr -a gti git
@@ -14,6 +14,8 @@ abbr -a pierref "CAROTTE_DEBUG_TOKEN=pierref make run"
 
 abbr -a rabbitmq-up 'docker-compose -f ~/Workspace/infra/infra-docker-compose/datasources.yml up -d rabbitmq'
 abbr -a rabbitmq-down 'docker-compose -f ~/Workspace/infra/infra-docker-compose/datasources.yml stop rabbitmq'
+
+abbr -a rabbitmq-forward 'kubectl port-forward -n rabbitmq service/rabbitmq 5675:5672'
 
 abbr -a elasticsearch-up 'docker-compose -f ~/Workspace/infra/infra-docker-compose/elasticsearch.yml up -d'
 abbr -a elasticsearch-down 'docker-compose -f ~/Workspace/infra/infra-docker-compose/elasticsearch.yml stop'

@@ -52,3 +52,6 @@ set -gx PATH $PATH:/opt/kubens
 # Encore
 set ENCORE_INSTALL /home/pierre/.encore
 set -gx PATH $ENCORE_INSTALL/bin:$PATH
+
+# Python 2.7
+set -gx PYTHON /usr/bin/python2.7
