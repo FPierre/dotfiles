@@ -170,7 +170,7 @@ sudo ln -sfv "$HOME/.dotfiles/config/hosts" /etc/hosts
 
 mkdir ~/.config/alacritty && ln -sfv "$HOME/.dotfiles/config/alacritty/alacritty.yml" "$HOME/.config/alacritty/alacritty.yml"
 
-ln -sfv "$HOME/.dotfiles/config/espanso/default.yml" "$HOME/.config/espanso/default.yml"
+ln -sfv "$HOME/.dotfiles/config/espanso/match/base.yml" "$HOME/.config/espanso/match/base.yml"
 
 ln -sfv "$HOME/.dotfiles/config/fish/abbreviations.fish" "$HOME/.config/fish/abbreviations.fish"
 source ~/.config/fish/abbreviations.fish
