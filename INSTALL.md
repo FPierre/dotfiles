@@ -110,19 +110,7 @@ sudo apt update \
 - VScode is not installed with Flatpak due to the path mess it introduce
 - MySQL server and PostgreSQL via Docker (over `apt`)
 
-[Espanso](https://espanso.org/docs/install/linux) and [Modulo](https://espanso.org/docs/install/linux#installing-modulo):
-
-```sh
-wget https://github.com/federico-terzi/espanso/releases/download/v0.7.3/espanso-debian-amd64.deb \
-  && sudo apt install ./espanso-debian-amd64.deb \
-  && espanso start
-```
-
-```sh
-sudo wget https://github.com/federico-terzi/modulo/releases/latest/download/modulo-x86_64.AppImage -O $HOME/opt/modulo.AppImage \
-  && chmod u+x $HOME/opt/modulo.AppImage \
-  && ln -s $HOME/opt/modulo.AppImage /usr/bin/modulo
-```
+[Espanso](https://espanso.org/docs/install/linux)
 
 ```sh
 flatpak install ca.desrt.dconf-editor com.slack.Slack md.obsidian.Obsidian
