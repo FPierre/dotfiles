@@ -45,7 +45,9 @@ sudo add-apt-repository -y ppa:git-core/ppa
 [Starship](https://starship.rs/guide/#%F0%9F%9A%80-installation):
 
 ```sh
-curl -fsSL https://starship.rs/install.sh | bash
+curl -sS https://starship.rs/install.sh | sh
+# Add the following to the end of ~/.config/fish/config.fish:
+starship init fish | source
 ```
 
 [Brave](https://brave.com/linux/#release-channel-installation):
