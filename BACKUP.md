@@ -18,54 +18,8 @@ code --list-extensions >> ~/.dotfiles/config/vscode/extensions.txt
 ```
 
 - Forward critical emails to personal inbox
-- Export Browser [Shortkeys](https://chrome.google.com/webstore/detail/shortkeys-custom-keyboard/logpjaacgmcbpdkdchjiaagddngobkck/reviews?hl=en-US&gl=US) extension:
-
-```json
-[
-  {
-    "key": "ctrl+up",
-    "label": "Tab left",
-    "action": "prevtab",
-    "sites": "",
-    "sitesArray": [""],
-    "activeInInputs": true,
-    "blacklist": false
-  },
-  {
-    "key": "ctrl+down",
-    "label": "Tab right",
-    "action": "nexttab",
-    "sites": "",
-    "sitesArray": [""],
-    "activeInInputs": true,
-    "blacklist": false
-  },
-  {
-    "key": "ctrl+shift+up",
-    "label": "Move tab to left",
-    "action": "movetableft",
-    "sites": "",
-    "sitesArray": [""],
-    "activeInInputs": true,
-    "blacklist": false
-  },
-  {
-    "key": "ctrl+shift+down",
-    "label": "Move tab to right",
-    "action": "movetabright",
-    "sites": "",
-    "sitesArray": [""],
-    "activeInInputs": true,
-    "blacklist": false
-  }
-]
-```
-
-- Export OS shortkey:
-
-```sh
-
-```
+- Export Browser [Shortkeys](https://chrome.google.com/webstore/detail/shortkeys-custom-keyboard/logpjaacgmcbpdkdchjiaagddngobkck/reviews?hl=en-US&gl=US) extension
+- Export OS shortkey
 
 ## Private
 

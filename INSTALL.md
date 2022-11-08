@@ -384,6 +384,51 @@ gsettings set org.gnome.mutter dynamic-workspaces false
 
 To move window to another workspace, it is possible their is a conflict with "Window > View split on left/right". Remove shortkey ctrl+command+left/right on them
 
+### Browser configuration
+
+- Install [Shortkeys](https://chrome.google.com/webstore/detail/shortkeys-custom-keyboard/logpjaacgmcbpdkdchjiaagddngobkck/reviews?hl=en-US&gl=US) extension with the following configuration:
+
+```json
+[
+  {
+    "key": "ctrl+up",
+    "label": "Tab left",
+    "action": "prevtab",
+    "sites": "",
+    "sitesArray": [""],
+    "activeInInputs": true,
+    "blacklist": false
+  },
+  {
+    "key": "ctrl+down",
+    "label": "Tab right",
+    "action": "nexttab",
+    "sites": "",
+    "sitesArray": [""],
+    "activeInInputs": true,
+    "blacklist": false
+  },
+  {
+    "key": "ctrl+shift+up",
+    "label": "Move tab to left",
+    "action": "movetableft",
+    "sites": "",
+    "sitesArray": [""],
+    "activeInInputs": true,
+    "blacklist": false
+  },
+  {
+    "key": "ctrl+shift+down",
+    "label": "Move tab to right",
+    "action": "movetabright",
+    "sites": "",
+    "sitesArray": [""],
+    "activeInInputs": true,
+    "blacklist": false
+  }
+]
+```
+
 ### Install Mega.nz
 
 [App](https://mega.io/desktop)
@@ -432,6 +477,34 @@ nano ~/.config/user-dirs.dirs
 ```sh
 echo "enabled=false" > ~/.config/user-dirs.conf
 ```
+
+## Keyboard behaviors
+
+At the end, the keyboard should behave like:
+
+### OS
+
+- Navigate through workspaces: `ctrl` + `alt` + `key up|right|down|left`
+- Move window through workspaces: `ctrl` + `super` + `key up|right|down|left`
+- Open universal search: `super`
+- Open file browser: `ctrl` + `alt` + `z`
+- Open browser: `ctrl` + `alt` + `e`
+- Open IDE: `ctrl` + `alt` + `r`
+- Open terminal: `ctrl` + `alt` + `t`
+- Navigate on open windows on the same workspace: `alt` + `tab`
+
+### Browser
+
+- Open a new tab: `ctrl` + `t`
+- Close a tab: `ctrl` + `w`
+- Reload a tab: `ctrl` + `r`
+- Move a tab: `ctrl` + `shift` + `key up|down`
+- Navigate on tabs: `ctrl` + `key up|down`
+
+## IDE
+
+- Move a line: `alt` + `key up|down`
+- Duplicate a line: `ctrl` + `shift` + `alt` + `key up|down`
 
 ### To do
 
