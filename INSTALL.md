@@ -96,7 +96,6 @@ sudo apt update \
   gnome-tweaks \
   htop \
   insomnia \
-  mysql-client \
   postgresql-client-13 \
   powertop \
   preload \
@@ -108,7 +107,7 @@ sudo apt update \
 ```
 
 - VScode is not installed with Flatpak due to the path mess it introduce
-- MySQL server and PostgreSQL via Docker (over `apt`)
+- PostgreSQL server via Docker (over `apt`)
 
 [Espanso](https://espanso.org/docs/install/linux)
 
@@ -127,6 +126,10 @@ Configure Powertop:
 ```sh
 sudo powertop
 ```
+
+## Install Mega.nz client
+
+- [App](https://mega.nz/desktop)
 
 ## Install Node.js environment
 
