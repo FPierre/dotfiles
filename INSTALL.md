@@ -1,22 +1,23 @@
 # Install
 
-## Dell XPS 13 notes
+## Notes on Dell XPS 13
 
 - F2: BIOS
 - F12: boot menu
 
 Boot on right USB port:
+
 1. Disable UEFI in the BIOS
 2. Go to boot menu
 3. Select UEFI Mass Storage XXX 2 (USB icon)
 
 ## Install Alacritty and Fish
 
- ```sh
+```sh
 sudo add-apt-repository ppa:aslatter/ppa \
-  && sudo add-apt-repository ppa:fish-shell/release-3 \
-  && sudo apt update \
-  && sudo apt install alacritty fish
+ && sudo add-apt-repository ppa:fish-shell/release-3 \
+ && sudo apt update \
+ && sudo apt install alacritty fish
 ```
 
 Set Fish as the [default shell](https://fishshell.com/docs/current/tutorial.html#switching-to-fish):
@@ -159,6 +160,24 @@ Install Yarn global packages:
 yarn global add carotte-cli fast-cli @vue/cli serve
 ```
 
+### Restore SSH and GPG
+
+```sh
+mkdir ~/.ssh \
+  && cp /media/pierre/SanDisk\ 256Go/Backup/ssh/* ~/.ssh/ \
+  && sudo chmod 600 ~/.ssh/id_rsa ~/.ssh/config ~/.ssh/known_hosts \
+  && sudo chmod 644 ~/.ssh/id_rsa.pub
+```
+
+(Copy the passphrase)
+
+```sh
+gpg --import /media/pierre/SanDisk\ 256Go/Backup/gpg/gpg.pub.asc
+gpg --import /media/pierre/SanDisk\ 256Go/Backup/gpg/gpg.priv.asc
+gpg --import /media/pierre/SanDisk\ 256Go/Backup/gpg/gpg.sub_priv.asc
+gpg --import-ownertrust /media/pierre/SanDisk\ 256Go/Backup/gpg/ownertrust.txt
+```
+
 ### Clone this repository
 
 ```sh
@@ -173,7 +192,7 @@ sudo ln -sfv "$HOME/.dotfiles/config/hosts" /etc/hosts
 
 mkdir ~/.config/alacritty && ln -sfv "$HOME/.dotfiles/config/alacritty/alacritty.yml" "$HOME/.config/alacritty/alacritty.yml"
 
-ln -sfv "$HOME/.dotfiles/config/espanso/default.yml" "$HOME/.config/espanso/default.yml"
+ln -sfv "$HOME/.dotfiles/config/espanso/match/base.yml" "$HOME/.config/espanso/match/base.yml"
 
 ln -sfv "$HOME/.dotfiles/config/fish/abbreviations.fish" "$HOME/.config/fish/abbreviations.fish"
 source ~/.config/fish/abbreviations.fish
@@ -290,7 +309,7 @@ curl https://baltocdn.com/helm/signing.asc | sudo apt-key add - \
   && sudo apt install helm
 ```
 
- [Terraform](https://www.terraform.io/downloads):
+[Terraform](https://www.terraform.io/downloads):
 
 ```sh
 curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add - \
@@ -306,9 +325,6 @@ wget https://raw.githubusercontent.com/warrensbox/terraform-switcher/release/ins
   && sudo mkdir /opt/tfswitch \
   && sudo ./install.sh -b /opt/tfswitch
 ```
-
-* Ansible
-* Android Studio (shop flatpak)
 
 ### OS configuration
 
@@ -371,25 +387,83 @@ gsettings set org.gnome.mutter dynamic-workspaces false
 
 To move window to another workspace, it is possible their is a conflict with "Window > View split on left/right". Remove shortkey ctrl+command+left/right on them
 
-### Restore SSH and GPG
+### Browser configuration
 
-```sh
-mkdir ~/.ssh \
-  && cp /media/pierre/SanDisk\ 256Go/Backup/ssh/* ~/.ssh/ \
-  && sudo chmod 600 ~/.ssh/id_rsa ~/.ssh/config ~/.ssh/known_hosts \
-  && sudo chmod 644 ~/.ssh/id_rsa.pub
+- Install [Shortkeys](https://chrome.google.com/webstore/detail/shortkeys-custom-keyboard/logpjaacgmcbpdkdchjiaagddngobkck/reviews?hl=en-US&gl=US) extension with the following configuration:
+
+```json
+[
+  {
+    "key": "ctrl+up",
+    "label": "Tab left",
+    "action": "prevtab",
+    "sites": "",
+    "sitesArray": [""],
+    "activeInInputs": true,
+    "blacklist": false
+  },
+  {
+    "key": "ctrl+down",
+    "label": "Tab right",
+    "action": "nexttab",
+    "sites": "",
+    "sitesArray": [""],
+    "activeInInputs": true,
+    "blacklist": false
+  },
+  {
+    "key": "ctrl+shift+up",
+    "label": "Move tab to left",
+    "action": "movetableft",
+    "sites": "",
+    "sitesArray": [""],
+    "activeInInputs": true,
+    "blacklist": false
+  },
+  {
+    "key": "ctrl+shift+down",
+    "label": "Move tab to right",
+    "action": "movetabright",
+    "sites": "",
+    "sitesArray": [""],
+    "activeInInputs": true,
+    "blacklist": false
+  }
+]
 ```
 
-(Copy the passphrase)
+### Install Mega.nz
 
-```sh
-gpg --import /media/pierre/SanDisk\ 256Go/Backup/gpg/gpg.pub.asc
-gpg --import /media/pierre/SanDisk\ 256Go/Backup/gpg/gpg.priv.asc
-gpg --import /media/pierre/SanDisk\ 256Go/Backup/gpg/gpg.sub_priv.asc
-gpg --import-ownertrust /media/pierre/SanDisk\ 256Go/Backup/gpg/ownertrust.txt
+[App](https://mega.io/desktop)
+
+Configuration:
+
+|   Local   |   Mega    |
+| :-------: | :-------: |
+| .dotfiles | .dotfiles |
+|   .ssh    |   .ssh    |
+|  Desktop  |  Desktop  |
+| Documents | Documents |
+| Downloads | Downloads |
+| Pictures  | Pictures  |
+| Workspace | Workspace |
+
 ```
-
-**Do not forget to add into ~/.ssh/config the private configuration to connect to Cubyn's bastion**
+*.crdownload
+*.lock
+*.log
+*.sb-????????-??????
+*.tmp
+*~.*
+.
+..
+.git
+Thumbs.db
+desktop.ini
+dist
+node_modules
+~*
+```
 
 ### Use DNS 1.1.1.1
 
@@ -407,12 +481,39 @@ nano ~/.config/user-dirs.dirs
 echo "enabled=false" > ~/.config/user-dirs.conf
 ```
 
+## Keyboard behaviors
+
+At the end, the keyboard should behave like:
+
+### OS
+
+- Navigate through workspaces: `ctrl` + `alt` + `key up|right|down|left`
+- Move window through workspaces: `ctrl` + `super` + `key up|right|down|left`
+- Open universal search: `super`
+- Open file browser: `ctrl` + `alt` + `z`
+- Open browser: `ctrl` + `alt` + `e`
+- Open IDE: `ctrl` + `alt` + `r`
+- Open terminal: `ctrl` + `alt` + `t`
+- Navigate on open windows on the same workspace: `alt` + `tab`
+
+### Browser
+
+- Open a new tab: `ctrl` + `t`
+- Close a tab: `ctrl` + `w`
+- Reload a tab: `ctrl` + `r`
+- Move a tab: `ctrl` + `shift` + `key up|down`
+- Navigate on tabs: `ctrl` + `key up|down`
+
+## IDE
+
+- Move a line: `alt` + `key up|down`
+- Duplicate a line: `ctrl` + `shift` + `alt` + `key up|down`
+
 ### To do
 
-* Install nano syntax highlighting
-  * https://www.if-not-true-then-false.com/2009/tuning-nano-text-editor-with-nanorc/
-  * https://github.com/scopatz/nanorc
-* Completion Docker
+- Install nano syntax highlighting
+  - https://www.if-not-true-then-false.com/2009/tuning-nano-text-editor-with-nanorc/
+  - https://github.com/scopatz/nanorc
 
 ## Issues
 
@@ -436,6 +537,6 @@ Then reboot
 
 Sources:
 
-* https://www.dell.com/community/Linux-General/XPS-13-7390-Ubuntu-Screen-flickering/td-p/7430121/page/3
-* https://wiki.archlinux.org/title/Dell_XPS_13_(9310)#Random_Hangs_on_i915
-* https://gitlab.com/risingprismtv/single-gpu-passthrough/-/wikis/2)-Editing-GRUB
+- https://www.dell.com/community/Linux-General/XPS-13-7390-Ubuntu-Screen-flickering/td-p/7430121/page/3
+- https://wiki.archlinux.org/title/Dell_XPS_13_(9310)#Random_Hangs_on_i915
+- https://gitlab.com/risingprismtv/single-gpu-passthrough/-/wikis/2)-Editing-GRUB
