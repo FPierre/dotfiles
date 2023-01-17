@@ -17,16 +17,6 @@ matches:
     replace: "https://12ft.io/"
   - triggers: [":changelog", ":release"]
     replace: "https://keepachangelog.com/en/1.0.0/"
-  - trigger: ":shipperId"
-    replace: "651063395"
-  - trigger: ":godId"
-    replace: "651063394"
-  - triggers: [":automatedId", ":automated-wh"]
-    replace: "35000000"
-  - triggers: [":manualId", ":manual-wh"]
-    replace: "3628042"
-  - triggers: [":spainId", ":span-wh"]
-    replace: "193543585"
   - triggers: [":warning", ":danger"]
     replace: "⚠️"
   - trigger: ":check"
@@ -39,10 +29,6 @@ matches:
     replace: "🤔"
   - trigger: ":rocket"
     replace: "🚀"
-  - triggers: [":carrot", ":carotte"]
-    replace: "🥕"
-  - trigger: ":rabbit"
-    replace: "🐇"
   - trigger: ":infinite"
     replace: "∞"
   - triggers: [":light", ":event"]
@@ -55,19 +41,10 @@ matches:
     replace: "✅"
   - trigger: ":cross"
     replace: "❌"
-  - trigger: ":lambda"
-    replace: "λ"
   - trigger: ":fr"
     replace: "🇫🇷"
   - trigger: ":en"
     replace: "🇬🇧"
-  - trigger: ":timestamp"
-    replace: "{{output}}"
-    vars:
-      - name: output
-        type: shell
-        params:
-          cmd: "date '+%s'"
   - trigger: ":uuid"
     replace: "{{output}}"
     vars:

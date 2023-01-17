@@ -198,6 +198,8 @@ EOF
 
 ## OS configuration
 
+Connect to [Gnome Shell extensions](https://extensions.gnome.org/) and download extensions
+
 [Make Alt+tab only switch in the current workspace](https://coderwall.com/p/m5mhoq/gnome-3-how-to-alt-tab-windows-on-current-workspace-only) and [ungroup](https://superuser.com/questions/394376/how-to-prevent-gnome-shells-alttab-from-grouping-windows-from-similar-apps/860001#860001):
 
 ```sh
@@ -213,18 +215,10 @@ gsettings set org.gnome.desktop.interface font-name 'DejaVu Sans 12'
 gsettings set org.gnome.desktop.interface gtk-theme 'Pop-dark'
 gsettings set org.gnome.desktop.interface monospace-font-name 'Fira Mono 13'
 gsettings set org.gnome.desktop.interface show-battery-percentage true
-```
-
-```sh
 gsettings set org.gnome.desktop.calendar show-weekdate true
-```
-
-```sh
 gsettings set org.gnome.desktop.privacy remember-recent-files false
-```
-
-```sh
-gsettings set org.gnome.desktop.search-providers disabled ['org.gnome.Contacts.desktop', 'org.gnome.Calculator.desktop', 'org.gnome.Calendar.desktop', 'org.gnome.seahorse.Application.desktop', 'org.gnome.Terminal.desktop']
+gsettings set org.gnome.desktop.search-providers disabled \[\'org.gnome.Contacts.desktop\',\ \'org.gno
+me.Calculator.desktop\',\ \'org.gnome.Calendar.desktop\',\ \'org.gnome.seahorse.Application.desktop\',\ \'org.gnome.Terminal.desktop\'\]
 ```
 
 ```sh
