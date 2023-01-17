@@ -1,11 +1,2 @@
-127.0.0.1       elasticsearch-app-staging-master
-127.0.0.1       elasticsearch-app-sandbox-master
-127.0.0.1       elasticsearch-app-production-master
 127.0.0.1       mysql
 127.0.0.1       postgresql
-127.0.0.1       rabbitmq
-127.0.0.1       sftp
-127.0.0.1       elasticsearch
-127.0.0.1       zeebe
-127.0.0.1       mongodb
-
