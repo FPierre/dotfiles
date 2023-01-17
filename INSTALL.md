@@ -15,27 +15,19 @@ Boot on right USB port:
 
 ```sh
 sudo add-apt-repository ppa:aslatter/ppa \
- && sudo add-apt-repository ppa:fish-shell/release-3 \
- && sudo apt update \
- && sudo apt install alacritty fish
+  && sudo add-apt-repository ppa:fish-shell/release-3 \
+  && sudo apt update \
+  && sudo apt install alacritty fish
 ```
 
 Set Fish as the [default shell](https://fishshell.com/docs/current/tutorial.html#switching-to-fish):
 
 ```sh
 echo /usr/bin/fish | sudo tee -a /etc/shells \
- && chsh -s /usr/bin/fish
+  && chsh -s /usr/bin/fish
 ```
 
-Log out, then log in again for the changes to take effect
-
-Then install [Fisher](https://github.com/jorgebucaran/fisher):
-
-```sh
-curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
-```
-
-## Install others packages
+## Install main packages
 
 GIT:
 
@@ -47,8 +39,6 @@ sudo add-apt-repository -y ppa:git-core/ppa
 
 ```sh
 curl -sS https://starship.rs/install.sh | sh
-# Add the following to the end of ~/.config/fish/config.fish:
-starship init fish | source
 ```
 
 [Brave](https://brave.com/linux/#release-channel-installation):
@@ -67,19 +57,7 @@ echo "deb [trusted=yes arch=amd64] https://download.konghq.com/insomnia-ubuntu/ 
   | sudo tee -a /etc/apt/sources.list.d/insomnia.list
 ```
 
-[TablePlus](https://tableplus.com/blog/2019/10/tableplus-linux-installation.html):
-
-```sh
-wget -qO - http://deb.tableplus.com/apt.tableplus.com.gpg.key | sudo apt-key add - \
-  && sudo add-apt-repository "deb [arch=amd64] https://deb.tableplus.com/debian/21 tableplus main"
-```
-
-[PostgreSQL client](https://www.postgresql.org/download/linux/ubuntu/):
-
-```sh
-sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt '(lsb_release -cs)'-pgdg main" > /etc/apt/sources.list.d/pgdg.list' \
-  wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
-```
+[Espanso](https://espanso.org/docs/install/linux)
 
 And:
 
@@ -97,20 +75,15 @@ sudo apt update \
   gnome-tweaks \
   htop \
   insomnia \
-  postgresql-client-13 \
   powertop \
   preload \
   ripgrep \
-  tableplus \
   tlp \
   tlp-rdw \
   vlc
 ```
 
-- VScode is not installed with Flatpak due to the path mess it introduce
-- PostgreSQL server via Docker (over `apt`)
-
-[Espanso](https://espanso.org/docs/install/linux)
+(VScode is not installed with Flatpak due to the path mess it introduce)
 
 ```sh
 flatpak install ca.desrt.dconf-editor com.slack.Slack md.obsidian.Obsidian
@@ -126,38 +99,6 @@ Configure Powertop:
 
 ```sh
 sudo powertop
-```
-
-## Install Mega.nz client
-
-- [App](https://mega.nz/desktop)
-
-## Install Node.js environment
-
-[Install fnm](https://github.com/Schniz/fnm#using-a-script-macoslinux), Node.js and Yarn:
-
-```sh
-curl -fsSL https://fnm.vercel.app/install | bash \
-  && fnm install v16 \
-  && npm install -g yarn
-```
-
-```sh
-# ~/.config/fish/conf.d/fnm.fish
-
-# fnm
-set PATH /home/pierre/.fnm $PATH
-fnm env --use-on-cd | source
-```
-
-```sh
-fnm completions --shell fish > ~/.config/fish/completions/fnm.fish
-```
-
-Install Yarn global packages:
-
-```sh
-yarn global add carotte-cli fast-cli @vue/cli serve
 ```
 
 ### Restore SSH and GPG
@@ -237,7 +178,224 @@ wget -O ~/.config/fish/completions/git-flow.fish https://raw.githubusercontent.c
 
 [For ripgrep](https://github.com/BurntSushi/ripgrep/blob/master/FAQ.md#does-ripgrep-have-support-for-shell-auto-completion)
 
-### Install devOps tools
+## Install Node.js environment
+
+[Install fnm](https://github.com/Schniz/fnm#using-a-script-macoslinux), Node.js and Yarn:
+
+```sh
+curl -fsSL https://fnm.vercel.app/install | bash \
+  && fnm install v18 \
+  && npm install -g yarn \
+  && fnm completions --shell fish > ~/.config/fish/completions/fnm.fish
+```
+
+```sh
+cat << EOF > ~/.config/fish/conf.d/fnm.fish
+set PATH /home/pierre/.fnm $PATH
+fnm env --use-on-cd | source
+EOF
+```
+
+## OS configuration
+
+[Make Alt+tab only switch in the current workspace](https://coderwall.com/p/m5mhoq/gnome-3-how-to-alt-tab-windows-on-current-workspace-only) and [ungroup](https://superuser.com/questions/394376/how-to-prevent-gnome-shells-alttab-from-grouping-windows-from-similar-apps/860001#860001):
+
+```sh
+gsettings set org.gnome.desktop.wm.keybindings switch-applications "[]"
+gsettings set org.gnome.desktop.wm.keybindings switch-windows "['<Alt>Tab']"
+```
+
+```sh
+gsettings set org.gnome.desktop.interface clock-show-weekday true
+gsettings set org.gnome.desktop.interface document-font-name 'Roboto Slab 13'
+gsettings set org.gnome.desktop.interface enable-animations false
+gsettings set org.gnome.desktop.interface font-name 'DejaVu Sans 12'
+gsettings set org.gnome.desktop.interface gtk-theme 'Pop-dark'
+gsettings set org.gnome.desktop.interface monospace-font-name 'Fira Mono 13'
+gsettings set org.gnome.desktop.interface show-battery-percentage true
+```
+
+```sh
+gsettings set org.gnome.desktop.calendar show-weekdate true
+```
+
+```sh
+gsettings set org.gnome.desktop.privacy remember-recent-files false
+```
+
+```sh
+gsettings set org.gnome.desktop.search-providers disabled ['org.gnome.Contacts.desktop', 'org.gnome.Calculator.desktop', 'org.gnome.Calendar.desktop', 'org.gnome.seahorse.Application.desktop', 'org.gnome.Terminal.desktop']
+```
+
+```sh
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-down "['<Primary><Super>Down']"
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-left "['<Primary><Super>Left']"
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-right "['<Primary><Super>Right']"
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-up "['<Primary><Super>Up']"
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-down "['<Primary><Alt>Down']"
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-left "['<Control><Alt>Left']"
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-right "['<Control><Alt>Right']"
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-up "['<Control><Alt>Up']"
+gsettings set org.gnome.desktop.wm.keybindings toggle-maximized "['<Alt>apostrophe']"
+```
+
+```sh
+gsettings set org.gnome.settings-daemon.plugins.media-keys home "['<Primary><Alt>z']"
+gsettings set org.gnome.settings-daemon.plugins.media-keys terminal "['<Primary><Alt>t']"
+gsettings set org.gnome.settings-daemon.plugins.media-keys www "['<Primary><Alt>e']"
+gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/']"
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ binding '<Primary><Alt>r'
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ command '/usr/bin/code'
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ name 'VSCode'
+```
+
+```sh
+gsettings set org.gnome.mutter attach-modal-dialogs false
+gsettings set org.gnome.mutter center-new-windows true
+gsettings set org.gnome.mutter dynamic-workspaces false
+```
+
+To move window to another workspace, it is possible their is a conflict with "Window > View split on left/right". Remove shortkey ctrl+command+left/right on them
+
+## Browser configuration
+
+- Install [Shortkeys](https://chrome.google.com/webstore/detail/shortkeys-custom-keyboard/logpjaacgmcbpdkdchjiaagddngobkck/reviews?hl=en-US&gl=US) extension with the following configuration:
+
+```json
+[
+  {
+    "key": "ctrl+up",
+    "label": "Tab left",
+    "action": "prevtab",
+    "sites": "",
+    "sitesArray": [""],
+    "activeInInputs": true,
+    "blacklist": false
+  },
+  {
+    "key": "ctrl+down",
+    "label": "Tab right",
+    "action": "nexttab",
+    "sites": "",
+    "sitesArray": [""],
+    "activeInInputs": true,
+    "blacklist": false
+  },
+  {
+    "key": "ctrl+shift+up",
+    "label": "Move tab to left",
+    "action": "movetableft",
+    "sites": "",
+    "sitesArray": [""],
+    "activeInInputs": true,
+    "blacklist": false
+  },
+  {
+    "key": "ctrl+shift+down",
+    "label": "Move tab to right",
+    "action": "movetabright",
+    "sites": "",
+    "sitesArray": [""],
+    "activeInInputs": true,
+    "blacklist": false
+  }
+]
+```
+
+## Install Mega.nz
+
+[App](https://mega.io/desktop)
+
+Configuration:
+
+|   Local   |   Mega    |
+| :-------: | :-------: |
+| .dotfiles | .dotfiles |
+|   .ssh    |   .ssh    |
+|  Desktop  |  Desktop  |
+| Documents | Documents |
+| Downloads | Downloads |
+| Pictures  | Pictures  |
+| Workspace | Workspace |
+
+```
+*.crdownload
+*.lock
+*.log
+*.sb-????????-??????
+*.tmp
+*~.*
+.
+..
+.git
+Thumbs.db
+desktop.ini
+dist
+node_modules
+~*
+```
+
+## Use DNS 1.1.1.1
+
+[Installation](https://1.1.1.1/fr/)
+
+## Customize Nautilus sidebar
+
+Comment the locations to hide into:
+
+```sh
+nano ~/.config/user-dirs.dirs
+```
+
+```sh
+echo "enabled=false" > ~/.config/user-dirs.conf
+```
+
+## Keyboard behaviors
+
+At the end, the keyboard should behave like:
+
+### OS
+
+- Navigate through workspaces: `ctrl` + `alt` + `key up|right|down|left`
+- Move window through workspaces: `ctrl` + `super` + `key up|right|down|left`
+- Open universal search: `super`
+- Open file browser: `ctrl` + `alt` + `z`
+- Open browser: `ctrl` + `alt` + `e`
+- Open IDE: `ctrl` + `alt` + `r`
+- Open terminal: `ctrl` + `alt` + `t`
+- Navigate on open windows on the same workspace: `alt` + `tab`
+
+### Browser
+
+- Open a new tab: `ctrl` + `t`
+- Close a tab: `ctrl` + `w`
+- Reload a tab: `ctrl` + `r`
+- Move a tab: `ctrl` + `shift` + `key up|down`
+- Navigate on tabs: `ctrl` + `key up|down`
+
+### IDE
+
+- Move a line: `alt` + `key up|down`
+- Duplicate a line: `ctrl` + `shift` + `alt` + `key up|down`
+
+## Install others tools
+
+PostgreSQL server: via Docker (over `apt`)
+
+[TablePlus](https://tableplus.com/blog/2019/10/tableplus-linux-installation.html):
+
+```sh
+wget -qO - http://deb.tableplus.com/apt.tableplus.com.gpg.key | sudo apt-key add - \
+  && sudo add-apt-repository "deb [arch=amd64] https://deb.tableplus.com/debian/21 tableplus main"
+```
+
+[PostgreSQL client](https://www.postgresql.org/download/linux/ubuntu/):
+
+```sh
+sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt '(lsb_release -cs)'-pgdg main" > /etc/apt/sources.list.d/pgdg.list' \
+  wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+```
 
 [Docker](https://docs.docker.com/engine/install/ubuntu) ([with post-installation](https://docs.docker.com/engine/install/linux-postinstall/)):
 
@@ -325,189 +483,6 @@ wget https://raw.githubusercontent.com/warrensbox/terraform-switcher/release/ins
   && sudo mkdir /opt/tfswitch \
   && sudo ./install.sh -b /opt/tfswitch
 ```
-
-### OS configuration
-
-[Make Alt+tab only switch in the current workspace](https://coderwall.com/p/m5mhoq/gnome-3-how-to-alt-tab-windows-on-current-workspace-only) and [ungroup](https://superuser.com/questions/394376/how-to-prevent-gnome-shells-alttab-from-grouping-windows-from-similar-apps/860001#860001):
-
-```sh
-gsettings set org.gnome.desktop.wm.keybindings switch-applications "[]"
-gsettings set org.gnome.desktop.wm.keybindings switch-windows "['<Alt>Tab']"
-```
-
-```sh
-gsettings set org.gnome.desktop.interface clock-show-weekday true
-gsettings set org.gnome.desktop.interface document-font-name 'Roboto Slab 13'
-gsettings set org.gnome.desktop.interface enable-animations false
-gsettings set org.gnome.desktop.interface font-name 'DejaVu Sans 12'
-gsettings set org.gnome.desktop.interface gtk-theme 'Pop-dark'
-gsettings set org.gnome.desktop.interface monospace-font-name 'Fira Mono 13'
-gsettings set org.gnome.desktop.interface show-battery-percentage true
-```
-
-```sh
-gsettings set org.gnome.desktop.calendar show-weekdate true
-```
-
-```sh
-gsettings set org.gnome.desktop.privacy remember-recent-files false
-```
-
-```sh
-gsettings set org.gnome.desktop.search-providers disabled ['org.gnome.Contacts.desktop', 'org.gnome.Calculator.desktop', 'org.gnome.Calendar.desktop', 'org.gnome.seahorse.Application.desktop', 'org.gnome.Terminal.desktop']
-```
-
-```sh
-gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-down "['<Primary><Super>Down']"
-gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-left "['<Primary><Super>Left']"
-gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-right "['<Primary><Super>Right']"
-gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-up "['<Primary><Super>Up']"
-gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-down "['<Primary><Alt>Down']"
-gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-left "['<Control><Alt>Left']"
-gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-right "['<Control><Alt>Right']"
-gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-up "['<Control><Alt>Up']"
-gsettings set org.gnome.desktop.wm.keybindings toggle-maximized "['<Alt>apostrophe']"
-```
-
-```sh
-gsettings set org.gnome.settings-daemon.plugins.media-keys home "['<Primary><Alt>z']"
-gsettings set org.gnome.settings-daemon.plugins.media-keys terminal "['<Primary><Alt>t']"
-gsettings set org.gnome.settings-daemon.plugins.media-keys www "['<Primary><Alt>e']"
-gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/']"
-gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ binding '<Primary><Alt>r'
-gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ command '/usr/bin/code'
-gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ name 'VSCode'
-```
-
-```sh
-gsettings set org.gnome.mutter attach-modal-dialogs false
-gsettings set org.gnome.mutter center-new-windows true
-gsettings set org.gnome.mutter dynamic-workspaces false
-```
-
-To move window to another workspace, it is possible their is a conflict with "Window > View split on left/right". Remove shortkey ctrl+command+left/right on them
-
-### Browser configuration
-
-- Install [Shortkeys](https://chrome.google.com/webstore/detail/shortkeys-custom-keyboard/logpjaacgmcbpdkdchjiaagddngobkck/reviews?hl=en-US&gl=US) extension with the following configuration:
-
-```json
-[
-  {
-    "key": "ctrl+up",
-    "label": "Tab left",
-    "action": "prevtab",
-    "sites": "",
-    "sitesArray": [""],
-    "activeInInputs": true,
-    "blacklist": false
-  },
-  {
-    "key": "ctrl+down",
-    "label": "Tab right",
-    "action": "nexttab",
-    "sites": "",
-    "sitesArray": [""],
-    "activeInInputs": true,
-    "blacklist": false
-  },
-  {
-    "key": "ctrl+shift+up",
-    "label": "Move tab to left",
-    "action": "movetableft",
-    "sites": "",
-    "sitesArray": [""],
-    "activeInInputs": true,
-    "blacklist": false
-  },
-  {
-    "key": "ctrl+shift+down",
-    "label": "Move tab to right",
-    "action": "movetabright",
-    "sites": "",
-    "sitesArray": [""],
-    "activeInInputs": true,
-    "blacklist": false
-  }
-]
-```
-
-### Install Mega.nz
-
-[App](https://mega.io/desktop)
-
-Configuration:
-
-|   Local   |   Mega    |
-| :-------: | :-------: |
-| .dotfiles | .dotfiles |
-|   .ssh    |   .ssh    |
-|  Desktop  |  Desktop  |
-| Documents | Documents |
-| Downloads | Downloads |
-| Pictures  | Pictures  |
-| Workspace | Workspace |
-
-```
-*.crdownload
-*.lock
-*.log
-*.sb-????????-??????
-*.tmp
-*~.*
-.
-..
-.git
-Thumbs.db
-desktop.ini
-dist
-node_modules
-~*
-```
-
-### Use DNS 1.1.1.1
-
-[Installation](https://1.1.1.1/fr/)
-
-### Customize Nautilus sidebar
-
-Comment the locations to hide into:
-
-```sh
-nano ~/.config/user-dirs.dirs
-```
-
-```sh
-echo "enabled=false" > ~/.config/user-dirs.conf
-```
-
-## Keyboard behaviors
-
-At the end, the keyboard should behave like:
-
-### OS
-
-- Navigate through workspaces: `ctrl` + `alt` + `key up|right|down|left`
-- Move window through workspaces: `ctrl` + `super` + `key up|right|down|left`
-- Open universal search: `super`
-- Open file browser: `ctrl` + `alt` + `z`
-- Open browser: `ctrl` + `alt` + `e`
-- Open IDE: `ctrl` + `alt` + `r`
-- Open terminal: `ctrl` + `alt` + `t`
-- Navigate on open windows on the same workspace: `alt` + `tab`
-
-### Browser
-
-- Open a new tab: `ctrl` + `t`
-- Close a tab: `ctrl` + `w`
-- Reload a tab: `ctrl` + `r`
-- Move a tab: `ctrl` + `shift` + `key up|down`
-- Navigate on tabs: `ctrl` + `key up|down`
-
-## IDE
-
-- Move a line: `alt` + `key up|down`
-- Duplicate a line: `ctrl` + `shift` + `alt` + `key up|down`
 
 ### To do
 
