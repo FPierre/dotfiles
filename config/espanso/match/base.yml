@@ -13,6 +13,8 @@ toggle_key: OFF
 # Matches are the substitution rules, when you type the "trigger" string
 # it gets replaced by the "replace" string.
 matches:
+  - trigger: ":email"
+    replace: "pierre.flauder@arsen.co"
   - trigger: ":12ft"
     replace: "https://12ft.io/"
   - triggers: [":changelog", ":release"]

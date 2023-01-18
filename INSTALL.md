@@ -79,7 +79,6 @@ sudo apt update \
   preload \
   ripgrep \
   tlp \
-  tlp-rdw \
   vlc
 ```
 
