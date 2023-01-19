@@ -55,22 +55,26 @@ matches:
         params:
           cmd: "uuidgen"
   - trigger: ":commit"
-    form: |
-      {{choices}}
-    form_fields:
-      choices:
-        type: list
-        values:
-          - "build:"
-          - "chore:"
-          - "ci:"
-          - "docs:"
-          - "feat:"
-          - "fix:"
-          - "perf:"
-          - "refactor:"
-          - "release:"
-          - "revert:"
-          - "style:"
-          - "test:"
-
+    replace: "build:"
+  - trigger: ":commit"
+    replace: "chore:"
+  - trigger: ":commit"
+    replace: "ci:"
+  - trigger: ":commit"
+    replace: "docs:"
+  - trigger: ":commit"
+    replace: "feat:"
+  - trigger: ":commit"
+    replace: "fix:"
+  - trigger: ":commit"
+    replace: "perf:"
+  - trigger: ":commit"
+    replace: "refactor:"
+  - trigger: ":commit"
+    replace: "release:"
+  - trigger: ":commit"
+    replace: "revert:"
+  - trigger: ":commit"
+    replace: "style:"
+  - trigger: ":commit"
+    replace: "test:"
