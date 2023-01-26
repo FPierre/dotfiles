@@ -11,7 +11,7 @@ Boot on right USB port:
 2. Go to boot menu
 3. Select UEFI Mass Storage XXX 2 (USB icon)
 
-## Install Alacritty and Fish
+## Install Alacritty, Fish and Fisher
 
 ```sh
 sudo add-apt-repository ppa:aslatter/ppa \
@@ -25,6 +25,10 @@ Set Fish as the [default shell](https://fishshell.com/docs/current/tutorial.html
 ```sh
 echo /usr/bin/fish | sudo tee -a /etc/shells \
   && chsh -s /usr/bin/fish
+```
+
+```sh
+curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
 ```
 
 ## Install main packages
@@ -78,7 +82,6 @@ sudo apt update \
   powertop \
   preload \
   ripgrep \
-  tlp \
   vlc
 ```
 
@@ -173,6 +176,10 @@ wget -P ~/.config/fish/completions \
 
 ```sh
 wget -O ~/.config/fish/completions/git-flow.fish https://raw.githubusercontent.com/bobthecow/git-flow-completion/master/git.fish
+```
+
+```sh
+fisher install aliz-ai/google-cloud-sdk-fish-completion
 ```
 
 [For ripgrep](https://github.com/BurntSushi/ripgrep/blob/master/FAQ.md#does-ripgrep-have-support-for-shell-auto-completion)
@@ -374,23 +381,31 @@ At the end, the keyboard should behave like:
 
 ## Install others tools
 
-PostgreSQL server: via Docker (over `apt`)
+### PostgreSQL server: via Docker (over `apt`)
 
-[TablePlus](https://tableplus.com/blog/2019/10/tableplus-linux-installation.html):
+### [Google Cloud CLI](https://cloud.google.com/sdk/docs/install#deb)
+
+### Firebase CLI
+
+```sh
+yarn global add firebase-tools
+```
+
+### [TablePlus](https://tableplus.com/blog/2019/10/tableplus-linux-installation.html)
 
 ```sh
 wget -qO - http://deb.tableplus.com/apt.tableplus.com.gpg.key | sudo apt-key add - \
   && sudo add-apt-repository "deb [arch=amd64] https://deb.tableplus.com/debian/21 tableplus main"
 ```
 
-[PostgreSQL client](https://www.postgresql.org/download/linux/ubuntu/):
+### [PostgreSQL client](https://www.postgresql.org/download/linux/ubuntu/)
 
 ```sh
 sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt '(lsb_release -cs)'-pgdg main" > /etc/apt/sources.list.d/pgdg.list' \
   wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
 ```
 
-[Docker](https://docs.docker.com/engine/install/ubuntu) ([with post-installation](https://docs.docker.com/engine/install/linux-postinstall/)):
+### [Docker](https://docs.docker.com/engine/install/ubuntu) ([with post-installation](https://docs.docker.com/engine/install/linux-postinstall/))
 
 ```sh
 sudo apt install -y gnupg lsb-release \
@@ -408,7 +423,7 @@ sudo apt update \
 
 A restart is required to make the changes effective
 
-Docker Compose:
+### Docker Compose
 
 ```sh
 sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-"(uname -s)"-"(uname -m)"" -o /usr/local/bin/docker-compose \
@@ -419,7 +434,7 @@ sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-
 docker-compose --version
 ```
 
-[AWS CLI](https://docs.aws.amazon.com/fr_fr/cli/latest/userguide/install-cliv2-linux.html):
+### [AWS CLI](https://docs.aws.amazon.com/fr_fr/cli/latest/userguide/install-cliv2-linux.html)
 
 ```sh
 curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" \
@@ -431,9 +446,7 @@ curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip
 aws --version
 ```
 
-[Google Cloud CLI](https://cloud.google.com/sdk/docs/install?hl=fr#deb) and Kubectl
-
-[Kubectx and Kubens](https://github.com/ahmetb/kubectx#manual-installation-macos-and-linux):
+### [Kubectx and Kubens](https://github.com/ahmetb/kubectx#manual-installation-macos-and-linux)
 
 ```sh
 sudo git clone https://github.com/ahmetb/kubectx /opt/kubectx \
@@ -443,7 +456,7 @@ sudo git clone https://github.com/ahmetb/kubectx /opt/kubectx \
   && ln -s /opt/kubectx/completion/kubens.fish ~/.config/fish/completions/
 ```
 
-[Helm](https://helm.sh/docs/intro/install/):
+### [Helm](https://helm.sh/docs/intro/install/)
 
 ```sh
 curl https://baltocdn.com/helm/signing.asc | sudo apt-key add - \
@@ -453,7 +466,7 @@ curl https://baltocdn.com/helm/signing.asc | sudo apt-key add - \
   && sudo apt install helm
 ```
 
-[Terraform](https://www.terraform.io/downloads):
+### [Terraform](https://www.terraform.io/downloads)
 
 ```sh
 curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add - \
@@ -461,7 +474,7 @@ curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add - \
   && sudo apt update && sudo apt install terraform
 ```
 
-[tfswitch](https://tfswitch.warrensbox.com/Install/#linux):
+### [tfswitch](https://tfswitch.warrensbox.com/Install/#linux)
 
 ```sh
 wget https://raw.githubusercontent.com/warrensbox/terraform-switcher/release/install.sh \
@@ -470,7 +483,7 @@ wget https://raw.githubusercontent.com/warrensbox/terraform-switcher/release/ins
   && sudo ./install.sh -b /opt/tfswitch
 ```
 
-### To do
+## To do
 
 - Install nano syntax highlighting
   - https://www.if-not-true-then-false.com/2009/tuning-nano-text-editor-with-nanorc/
