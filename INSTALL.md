@@ -257,6 +257,10 @@ gsettings set org.gnome.mutter dynamic-workspaces false
 
 To move window to another workspace, it is possible their is a conflict with "Window > View split on left/right". Remove shortkey ctrl+command+left/right on them
 
+## Touchpad configuration
+
+- Install [Touché](https://flathub.org/apps/details/com.github.joseexposito.touche)
+
 ## Browser configuration
 
 - Install [Shortkeys](https://chrome.google.com/webstore/detail/shortkeys-custom-keyboard/logpjaacgmcbpdkdchjiaagddngobkck/reviews?hl=en-US&gl=US) extension with the following configuration:
@@ -350,6 +354,12 @@ nano ~/.config/user-dirs.dirs
 ```sh
 echo "enabled=false" > ~/.config/user-dirs.conf
 ```
+
+## Touchpad behaviors
+
+At the end, the touchpad should behave like:
+- Go back: 3 fingers swipe on left
+- Go next: 3 fingers swipe on right
 
 ## Keyboard behaviors
 
