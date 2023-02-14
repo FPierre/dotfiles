@@ -420,14 +420,14 @@ sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt '(lsb_release -cs)
 ### [Docker](https://docs.docker.com/engine/install/ubuntu) ([with post-installation](https://docs.docker.com/engine/install/linux-postinstall/))
 
 ```sh
-sudo apt install -y gnupg lsb-release \
-  && curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg \
-  && echo "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu "(lsb_release -cs)" stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo mkdir -m 0755 -p /etc/apt/keyrings \
+  && curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg \
+  && echo "deb [arch=amd64 signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu "(lsb_release -cs)" stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 ```
 
 ```sh
 sudo apt update \
-  && sudo apt install -y docker-ce docker-ce-cli containerd.io \
+  && sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin \
   && sudo groupadd docker \
   && sudo usermod -aG docker $USER \
   && newgrp docker
