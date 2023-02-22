@@ -8,13 +8,15 @@
 # Matches are substitution rules: when you type the "trigger" string
 # it gets replaced by the "replace" string.
 
-toggle_key: OFF
-
 # Matches are the substitution rules, when you type the "trigger" string
 # it gets replaced by the "replace" string.
 matches:
   - trigger: ":email"
     replace: "pierre.flauder@arsen.co"
+  - trigger: ":userId"
+    replace: "yLuUnvolsqZK86xy4dGNhijCWKA3"
+  - triggers: [":orgId", ":organizationId"]
+    replace: "sIsG8eKFjfg2fveY40zn"
   - trigger: ":12ft"
     replace: "https://12ft.io/"
   - triggers: [":changelog", ":release"]
@@ -22,7 +24,7 @@ matches:
   - triggers: [":warning", ":danger"]
     replace: "⚠️"
   - trigger: ":check"
-    replace: "✔️"
+    replace: "✅"
   - trigger: ":brain"
     replace: "🧠"
   - trigger: ":fire"
@@ -39,8 +41,6 @@ matches:
     replace: "👍"
   - triggers: [":-1"]
     replace: "👎"
-  - trigger: ":check"
-    replace: "✅"
   - trigger: ":cross"
     replace: "❌"
   - trigger: ":fr"
@@ -78,3 +78,5 @@ matches:
     replace: "style:"
   - trigger: ":commit"
     replace: "test:"
+  - regex: ":refusal(?P<name>[a-zA-Z]+);"
+    replace: "Hello {{name}},\n\nLe CTO et moi avons discuté de ton profil suite à notre entretien. Nous n'allons pas continuer avec ta candidature : nous cherchons un profil avec plus d'expérience en DDD et architecture cloud.\n\nMerci pour ton intérêt pour Arsen et bonne chance dans ta recherche !"

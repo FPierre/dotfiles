@@ -30,7 +30,7 @@
   "editor.emptySelectionClipboard": false,
   "editor.fontFamily": "'Fira Code', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
   "editor.fontLigatures": true,
-  "editor.fontSize": 23,
+  "editor.fontSize": 21,
   "editor.formatOnSave": true,
   "editor.minimap.enabled": false,
   "editor.minimap.maxColumn": 100,
@@ -84,5 +84,11 @@
   "workbench.tree.indent": 20,
   "editor.inlineSuggest.enabled": true,
   "prettier.printWidth": 100,
-  "prettier.singleQuote": true
+  "prettier.singleQuote": true,
+  "github.copilot.enable": {
+    "*": true,
+    "yaml": false,
+    "plaintext": false,
+    "markdown": false
+  }
 }
