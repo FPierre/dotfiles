@@ -91,12 +91,6 @@ sudo apt update \
 flatpak install ca.desrt.dconf-editor com.slack.Slack md.obsidian.Obsidian
 ```
 
-Start TLP:
-
-```sh
-sudo tlp start
-```
-
 Configure Powertop:
 
 ```sh
