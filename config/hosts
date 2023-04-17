@@ -1,2 +1,2 @@
-127.0.0.1       mysql
-127.0.0.1       postgresql
+127.0.0.1       api.firefoo.app
+127.0.0.1       releases.firefoo.app

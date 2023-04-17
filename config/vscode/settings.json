@@ -35,6 +35,7 @@
   "editor.minimap.enabled": false,
   "editor.minimap.maxColumn": 100,
   "editor.minimap.renderCharacters": false,
+  "editor.mouseWheelZoom": false,
   "editor.multiCursorModifier": "ctrlCmd",
   "editor.quickSuggestionsDelay": 5,
   "editor.renderWhitespace": "all",
@@ -89,6 +90,9 @@
     "*": true,
     "yaml": false,
     "plaintext": false,
-    "markdown": false
-  }
+    "markdown": true
+  },
+  "security.workspace.trust.untrustedFiles": "open",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "editor.largeFileOptimizations": false
 }

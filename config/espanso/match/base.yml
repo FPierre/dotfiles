@@ -16,7 +16,7 @@ matches:
   - trigger: ":userId"
     replace: "yLuUnvolsqZK86xy4dGNhijCWKA3"
   - triggers: [":orgId", ":organizationId"]
-    replace: "sIsG8eKFjfg2fveY40zn"
+    replace: "pVxa0YINsYUwrSEXcylU"
   - trigger: ":12ft"
     replace: "https://12ft.io/"
   - triggers: [":changelog", ":release"]
@@ -33,6 +33,8 @@ matches:
     replace: "🤔"
   - trigger: ":rocket"
     replace: "🚀"
+  - trigger: ":hammer"
+    replace: "⚒️"
   - trigger: ":infinite"
     replace: "∞"
   - triggers: [":light", ":event"]
@@ -79,4 +81,26 @@ matches:
   - trigger: ":commit"
     replace: "test:"
   - regex: ":refusal(?P<name>[a-zA-Z]+);"
-    replace: "Hello {{name}},\n\nLe CTO et moi avons discuté de ton profil suite à notre entretien. Nous n'allons pas continuer avec ta candidature : nous cherchons un profil avec plus d'expérience en DDD et architecture cloud.\n\nMerci pour ton intérêt pour Arsen et bonne chance dans ta recherche !"
+    replace: "Hello {{name}},\n\nLe CTO et moi avons discuté de ta candidature suite à notre entretien. Nous n'allons pas continuer avec ta candidature : nous cherchons un profil avec plus d'expérience en DDD et architecture cloud.\n\nMerci pour ton intérêt pour Arsen et bonne chance dans ta recherche !"
+  - trigger: ":refusal"
+    replace: "Hello <<NAME>>,\n\nLe CTO et moi avons discuté de ta candidature suite à notre entretien. Nous n'allons pas continuer avec ta candidature : nous cherchons un profil avec plus d'expérience en DDD et architecture cloud.\n\nMerci pour ton intérêt pour Arsen et bonne chance dans ta recherche !"
+  - trigger: ":screen"
+    replace: |
+             Screen call {{now}}
+
+             - Qu'est ce que tu as retenu d'Arsen ?
+             - Pourquoi tu pars ?
+             - Tu cherches quoi ?
+             - Prétentions salariales ?
+             - Early ?
+             - Remote ?
+             - Disponibilité ?
+
+             PRO
+
+             CON
+    vars:
+      - name: now
+        type: date
+        params:
+          format: "%d/%m/%Y"

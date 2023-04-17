@@ -161,10 +161,8 @@ cat config/vscode/extensions.txt | xargs -n 1 code --install-extension
 wget -P ~/.config/fish/completions \
   https://raw.githubusercontent.com/fish-shell/fish-shell/master/share/completions/git.fish \
   https://raw.githubusercontent.com/fish-shell/fish-shell/master/share/completions/ls.fish \
-  https://raw.githubusercontent.com/fish-shell/fish-shell/master/share/completions/helm.fish \
   https://raw.githubusercontent.com/fish-shell/fish-shell/master/share/completions/node.fish \
   https://raw.githubusercontent.com/fish-shell/fish-shell/master/share/completions/npm.fish \
-  https://raw.githubusercontent.com/fish-shell/fish-shell/master/share/completions/terraform.fish \
   https://raw.githubusercontent.com/fish-shell/fish-shell/master/share/completions/yarn.fish
 ```
 
@@ -172,9 +170,7 @@ wget -P ~/.config/fish/completions \
 wget -O ~/.config/fish/completions/git-flow.fish https://raw.githubusercontent.com/bobthecow/git-flow-completion/master/git.fish
 ```
 
-```sh
-fisher install aliz-ai/google-cloud-sdk-fish-completion
-```
+[gcloud completion](https://github.com/lgathy/google-cloud-sdk-fish-completion)
 
 [For ripgrep](https://github.com/BurntSushi/ripgrep/blob/master/FAQ.md#does-ripgrep-have-support-for-shell-auto-completion)
 
@@ -354,6 +350,7 @@ echo "enabled=false" > ~/.config/user-dirs.conf
 ## Touchpad behaviors
 
 At the end, the touchpad should behave like:
+
 - Go back: 3 fingers swipe on left
 - Go next: 3 fingers swipe on right
 
