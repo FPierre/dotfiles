@@ -213,8 +213,7 @@ gsettings set org.gnome.desktop.interface monospace-font-name 'Fira Mono 13'
 gsettings set org.gnome.desktop.interface show-battery-percentage true
 gsettings set org.gnome.desktop.calendar show-weekdate true
 gsettings set org.gnome.desktop.privacy remember-recent-files false
-gsettings set org.gnome.desktop.search-providers disabled \[\'org.gnome.Contacts.desktop\',\ \'org.gno
-me.Calculator.desktop\',\ \'org.gnome.Calendar.desktop\',\ \'org.gnome.seahorse.Application.desktop\',\ \'org.gnome.Terminal.desktop\'\]
+gsettings set org.gnome.desktop.search-providers disabled \[\'org.gnome.Contacts.desktop\',\ \'org.gnome.Calculator.desktop\',\ \'org.gnome.Calendar.desktop\',\ \'org.gnome.seahorse.Application.desktop\',\ \'org.gnome.Terminal.desktop\'\]
 ```
 
 ```sh
