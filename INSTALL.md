@@ -407,47 +407,6 @@ sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt '(lsb_release -cs)
   wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
 ```
 
-### [Docker](https://docs.docker.com/engine/install/ubuntu) ([with post-installation](https://docs.docker.com/engine/install/linux-postinstall/))
-
-```sh
-sudo mkdir -m 0755 -p /etc/apt/keyrings \
-  && curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg \
-  && echo "deb [arch=amd64 signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu "(lsb_release -cs)" stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-```
-
-```sh
-sudo apt update \
-  && sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin \
-  && sudo groupadd docker \
-  && sudo usermod -aG docker $USER \
-  && newgrp docker
-```
-
-A restart is required to make the changes effective
-
-### Docker Compose
-
-```sh
-sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-"(uname -s)"-"(uname -m)"" -o /usr/local/bin/docker-compose \
-  && sudo chmod +x /usr/local/bin/docker-compose
-```
-
-```sh
-docker-compose --version
-```
-
-### [AWS CLI](https://docs.aws.amazon.com/fr_fr/cli/latest/userguide/install-cliv2-linux.html)
-
-```sh
-curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" \
-  && unzip awscliv2.zip \
-  && sudo ./aws/install
-```
-
-```sh
-aws --version
-```
-
 ### [Kubectx and Kubens](https://github.com/ahmetb/kubectx#manual-installation-macos-and-linux)
 
 ```sh
