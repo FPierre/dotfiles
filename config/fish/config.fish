@@ -19,3 +19,10 @@ starship init fish | source
 # Declare global bin path
 # Found with: yarn global bin
 set -gx PATH $PATH:/home/pierre/.yarn/bin
+
+abbr -a exti exit
+abbr -a gti git
+
+abbr -a bat batcat
+
+abbr -a npm-pre-publish "npm pack && tar -xvzf *.tgz"
