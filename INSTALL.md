@@ -194,8 +194,6 @@ curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fi
 fisher install lgathy/google-cloud-sdk-fish-completion
 ```
 
-[For ripgrep](https://github.com/BurntSushi/ripgrep/blob/master/FAQ.md#does-ripgrep-have-support-for-shell-auto-completion)
-
 ## Install Node.js environment
 
 [Install fnm](https://github.com/Schniz/fnm#using-a-script-macoslinux), Node.js and Yarn:
