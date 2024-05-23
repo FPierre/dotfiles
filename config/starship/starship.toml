@@ -21,3 +21,6 @@ disabled = true
 
 [battery]
 disabled = true
+
+[env_var.PUB_SUB_SCOPED_ENV_KEY]
+format = "scoped by key [$env_value](yellow)"

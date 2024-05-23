@@ -26,3 +26,12 @@ abbr -a gti git
 abbr -a bat batcat
 
 abbr -a npm-pre-publish "npm pack && tar -xvzf *.tgz"
+
+abbr -a docker-backend-up docker
+
+# Bun
+set --export BUN_INSTALL "$HOME/.bun"
+set --export PATH $BUN_INSTALL/bin $PATH
+
+# Google SQL Cloud Proxy
+abbr -a proxy-dev /opt/cloud-sql-proxy/cloud-sql-proxy "arsen-platform-dev:europe-west3:arsen-backend-dev"

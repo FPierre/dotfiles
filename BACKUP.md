@@ -1,9 +1,15 @@
 # Backup
 
-- Push dotfiles to GitHub (also exists in Mega.nz)
+## TODO
+
+- LightBurn
+- Firefoo
+- GCP keys
+- Yubikey?
+
+- Push dotfiles to GitHub
 - Push Obsidian folder to GitHub (also exists in Mega.nz)
-- Push Workspace folder to GitHub (also exists in Mega.nz)
-- Export all configurations from Insomnia
+- Push Workspace folder to GitHub
 - Export Fisher:
 
 ```sh
@@ -24,7 +30,7 @@ code --list-extensions >> ~/.dotfiles/config/vscode/extensions.txt
 ## Private
 
 - [Export config Brave](https://support.brave.com/hc/en-us/articles/360019782291-How-do-I-import-or-export-browsing-data-)
-- Export config cloud (if exists)
+- Export Cloud config (if exists)
 - Export NPM token
 - Export SSH keys:
 

@@ -1,22 +1,54 @@
 # espanso match file
-
 # For a complete introduction, visit the official docs at: https://espanso.org/docs/
-
-# You can use this file to define the base matches (aka snippets)
-# that will be available in every application when using espanso.
-
-# Matches are substitution rules: when you type the "trigger" string
-# it gets replaced by the "replace" string.
-
-# Matches are the substitution rules, when you type the "trigger" string
-# it gets replaced by the "replace" string.
 matches:
+  # -- Trash Org --
+  # Ids: `0G7IXVvZ7SuzDVFuRlGK`, `cs7Mqk21jrF58d7Wh9rH`
+  #
+  # -- Trash Users --
+  # Ids: `8Z4tjMRHRsg8zKY8jFTcKKRQpws1`, `RLT2yasnbNhJHmJZ13jRJ4iGSWj2`
+
+  # -- Simple Org --
+  #
+  # - Id: `pierreSimpleOrg----` (Pierre Simple Org)
+  # - Idp: ❌
+  # - Email delivery: Mailgun
+  # - SSO: ❌
+  # - User pierre.flauder@arsen.co:
+  #   - dev: `Yq9yLMif5zS9at6Zx1ItAqhzy0E2`
+  #   - prod: `OHx4G8K9XCQ6zexl8o4VUgHawk53`
+  - triggers: [":orgId", ":orgid"]
+    replace: "pierreSimpleOrg----"
+  - triggers: [":devUserId", ":devuserid", ":userDevId", ":userdevid"]
+    replace: "Yq9yLMif5zS9at6Zx1ItAqhzy0E2"
+  - triggers: [":prodUserId", ":userProdId", ":produserid", ":userprodid"]
+    replace: "OHx4G8K9XCQ6zexl8o4VUgHawk53"
+
+  # -- Partner --
+  #
+  # - Id: `pierrePartner-------`
+  # - Name: `Pierre Partner`
+  # - User pierre.flauder+partner@arsen.co:
+  #   - dev: `eSJksshWJBe1Zhm1KTqQmc4x9em1`
+  #   - prod: `z1l5OE8YFlVWOLIjxu5HECiGLsi1`
+  - triggers: [":partnerId", ":partnerid"]
+    replace: "pierrePartner-------"
+  - triggers: [":devPartnerUserId", ":devpartneruserid", ":userPartnerDevId", ":userpartnerdevid"]
+    replace: "eSJksshWJBe1Zhm1KTqQmc4x9em1"
+  - triggers: [":prodPartnerUserId", ":prodpartneruserid", ":userPartnerProdId", ":userpartnerprodid"]
+    replace: "z1l5OE8YFlVWOLIjxu5HECiGLsi1"
+
+  # -- Partner's Org --
+  #
+  # - Id: `pierrePartnerOrg----` (Pierre Partner's Org)
+  # - Idp: Microsoft
+  # - Email delivery: Microsoft
+  # - SSO: Microsoft
+  # - User: Partner's User
+  - triggers: [":partnerOrgId", ":partnerorgid"]
+    replace: "pierrePartnerOrg----"
+
   - trigger: ":email"
     replace: "pierre.flauder@arsen.co"
-  - trigger: ":userId"
-    replace: "yLuUnvolsqZK86xy4dGNhijCWKA3"
-  - triggers: [":orgId", ":organizationId"]
-    replace: "pVxa0YINsYUwrSEXcylU"
   - trigger: ":12ft"
     replace: "https://12ft.io/"
   - triggers: [":changelog", ":release"]
@@ -25,15 +57,37 @@ matches:
     replace: "⚠️"
   - trigger: ":check"
     replace: "✅"
+  - trigger: ":star"
+    replace: "⭐"
   - trigger: ":brain"
     replace: "🧠"
+  - triggers: [":death", ":skull"]
+    replace: "💀"
+  - trigger: ":hourglass"
+    replace: "⏳"
   - trigger: ":fire"
     replace: "🔥"
   - trigger: ":thinking"
     replace: "🤔"
   - trigger: ":rocket"
     replace: "🚀"
-  - trigger: ":hammer"
+  - trigger: ":bug"
+    replace: "🐞"
+  - trigger: ":idea"
+    replace: "💡"
+  - trigger: ":stop"
+    replace: "🚫"
+  - trigger: ":lock"
+    replace: "🔒"
+  - trigger: ":ruler"
+    replace: "📏"
+  - trigger: ":sparkles"
+    replace: "✨"
+  - trigger: ":boom"
+    replace: "💥"
+  - triggers: [":wip", ":construction"]
+    replace: "🚧"
+  - triggers: [":hammer", ":tool"]
     replace: "⚒️"
   - trigger: ":infinite"
     replace: "∞"

@@ -1,6 +1,12 @@
 # Install
 
-## Notes on Dell XPS 13
+## TODO
+
+- Install Flatpak Obfuscate
+- Fisher still needed?
+- com.github.joseexposito.touche
+
+## Notes for Dell XPS 13 9315
 
 - F2: BIOS
 - F12: boot menu
@@ -54,14 +60,11 @@ curl -s https://brave-browser-apt-release.s3.brave.com/brave-core.asc | sudo apt
 
 [Chrome](https://www.google.fr/chrome/index.html)
 
-[Insomnia](https://support.insomnia.rest/article/156-installation):
-
-```sh
-echo "deb [trusted=yes arch=amd64] https://download.konghq.com/insomnia-ubuntu/ default all" \
-  | sudo tee -a /etc/apt/sources.list.d/insomnia.list
-```
-
 [Espanso](https://espanso.org/docs/install/linux)
+
+[Bruno](https://www.usebruno.com/downloads)
+
+[Github CLI](https://github.com/cli/cli/blob/trunk/docs/install_linux.md#debian-ubuntu-linux-raspberry-pi-os-apt)
 
 And:
 
@@ -71,14 +74,12 @@ sudo apt update \
   autojump \
   bat \
   brave-browser \
+  btm \
   code \
   exa \
   fonts-firacode \
   git \
-  git-flow \
   gnome-tweaks \
-  htop \
-  insomnia \
   powertop \
   preload \
   ripgrep \
@@ -88,7 +89,15 @@ sudo apt update \
 (VScode is not installed with Flatpak due to the path mess it introduce)
 
 ```sh
-flatpak install ca.desrt.dconf-editor com.slack.Slack md.obsidian.Obsidian
+flatpak install \
+  ca.desrt.dconf-editor \
+  ca.desrt.dconf-editor \
+  com.belmoussaoui.Obfuscate \
+  com.github.joseexposito.touche \
+  com.slack.Slack \
+  com.spotify.Client \
+  md.obsidian.Obsidian \
+  com.boxy_svg.BoxySVG
 ```
 
 Configure Powertop:
@@ -144,7 +153,6 @@ ln -sfv "$HOME/.dotfiles/config/git/.gitconfig" "$HOME/.gitconfig"
 
 ln -sfv "$HOME/.dotfiles/config/vscode/settings.json" "$HOME/.config/Code/User/settings.json"
 ln -sfv "$HOME/.dotfiles/config/vscode/keybindings.json" "$HOME/.config/Code/User/keybindings.json"
-ln -sfv "$HOME/.dotfiles/config/vscode/snippets/jest-describe.json" "$HOME/.config/Code/User/snippets/jest-describe.json"
 ```
 
 Install VSCode extensions:
@@ -159,18 +167,32 @@ cat config/vscode/extensions.txt | xargs -n 1 code --install-extension
 
 ```sh
 wget -P ~/.config/fish/completions \
+  https://raw.githubusercontent.com/fish-shell/fish-shell/master/share/completions/apt.fish \
+  https://raw.githubusercontent.com/fish-shell/fish-shell/master/share/completions/flatpak.fish \
+  https://raw.githubusercontent.com/fish-shell/fish-shell/master/share/completions/gh.fish \
   https://raw.githubusercontent.com/fish-shell/fish-shell/master/share/completions/git.fish \
+  https://raw.githubusercontent.com/fish-shell/fish-shell/master/share/completions/kill.fish \
+  https://raw.githubusercontent.com/fish-shell/fish-shell/master/share/completions/killall.fish \
   https://raw.githubusercontent.com/fish-shell/fish-shell/master/share/completions/ls.fish \
+  https://raw.githubusercontent.com/fish-shell/fish-shell/master/share/completions/ngrok.fish \
   https://raw.githubusercontent.com/fish-shell/fish-shell/master/share/completions/node.fish \
   https://raw.githubusercontent.com/fish-shell/fish-shell/master/share/completions/npm.fish \
+  https://raw.githubusercontent.com/fish-shell/fish-shell/master/share/completions/pg_dump.fish \
+  https://raw.githubusercontent.com/fish-shell/fish-shell/master/share/completions/pkill.fish \
+  https://raw.githubusercontent.com/fish-shell/fish-shell/master/share/completions/ssh.fish \
+  https://raw.githubusercontent.com/fish-shell/fish-shell/master/share/completions/starship.fish \
   https://raw.githubusercontent.com/fish-shell/fish-shell/master/share/completions/yarn.fish
 ```
 
+[gcloud completion](https://github.com/lgathy/google-cloud-sdk-fish-completion):
+
 ```sh
-wget -O ~/.config/fish/completions/git-flow.fish https://raw.githubusercontent.com/bobthecow/git-flow-completion/master/git.fish
+curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
 ```
 
-[gcloud completion](https://github.com/lgathy/google-cloud-sdk-fish-completion)
+```sh
+fisher install lgathy/google-cloud-sdk-fish-completion
+```
 
 [For ripgrep](https://github.com/BurntSushi/ripgrep/blob/master/FAQ.md#does-ripgrep-have-support-for-shell-auto-completion)
 
@@ -180,7 +202,7 @@ wget -O ~/.config/fish/completions/git-flow.fish https://raw.githubusercontent.c
 
 ```sh
 curl -fsSL https://fnm.vercel.app/install | bash \
-  && fnm install v18 \
+  && fnm install v20 \
   && npm install -g yarn \
   && fnm completions --shell fish > ~/.config/fish/completions/fnm.fish
 ```
@@ -397,7 +419,7 @@ yarn global add firebase-tools
 
 ```sh
 wget -qO - http://deb.tableplus.com/apt.tableplus.com.gpg.key | sudo apt-key add - \
-  && sudo add-apt-repository "deb [arch=amd64] https://deb.tableplus.com/debian/21 tableplus main"
+  && sudo add-apt-repository "deb [arch=amd64] https://deb.tableplus.com/debian/22 tableplus main"
 ```
 
 ### [PostgreSQL client](https://www.postgresql.org/download/linux/ubuntu/)
@@ -405,43 +427,6 @@ wget -qO - http://deb.tableplus.com/apt.tableplus.com.gpg.key | sudo apt-key add
 ```sh
 sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt '(lsb_release -cs)'-pgdg main" > /etc/apt/sources.list.d/pgdg.list' \
   wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
-```
-
-### [Kubectx and Kubens](https://github.com/ahmetb/kubectx#manual-installation-macos-and-linux)
-
-```sh
-sudo git clone https://github.com/ahmetb/kubectx /opt/kubectx \
-  && sudo ln -s /opt/kubectx/kubectx /usr/local/bin/kubectx \
-  && sudo ln -s /opt/kubectx/kubens /usr/local/bin/kubens \
-  && ln -s /opt/kubectx/completion/kubectx.fish ~/.config/fish/completions/ \
-  && ln -s /opt/kubectx/completion/kubens.fish ~/.config/fish/completions/
-```
-
-### [Helm](https://helm.sh/docs/intro/install/)
-
-```sh
-curl https://baltocdn.com/helm/signing.asc | sudo apt-key add - \
-  && sudo apt-get install apt-transport-https --yes \
-  && echo "deb https://baltocdn.com/helm/stable/debian/ all main" | sudo tee /etc/apt/sources.list.d/helm-stable-debian.list \
-  && sudo apt update \
-  && sudo apt install helm
-```
-
-### [Terraform](https://www.terraform.io/downloads)
-
-```sh
-curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add - \
-  && sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com "(lsb_release -cs)" main" \
-  && sudo apt update && sudo apt install terraform
-```
-
-### [tfswitch](https://tfswitch.warrensbox.com/Install/#linux)
-
-```sh
-wget https://raw.githubusercontent.com/warrensbox/terraform-switcher/release/install.sh \
-  && chmod 755 install.sh \
-  && sudo mkdir /opt/tfswitch \
-  && sudo ./install.sh -b /opt/tfswitch
 ```
 
 ## To do
