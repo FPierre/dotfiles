@@ -1,20 +1,5 @@
 # Install
 
-## TODO
-
-- Fisher still needed?
-
-## Notes for Dell XPS 13 9315
-
-- F2: BIOS
-- F12: boot menu
-
-Boot on right USB port:
-
-1. Disable UEFI in the BIOS
-2. Go to boot menu
-3. Select UEFI Mass Storage XXX 2 (USB icon)
-
 ## Install Alacritty, Fish and Fisher
 
 ```sh
@@ -45,24 +30,13 @@ sudo add-apt-repository -y ppa:git-core/ppa
 
 [Starship](https://starship.rs/guide/#%F0%9F%9A%80-installation):
 
-```sh
-curl -sS https://starship.rs/install.sh | sh
-```
-
 [Brave](https://brave.com/linux/#release-channel-installation):
-
-```sh
-curl -s https://brave-browser-apt-release.s3.brave.com/brave-core.asc | sudo apt-key --keyring /etc/apt/trusted.gpg.d/brave-browser-release.gpg add - \
-  && echo "deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main" | sudo tee /etc/apt/sources.list.d/brave-browser-release.list
-```
 
 [Chrome](https://www.google.fr/chrome/index.html)
 
 [Espanso](https://espanso.org/docs/install/linux)
 
 [Bruno](https://www.usebruno.com/downloads)
-
-[Github CLI](https://github.com/cli/cli/blob/trunk/docs/install_linux.md#debian-ubuntu-linux-raspberry-pi-os-apt)
 
 And:
 
@@ -93,15 +67,20 @@ flatpak install \
   com.github.joseexposito.touche \
   com.slack.Slack \
   com.spotify.Client \
-  md.obsidian.Obsidian \
-  com.boxy_svg.BoxySVG \
-  com.github.johnfactotum.Foliate
+  com.boxy_svg.BoxySVG
 ```
 
 Configure Powertop:
 
 ```sh
 sudo powertop
+```
+
+### Clone this repository
+
+```sh
+git clone git@github.com:FPierre/dotfiles.git ~/.dotfiles \
+  && cd ~/.dotfiles
 ```
 
 ### Restore SSH and GPG
@@ -120,13 +99,6 @@ gpg --import /media/pierre/SanDisk\ 256Go/Backup/gpg/gpg.pub.asc
 gpg --import /media/pierre/SanDisk\ 256Go/Backup/gpg/gpg.priv.asc
 gpg --import /media/pierre/SanDisk\ 256Go/Backup/gpg/gpg.sub_priv.asc
 gpg --import-ownertrust /media/pierre/SanDisk\ 256Go/Backup/gpg/ownertrust.txt
-```
-
-### Clone this repository
-
-```sh
-git clone git@github.com:FPierre/dotfiles.git ~/.dotfiles \
-  && cd ~/.dotfiles
 ```
 
 ### Links to existing configurations
@@ -167,7 +139,6 @@ cat config/vscode/extensions.txt | xargs -n 1 code --install-extension
 wget -P ~/.config/fish/completions \
   https://raw.githubusercontent.com/fish-shell/fish-shell/master/share/completions/apt.fish \
   https://raw.githubusercontent.com/fish-shell/fish-shell/master/share/completions/flatpak.fish \
-  https://raw.githubusercontent.com/fish-shell/fish-shell/master/share/completions/gh.fish \
   https://raw.githubusercontent.com/fish-shell/fish-shell/master/share/completions/git.fish \
   https://raw.githubusercontent.com/fish-shell/fish-shell/master/share/completions/kill.fish \
   https://raw.githubusercontent.com/fish-shell/fish-shell/master/share/completions/killall.fish \
@@ -348,9 +319,9 @@ node_modules
 ~*
 ```
 
-## Use DNS 1.1.1.1
+## Link to NextDNS
 
-[Installation](https://1.1.1.1/fr/)
+[NextDNS](https://nextdns.io/)
 
 ## Customize Nautilus sidebar
 
@@ -401,8 +372,6 @@ At the end, the keyboard should behave like:
 
 ## Install others tools
 
-### PostgreSQL server: via Docker (over `apt`)
-
 ### [Google Cloud CLI](https://cloud.google.com/sdk/docs/install#deb)
 
 ### Firebase CLI
@@ -418,6 +387,8 @@ wget -qO - http://deb.tableplus.com/apt.tableplus.com.gpg.key | sudo apt-key add
   && sudo add-apt-repository "deb [arch=amd64] https://deb.tableplus.com/debian/22 tableplus main"
 ```
 
+### PostgreSQL server: via Docker (over `apt`)
+
 ### [PostgreSQL client](https://www.postgresql.org/download/linux/ubuntu/)
 
 ```sh
@@ -425,13 +396,7 @@ sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt '(lsb_release -cs)
   wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
 ```
 
-## To do
-
-- Install nano syntax highlighting
-  - https://www.if-not-true-then-false.com/2009/tuning-nano-text-editor-with-nanorc/
-  - https://github.com/scopatz/nanorc
-
-## Issues
+## Fix issues
 
 ### Screen flicker on battery
 

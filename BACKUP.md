@@ -1,45 +1,38 @@
 # Backup
 
-## TODO
-
-- NextDNS
-- LightBurn
-- Firefoo
-- GCP keys
-- Yubikey
-
-- Push dotfiles to GitHub
-- Push Obsidian folder to GitHub (also exists in Mega.nz)
-- Push Workspace folder to GitHub
-- Export Fisher:
+## Export installed Fish modules
 
 ```sh
 fisher ls
 ```
 
-- Export VSCode unsaved tab
-- Export VSCode extensions:
+## Export VSCode unsaved tab
+
+## Export VSCode extensions
 
 ```sh
 code --list-extensions >> ~/.dotfiles/config/vscode/extensions.txt
 ```
 
-- Forward critical emails to personal inbox
-- Export Browser [Shortkeys](https://chrome.google.com/webstore/detail/shortkeys-custom-keyboard/logpjaacgmcbpdkdchjiaagddngobkck/reviews?hl=en-US&gl=US) extension
-- Export OS shortkey
+## Export Browser shortkeys
 
-## Private
+From extension [shortkeys-custom-keyboard](https://chrome.google.com/webstore/detail/shortkeys-custom-keyboard/logpjaacgmcbpdkdchjiaagddngobkck/reviews?hl=en-US&gl=US)
 
-- [Export config Brave](https://support.brave.com/hc/en-us/articles/360019782291-How-do-I-import-or-export-browsing-data-)
-- Export Cloud config (if exists)
-- Export NPM token
-- Export SSH keys:
+## Export OS shortkey
+
+## [Export config Brave](https://support.brave.com/hc/en-us/articles/360019782291-How-do-I-import-or-export-browsing-data-)
+
+## Export CGP Cloud config
+
+## Export NPM token
+
+## Export SSH keys
 
 ```sh
 cp ~/.ssh/* /media/pierre/SanDisk\ 256Go/Backup/ssh
 ```
 
-- [Export GPG key](https://serverfault.com/a/1040984):
+## [Export GPG key](https://serverfault.com/a/1040984)
 
 (Copy the passphrase)
 
@@ -51,8 +44,9 @@ gpg --export-secret-subkeys --armor "Pierre Flauder" > gpg.sub_priv.asc
 gpg --export-ownertrust > ownertrust.txt
 ```
 
-- Export config TablePlus (`~/.tableplus/settings/connections.json`, `~/.tableplus/queries/`)
-- Export config Dconf:
+## Export config TablePlus (`~/.tableplus/settings/connections.json`, `~/.tableplus/queries/`)
+
+## Export config Dconf
 
 ```sh
 dconf dump / > ~/.dotfiles/config/dconf/dconf-settings.ini
