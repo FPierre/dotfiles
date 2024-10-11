@@ -2,9 +2,7 @@
 
 ## TODO
 
-- Install Flatpak Obfuscate
 - Fisher still needed?
-- com.github.joseexposito.touche
 
 ## Notes for Dell XPS 13 9315
 
@@ -76,7 +74,7 @@ sudo apt update \
   brave-browser \
   btm \
   code \
-  exa \
+  eza \
   fonts-firacode \
   git \
   gnome-tweaks \
@@ -91,13 +89,13 @@ sudo apt update \
 ```sh
 flatpak install \
   ca.desrt.dconf-editor \
-  ca.desrt.dconf-editor \
   com.belmoussaoui.Obfuscate \
   com.github.joseexposito.touche \
   com.slack.Slack \
   com.spotify.Client \
   md.obsidian.Obsidian \
-  com.boxy_svg.BoxySVG
+  com.boxy_svg.BoxySVG \
+  com.github.johnfactotum.Foliate
 ```
 
 Configure Powertop:

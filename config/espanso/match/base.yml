@@ -1,18 +1,8 @@
 # espanso match file
 # For a complete introduction, visit the official docs at: https://espanso.org/docs/
 matches:
-  # -- Trash Org --
-  # Ids: `0G7IXVvZ7SuzDVFuRlGK`, `cs7Mqk21jrF58d7Wh9rH`
+  # -- Organization --
   #
-  # -- Trash Users --
-  # Ids: `8Z4tjMRHRsg8zKY8jFTcKKRQpws1`, `RLT2yasnbNhJHmJZ13jRJ4iGSWj2`
-
-  # -- Simple Org --
-  #
-  # - Id: `pierreSimpleOrg----` (Pierre Simple Org)
-  # - Idp: ❌
-  # - Email delivery: Mailgun
-  # - SSO: ❌
   # - User pierre.flauder@arsen.co:
   #   - dev: `Yq9yLMif5zS9at6Zx1ItAqhzy0E2`
   #   - prod: `OHx4G8K9XCQ6zexl8o4VUgHawk53`
@@ -40,10 +30,6 @@ matches:
   # -- Partner's Org --
   #
   # - Id: `pierrePartnerOrg----` (Pierre Partner's Org)
-  # - Idp: Microsoft
-  # - Email delivery: Microsoft
-  # - SSO: Microsoft
-  # - User: Partner's User
   - triggers: [":partnerOrgId", ":partnerorgid"]
     replace: "pierrePartnerOrg----"
 
@@ -59,6 +45,8 @@ matches:
     replace: "✅"
   - trigger: ":star"
     replace: "⭐"
+  - trigger: ":clock"
+    replace: "🕒"
   - trigger: ":brain"
     replace: "🧠"
   - triggers: [":death", ":skull"]
@@ -71,18 +59,12 @@ matches:
     replace: "🤔"
   - trigger: ":rocket"
     replace: "🚀"
-  - trigger: ":bug"
-    replace: "🐞"
   - trigger: ":idea"
     replace: "💡"
   - trigger: ":stop"
     replace: "🚫"
   - trigger: ":lock"
     replace: "🔒"
-  - trigger: ":ruler"
-    replace: "📏"
-  - trigger: ":sparkles"
-    replace: "✨"
   - trigger: ":boom"
     replace: "💥"
   - triggers: [":wip", ":construction"]

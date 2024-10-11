@@ -80,9 +80,10 @@
   "editor.inlineSuggest.enabled": true,
   "github.copilot.enable": {
     "*": true,
-    "plaintext": "true",
-    "markdown": "true",
-    "yaml": false
+    "plaintext": true,
+    "markdown": true,
+    "yaml": false,
+    "mdx": true
   },
   "security.workspace.trust.untrustedFiles": "open",
   "javascript.updateImportsOnFileMove.enabled": "always",
@@ -98,6 +99,7 @@
     "hygen",
     "lockdown",
     "luxon",
+    "mailgun",
     "Mailgun",
     "modelization",
     "Modulithe",
@@ -128,7 +130,6 @@
   "cSpell.enableFiletypes": ["astro"],
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.minimap.enabled": false,
   "eslint.experimental.useFlatConfig": true,
   "eslint.useESLintClass": true,
   "eslint.options": {
@@ -136,5 +137,51 @@
   },
   "window.zoomPerWindow": false,
   "workbench.editor.enablePreview": false,
-  "vue.server.hybridMode": false
+  "github.copilot.editor.enableAutoCompletions": true,
+  "editor.minimap.enabled": false,
+  "markdown.copyFiles.destination": {
+    "**/*": "${documentWorkspaceFolder}/attachments/"
+  },
+  "workbench.sideBar.location": "right",
+  "typescript.preferences.preferTypeOnlyAutoImports": true,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "workbench.activityBar.location": "top",
+  "workbench.layoutControl.enabled": false,
+  "window.commandCenter": false,
+  "[astro]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "workbench.iconTheme": "material-icon-theme",
+  "material-icon-theme.activeIconPack": "nest",
+  "material-icon-theme.saturation": 0.75,
+  "material-icon-theme.folders.color": "#777",
+  "material-icon-theme.opacity": 0.9,
+  "material-icon-theme.files.associations": {
+    "*.controller.ts": "Http",
+    "*.gateway.ts": "",
+    "*.module.ts": "",
+    "controller.api.ts": "Http"
+  },
+  "material-icon-theme.folders.associations": {
+    ".github": "",
+    ".husky": "",
+    ".vscode": "",
+    "core": "",
+    "custom": "",
+    "decorators": "",
+    "docker": "",
+    "drizzle": "",
+    "env": "",
+    "environments": "",
+    "firebase": "",
+    "fixtures": "",
+    "guards": "",
+    "jwt": "",
+    "models": "",
+    "node_modules": "",
+    "pipes": "",
+    "scripts": "",
+    "validators": "",
+    "workflows": ""
+  }
 }

@@ -20,6 +20,8 @@ starship init fish | source
 # Found with: yarn global bin
 set -gx PATH $PATH:/home/pierre/.yarn/bin
 
+# Zed
+
 abbr -a exti exit
 abbr -a gti git
 
@@ -34,4 +36,15 @@ set --export BUN_INSTALL "$HOME/.bun"
 set --export PATH $BUN_INSTALL/bin $PATH
 
 # Google SQL Cloud Proxy
-abbr -a proxy-dev /opt/cloud-sql-proxy/cloud-sql-proxy "arsen-platform-dev:europe-west3:arsen-backend-dev"
+# abbr -a proxy-dev /opt/cloud-sql-proxy/cloud-sql-proxy arsen-platform-dev:europe-west3:arsen-backend-dev
+abbr -a proxy-dev /opt/cloud-sql-proxy/cloud-sql-proxy arsen-platform-dev:europe-west3:arsen-postgresql-dev
+abbr -a proxy-prod /opt/cloud-sql-proxy/cloud-sql-proxy arsen-platform-prod:europe-west3:arsen-postgresql-prod
+
+abbr -a p pnpm
+
+# pnpm
+set -gx PNPM_HOME "/home/pierre/.local/share/pnpm"
+if not string match -q -- $PNPM_HOME $PATH
+  set -gx PATH "$PNPM_HOME" $PATH
+end
+# pnpm end

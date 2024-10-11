@@ -2,10 +2,11 @@
 
 ## TODO
 
+- NextDNS
 - LightBurn
 - Firefoo
 - GCP keys
-- Yubikey?
+- Yubikey
 
 - Push dotfiles to GitHub
 - Push Obsidian folder to GitHub (also exists in Mega.nz)
