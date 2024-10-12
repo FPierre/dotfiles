@@ -19,6 +19,4 @@ Boot on the right USB port:
 - Link to NextDNS
 - Install LightBurn + license
 - Install Firefoo + license
-- Backup GCP keys
 - Connect to Yubikey
-- Push Workspace folder to GitHub

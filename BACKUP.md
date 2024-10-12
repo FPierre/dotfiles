@@ -1,5 +1,18 @@
 # Backup
 
+## Backup folders
+
+- `~/.config/`
+- `~/.firefoo/saved-queries/`
+- `~/.ssh/`
+- `~/.tableplus/queries/`
+- `~/.tableplus/settings/connections.json`
+- `~/Downloads/`
+- `~/Pictures/`
+- `~/Screenshots/`
+- `~/Videos/`
+- `~/Workspace/` (without `node_modules/`)
+
 ## Export installed Fish modules
 
 ```sh
@@ -11,8 +24,12 @@ fisher ls
 ## Export VSCode extensions
 
 ```sh
-code --list-extensions >> ~/.dotfiles/config/vscode/extensions.txt
+code --list-extensions > ~/.dotfiles/config/vscode/extensions.txt
 ```
+
+## Export Chrome bookmarks
+
+## Export Brave bookmarks
 
 ## Export Browser shortkeys
 
@@ -43,8 +60,6 @@ gpg --export-secret-keys --armor "Pierre Flauder" > gpg.priv.asc
 gpg --export-secret-subkeys --armor "Pierre Flauder" > gpg.sub_priv.asc
 gpg --export-ownertrust > ownertrust.txt
 ```
-
-## Export config TablePlus (`~/.tableplus/settings/connections.json`, `~/.tableplus/queries/`)
 
 ## Export config Dconf
 
