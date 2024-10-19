@@ -11,7 +11,15 @@
 - `~/Pictures/`
 - `~/Screenshots/`
 - `~/Videos/`
-- `~/Workspace/` (without `node_modules/`)
+- `~/Workspace/` (without `node_modules/`: https://unix.stackexchange.com/a/345001):
+
+  ```sh
+  rsync -rv ~/Workspace /media/pierre/SanDisk\ 256Go/Backup \
+    --exclude=node_modules \
+    --exclude=env \
+    --exclude=.cache \
+    --exclude=dist
+  ```
 
 ## Export installed Fish modules
 
@@ -36,8 +44,6 @@ code --list-extensions > ~/.dotfiles/config/vscode/extensions.txt
 From extension [shortkeys-custom-keyboard](https://chrome.google.com/webstore/detail/shortkeys-custom-keyboard/logpjaacgmcbpdkdchjiaagddngobkck/reviews?hl=en-US&gl=US)
 
 ## Export OS shortkey
-
-## [Export config Brave](https://support.brave.com/hc/en-us/articles/360019782291-How-do-I-import-or-export-browsing-data-)
 
 ## Export CGP Cloud config
 
@@ -65,12 +71,4 @@ gpg --export-ownertrust > ownertrust.txt
 
 ```sh
 dconf dump / > ~/.dotfiles/config/dconf/dconf-settings.ini
-```
-
-## Help
-
-- [Copy projects without `node_modules/`](https://unix.stackexchange.com/a/345001):
-
-```sh
-rsync -rv --exclude=node_modules --exclude=env ~/Workspace /<DESTINATION>
 ```

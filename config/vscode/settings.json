@@ -79,11 +79,13 @@
   "workbench.tree.indent": 20,
   "editor.inlineSuggest.enabled": true,
   "github.copilot.enable": {
-    "*": true,
+    "*": false,
     "plaintext": true,
     "markdown": true,
+    "scminput": false,
+    "mdx": true,
     "yaml": false,
-    "mdx": true
+    "typescript": true
   },
   "security.workspace.trust.untrustedFiles": "open",
   "javascript.updateImportsOnFileMove.enabled": "always",

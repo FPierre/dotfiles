@@ -17,6 +17,6 @@ Boot on the right USB port:
 
 - Update Mega sync config
 - Link to NextDNS
-- Install LightBurn + license
-- Install Firefoo + license
+- Install LightBurn
+- Install Firefoo
 - Connect to Yubikey
