@@ -44,6 +44,8 @@ sudo add-apt-repository -y ppa:git-core/ppa
 
 [btm](https://github.com/ClementTsang/bottom?tab=readme-ov-file#debian--ubuntu)
 
+[TablePlus](https://tableplus.com/blog/2019/10/tableplus-linux-installation.html)
+
 And:
 
 ```sh
@@ -386,13 +388,6 @@ At the end, the keyboard should behave like:
 
 ```sh
 yarn global add firebase-tools
-```
-
-### [TablePlus](https://tableplus.com/blog/2019/10/tableplus-linux-installation.html)
-
-```sh
-wget -qO - http://deb.tableplus.com/apt.tableplus.com.gpg.key | sudo apt-key add - \
-  && sudo add-apt-repository "deb [arch=amd64] https://deb.tableplus.com/debian/22 tableplus main"
 ```
 
 ### PostgreSQL server: via Docker (over `apt`)
