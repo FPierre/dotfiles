@@ -62,8 +62,6 @@ sudo apt update \
   vlc
 ```
 
-(VScode is not installed with Flatpak due to the path mess it introduce)
-
 ```sh
 flatpak install \
   ca.desrt.dconf-editor \
