@@ -175,11 +175,13 @@ fisher install lgathy/google-cloud-sdk-fish-completion
 
 ## Install Node.js environment
 
-[Install fnm](https://github.com/Schniz/fnm#using-a-script-macoslinux), Node.js and Yarn:
+Install [fnm](https://github.com/Schniz/fnm#using-a-script-macoslinux), Node.js and Yarn:
 
 ```sh
 curl -fsSL https://fnm.vercel.app/install | bash
 ```
+
+Restart the terminal, then:
 
 ```sh
 fnm install v20 \
