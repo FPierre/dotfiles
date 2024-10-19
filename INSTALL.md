@@ -1,5 +1,7 @@
 # Install
 
+> Needed: Yubikey, phone with 2FA, Bitwarden master password
+
 ## Install Alacritty, Fish and Fisher
 
 ```sh
@@ -78,15 +80,21 @@ Configure Powertop:
 sudo powertop
 ```
 
+### Setup Bitwarden extension on Chrome
+
+- Install the extension
+- Connect to Bitwarden
+
 ### Restore SSH and GPG
 
-(Copy the passphrase)
+(Copy the SSH passphrase)
 
 ```sh
 mkdir ~/.ssh \
-  && cp /media/pierre/SanDisk\ 256Go/Backup/ssh/* ~/.ssh/ \
-  && sudo chmod 600 ~/.ssh/id_rsa ~/.ssh/config ~/.ssh/known_hosts \
-  && sudo chmod 644 ~/.ssh/id_rsa.pub
+  && cp /media/pierre/SanDisk\ 256Go/Backup/.ssh/* ~/.ssh/ \
+  && sudo chmod 600 ~/.ssh/id_ed25519 ~/.ssh/known_hosts \
+  && sudo chmod 644 ~/.ssh/id_ed25519.pub \
+  && ssh-add ~/.ssh/id_ed25519
 ```
 
 (Copy the passphrase)
