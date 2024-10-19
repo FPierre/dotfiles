@@ -187,13 +187,6 @@ fnm install v20 \
   && fnm completions --shell fish > ~/.config/fish/completions/fnm.fish
 ```
 
-```sh
-cat << EOF > ~/.config/fish/conf.d/fnm.fish
-set PATH /home/pierre/.fnm $PATH
-fnm env --use-on-cd | source
-EOF
-```
-
 ## OS configuration
 
 Connect to [Gnome Shell extensions](https://extensions.gnome.org/) and download extensions
