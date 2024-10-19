@@ -178,8 +178,11 @@ fisher install lgathy/google-cloud-sdk-fish-completion
 [Install fnm](https://github.com/Schniz/fnm#using-a-script-macoslinux), Node.js and Yarn:
 
 ```sh
-curl -fsSL https://fnm.vercel.app/install | bash \
-  && fnm install v20 \
+curl -fsSL https://fnm.vercel.app/install | bash
+```
+
+```sh
+fnm install v20 \
   && npm install -g yarn \
   && fnm completions --shell fish > ~/.config/fish/completions/fnm.fish
 ```
