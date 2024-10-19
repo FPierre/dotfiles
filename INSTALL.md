@@ -28,15 +28,19 @@ GIT:
 sudo add-apt-repository -y ppa:git-core/ppa
 ```
 
-[Starship](https://starship.rs/guide/#%F0%9F%9A%80-installation):
+[Starship](https://starship.rs/guide/#%F0%9F%9A%80-installation)
 
-[Brave](https://brave.com/linux/#release-channel-installation):
+[Brave](https://brave.com/linux/#release-channel-installation)
 
 [Chrome](https://www.google.fr/chrome/index.html)
 
 [Espanso](https://espanso.org/docs/install/linux)
 
 [Bruno](https://www.usebruno.com/downloads)
+
+[eza](https://github.com/eza-community/eza/blob/main/INSTALL.md)
+
+[btm](https://github.com/ClementTsang/bottom?tab=readme-ov-file#debian--ubuntu)
 
 And:
 
@@ -46,9 +50,7 @@ sudo apt update \
   autojump \
   bat \
   brave-browser \
-  btm \
   code \
-  eza \
   fonts-firacode \
   git \
   gnome-tweaks \
@@ -76,14 +78,9 @@ Configure Powertop:
 sudo powertop
 ```
 
-### Clone this repository
-
-```sh
-git clone git@github.com:FPierre/dotfiles.git ~/.dotfiles \
-  && cd ~/.dotfiles
-```
-
 ### Restore SSH and GPG
+
+(Copy the passphrase)
 
 ```sh
 mkdir ~/.ssh \
@@ -99,6 +96,13 @@ gpg --import /media/pierre/SanDisk\ 256Go/Backup/gpg/gpg.pub.asc
 gpg --import /media/pierre/SanDisk\ 256Go/Backup/gpg/gpg.priv.asc
 gpg --import /media/pierre/SanDisk\ 256Go/Backup/gpg/gpg.sub_priv.asc
 gpg --import-ownertrust /media/pierre/SanDisk\ 256Go/Backup/gpg/ownertrust.txt
+```
+
+### Clone this repository
+
+```sh
+git clone git@github.com:FPierre/dotfiles.git ~/.dotfiles \
+  && cd ~/.dotfiles
 ```
 
 ### Links to existing configurations
