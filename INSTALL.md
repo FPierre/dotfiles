@@ -245,7 +245,7 @@ To move window to another workspace, it is possible their is a conflict with "Wi
 
 ## Touchpad configuration
 
-- Install [Touché](https://flathub.org/apps/details/com.github.joseexposito.touche)
+On Touché
 
 ![Screenshot from 2023-01-27 08-17-10](https://user-images.githubusercontent.com/3307327/215030385-267e9a6d-6391-4bba-bb9c-180754bece9e.png)
 
