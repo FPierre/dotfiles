@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Pop!_Shop Daemon
+Comment=Browse and manage apps
+Exec=sleep 60; io.elementary.appcenter -s
+Icon=io.elementary.appcenter
+Terminal=false
+Type=Application
+NoDisplay=false
+X-GNOME-AutoRestart=true
+X-GNOME-Autostart-Delay=60
+X-GNOME-Autostart-Phase=Applications

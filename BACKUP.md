@@ -27,12 +27,12 @@
 fisher ls
 ```
 
-## Export VSCode unsaved tab
+## Export Code unsaved tab
 
-## Export VSCode extensions
+## Export Code extensions
 
 ```sh
-code --list-extensions > ~/.dotfiles/config/vscode/extensions.txt
+code --list-extensions > ~/.dotfiles/config/code/extensions.txt
 ```
 
 ## Export Chrome bookmarks

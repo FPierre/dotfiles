@@ -6,7 +6,8 @@
 sudo add-apt-repository ppa:aslatter/ppa \
   && sudo add-apt-repository ppa:fish-shell/release-3 \
   && sudo apt update \
-  && sudo apt install alacritty fish
+  && sudo apt install alacritty=0.13.2+1-20241016T115423~jammy-1cc08ebb fish \
+  && curl -LO --output-dir ~/.config/alacritty https://github.com/catppuccin/alacritty/raw/main/catppuccin-macchiato.toml
 ```
 
 Set Fish as the [default shell](https://fishshell.com/docs/current/tutorial.html#switching-to-fish):
@@ -36,6 +37,10 @@ sudo add-apt-repository -y ppa:git-core/ppa
 
 [Espanso](https://espanso.org/docs/install/linux)
 
+```sh
+espanso install actually-all-emojis
+```
+
 [Bruno](https://www.usebruno.com/downloads)
 
 [eza](https://github.com/eza-community/eza/blob/main/INSTALL.md)
@@ -60,7 +65,25 @@ sudo apt update \
   vlc
 ```
 
-(VScode is not installed with Flatpak due to the path mess it introduce)
+If some sources warn like:
+
+```
+Skipping acquire of configured file 'main/binary-i386/Packages' as repository 'https://brave-browser-apt-release.s3.brave.com stable InRelease' doesn't support architecture 'i386'
+```
+
+[Fix](https://askubuntu.com/a/741411) by adding `arch=amd64`:
+
+```sh
+sudo nano /etc/apt/sources.list.d/brave-browser-release.list
+```
+
+```
+# before
+deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main
+
+# after
+deb [arch=amd64 signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main
+```
 
 ```sh
 flatpak install \
@@ -110,12 +133,13 @@ git clone git@github.com:FPierre/dotfiles.git ~/.dotfiles \
 ```sh
 sudo ln -sfv "$HOME/.dotfiles/config/hosts" /etc/hosts
 
-mkdir ~/.config/alacritty && ln -sfv "$HOME/.dotfiles/config/alacritty/alacritty.yml" "$HOME/.config/alacritty/alacritty.yml"
+ln -sfv "$HOME/.dotfiles/config/fish/abbreviations.fish" "$HOME/.config/fish/abbreviations.fish"
+source ~/.config/fish/abbreviations.fish
+
+mkdir "$HOME/.config/alacritty" && ln -sfv "$HOME/.dotfiles/config/alacritty/alacritty.toml" "$HOME/.config/alacritty/alacritty.toml"
 
 ln -sfv "$HOME/.dotfiles/config/espanso/match/base.yml" "$HOME/.config/espanso/match/base.yml"
 
-ln -sfv "$HOME/.dotfiles/config/fish/abbreviations.fish" "$HOME/.config/fish/abbreviations.fish"
-source ~/.config/fish/abbreviations.fish
 ln -sfv "$HOME/.dotfiles/config/fish/config.fish" "$HOME/.config/fish/config.fish"
 ln -sfv "$HOME/.dotfiles/config/fish/functions/c.fish" "$HOME/.config/fish/functions/c.fish"
 ln -sfv "$HOME/.dotfiles/config/fish/functions/ls.fish" "$HOME/.config/fish/functions/ls.fish"
@@ -125,14 +149,18 @@ ln -sfv "$HOME/.dotfiles/config/starship/starship.toml" "$HOME/.config/starship.
 
 ln -sfv "$HOME/.dotfiles/config/git/.gitconfig" "$HOME/.gitconfig"
 
-ln -sfv "$HOME/.dotfiles/config/vscode/settings.json" "$HOME/.config/Code/User/settings.json"
-ln -sfv "$HOME/.dotfiles/config/vscode/keybindings.json" "$HOME/.config/Code/User/keybindings.json"
+ln -sfv "$HOME/.dotfiles/config/code/settings.json" "$HOME/.config/Code/User/settings.json"
+ln -sfv "$HOME/.dotfiles/config/code/keybindings.json" "$HOME/.config/Code/User/keybindings.json"
+
+ln -sfv "$HOME/.dotfiles/config/touchegg/touchegg.conf" "$HOME/.config/touchegg/touchegg.conf"
+
+cp "$HOME/.dotfiles/config/autostart/io.elementary.appcenter-daemon.desktop" "$HOME/.config/autostart"
 ```
 
-Install VSCode extensions:
+Install Code extensions:
 
 ```sh
-cat config/vscode/extensions.txt | xargs -n 1 code --install-extension
+cat config/code/extensions.txt | xargs -n 1 code --install-extension
 ```
 
 ### Get CLI completions
@@ -142,6 +170,8 @@ cat config/vscode/extensions.txt | xargs -n 1 code --install-extension
 ```sh
 wget -P ~/.config/fish/completions \
   https://raw.githubusercontent.com/fish-shell/fish-shell/master/share/completions/apt.fish \
+  https://raw.githubusercontent.com/fish-shell/fish-shell/master/share/completions/bun.fish \
+  https://raw.githubusercontent.com/fish-shell/fish-shell/master/share/completions/fisher.fish \
   https://raw.githubusercontent.com/fish-shell/fish-shell/master/share/completions/flatpak.fish \
   https://raw.githubusercontent.com/fish-shell/fish-shell/master/share/completions/git.fish \
   https://raw.githubusercontent.com/fish-shell/fish-shell/master/share/completions/kill.fish \
@@ -173,9 +203,11 @@ fisher install lgathy/google-cloud-sdk-fish-completion
 
 ```sh
 curl -fsSL https://fnm.vercel.app/install | bash \
-  && fnm install v20 \
-  && npm install -g yarn \
-  && fnm completions --shell fish > ~/.config/fish/completions/fnm.fish
+  && fnm install v22 \
+  && npm install -g yarn pnpm \
+  && fnm completions --shell fish > ~/.config/fish/completions/fnm.fish \
+  && pnpm completion fish > ~/.config/fish/completions/pnpm.fish \
+  && yarn global add netlify-cli http-server grunt-cli firebase-tools drizzle-kit create-vite @nestjs/cli
 ```
 
 ```sh
@@ -228,7 +260,7 @@ gsettings set org.gnome.settings-daemon.plugins.media-keys www "['<Primary><Alt>
 gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/']"
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ binding '<Primary><Alt>r'
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ command '/usr/bin/code'
-gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ name 'VSCode'
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ name 'Code'
 ```
 
 ```sh
@@ -237,11 +269,14 @@ gsettings set org.gnome.mutter center-new-windows true
 gsettings set org.gnome.mutter dynamic-workspaces false
 ```
 
-To move window to another workspace, it is possible their is a conflict with "Window > View split on left/right". Remove shortkey ctrl+command+left/right on them
+Their is a conflict with shortkey to "move window to another workspace" with "Window > View split on left/right". Remove shortkey `ctrl+super+left` and `ctrl+super+right` on them:
+
+```sh
+gsettings set org.gnome.desktop.wm.keybindings move-to-monitor-left @as\ \[\]
+gsettings set org.gnome.desktop.wm.keybindings move-to-monitor-right @as\ \[\]
+```
 
 ## Touchpad configuration
-
-- Install [Touché](https://flathub.org/apps/details/com.github.joseexposito.touche)
 
 ![Screenshot from 2023-01-27 08-17-10](https://user-images.githubusercontent.com/3307327/215030385-267e9a6d-6391-4bba-bb9c-180754bece9e.png)
 
@@ -294,17 +329,15 @@ To move window to another workspace, it is possible their is a conflict with "Wi
 
 [App](https://mega.io/desktop)
 
-Configuration:
+Sync configuration:
 
 |   Local   |   Mega    |
 | :-------: | :-------: |
 | .dotfiles | .dotfiles |
 |   .ssh    |   .ssh    |
-|  Desktop  |  Desktop  |
 | Documents | Documents |
 | Downloads | Downloads |
 | Pictures  | Pictures  |
-| Workspace | Workspace |
 
 ```
 *.crdownload
@@ -339,44 +372,11 @@ nano ~/.config/user-dirs.dirs
 echo "enabled=false" > ~/.config/user-dirs.conf
 ```
 
-## Touchpad behaviors
-
-At the end, the touchpad should behave like:
-
-- Go back: 3 fingers swipe on left
-- Go next: 3 fingers swipe on right
-
-## Keyboard behaviors
-
-At the end, the keyboard should behave like:
-
-### OS
-
-- Navigate through workspaces: `ctrl` + `alt` + `key up|right|down|left`
-- Move window through workspaces: `ctrl` + `super` + `key up|right|down|left`
-- Open universal search: `super`
-- Open file browser: `ctrl` + `alt` + `z`
-- Open browser: `ctrl` + `alt` + `e`
-- Open IDE: `ctrl` + `alt` + `r`
-- Open terminal: `ctrl` + `alt` + `t`
-- Navigate on open windows on the same workspace: `alt` + `tab`
-
-### Browser
-
-- Open a new tab: `ctrl` + `t`
-- Close a tab: `ctrl` + `w`
-- Reload a tab: `ctrl` + `r`
-- Move a tab: `ctrl` + `shift` + `key up|down`
-- Navigate on tabs: `ctrl` + `key up|down`
-
-### IDE
-
-- Move a line: `alt` + `key up|down`
-- Duplicate a line: `ctrl` + `shift` + `alt` + `key up|down`
-
 ## Install others tools
 
 ### [Google Cloud CLI](https://cloud.google.com/sdk/docs/install#deb)
+
+### [Firefoo](https://github.com/mltek/firefoo-releases/releases)
 
 ### Firebase CLI
 
@@ -400,7 +400,42 @@ sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt '(lsb_release -cs)
   wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
 ```
 
-## Fix issues
+## Touchpad behaviors
+
+The touchpad should behave like:
+
+- Go back: 3 fingers swipe on left
+- Go next: 3 fingers swipe on right
+
+### Keyboard behaviors
+
+The keyboard should behave like:
+
+### OS
+
+- Navigate through workspaces: `ctrl` + `alt` + `key up|right|down|left`
+- Move window through workspaces: `ctrl` + `super` + `key up|right|down|left`
+- Open universal search: `super`
+- Open file browser: `ctrl` + `alt` + `z`
+- Open browser: `ctrl` + `alt` + `e`
+- Open IDE: `ctrl` + `alt` + `r`
+- Open terminal: `ctrl` + `alt` + `t`
+- Navigate on open windows on the same workspace: `alt` + `tab`
+
+### Browser
+
+- Open a new tab: `ctrl` + `t`
+- Close a tab: `ctrl` + `w`
+- Reload a tab: `ctrl` + `r`
+- Move a tab: `ctrl` + `shift` + `key up|down`
+- Navigate on tabs: `ctrl` + `key up|down`
+
+### Code
+
+- Move a line: `alt` + `key up|down`
+- Duplicate a line: `ctrl` + `shift` + `alt` + `key up|down`
+
+## Possibles issues
 
 ### Screen flicker on battery
 
