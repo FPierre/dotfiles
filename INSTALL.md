@@ -1,5 +1,7 @@
 # Install
 
+> Needed: Yubikey, phone with 2FA, Bitwarden master password
+
 ## Install Alacritty, Fish and Fisher
 
 ```sh
@@ -46,6 +48,8 @@ espanso install actually-all-emojis
 [eza](https://github.com/eza-community/eza/blob/main/INSTALL.md)
 
 [btm](https://github.com/ClementTsang/bottom?tab=readme-ov-file#debian--ubuntu)
+
+[TablePlus](https://tableplus.com/blog/2019/10/tableplus-linux-installation.html)
 
 And:
 
@@ -101,15 +105,21 @@ Configure Powertop:
 sudo powertop
 ```
 
+### Setup Bitwarden extension on Chrome
+
+- Install the extension
+- Connect to Bitwarden
+
 ### Restore SSH and GPG
 
-(Copy the passphrase)
+(Copy the SSH passphrase)
 
 ```sh
 mkdir ~/.ssh \
-  && cp /media/pierre/SanDisk\ 256Go/Backup/ssh/* ~/.ssh/ \
-  && sudo chmod 600 ~/.ssh/id_rsa ~/.ssh/config ~/.ssh/known_hosts \
-  && sudo chmod 644 ~/.ssh/id_rsa.pub
+  && cp /media/pierre/SanDisk\ 256Go/Backup/.ssh/* ~/.ssh/ \
+  && sudo chmod 600 ~/.ssh/id_ed25519 ~/.ssh/known_hosts \
+  && sudo chmod 644 ~/.ssh/id_ed25519.pub \
+  && ssh-add ~/.ssh/id_ed25519
 ```
 
 (Copy the passphrase)
@@ -199,7 +209,7 @@ fisher install lgathy/google-cloud-sdk-fish-completion
 
 ## Install Node.js environment
 
-[Install fnm](https://github.com/Schniz/fnm#using-a-script-macoslinux), Node.js and Yarn:
+Install [fnm](https://github.com/Schniz/fnm#using-a-script-macoslinux), Node.js and Yarn:
 
 ```sh
 curl -fsSL https://fnm.vercel.app/install | bash \
@@ -210,11 +220,12 @@ curl -fsSL https://fnm.vercel.app/install | bash \
   && yarn global add netlify-cli http-server grunt-cli firebase-tools drizzle-kit create-vite @nestjs/cli
 ```
 
+Restart the terminal, then:
+
 ```sh
-cat << EOF > ~/.config/fish/conf.d/fnm.fish
-set PATH /home/pierre/.fnm $PATH
-fnm env --use-on-cd | source
-EOF
+fnm install v20 \
+  && npm install -g yarn \
+  && fnm completions --shell fish > ~/.config/fish/completions/fnm.fish
 ```
 
 ## OS configuration
@@ -382,13 +393,6 @@ echo "enabled=false" > ~/.config/user-dirs.conf
 
 ```sh
 yarn global add firebase-tools
-```
-
-### [TablePlus](https://tableplus.com/blog/2019/10/tableplus-linux-installation.html)
-
-```sh
-wget -qO - http://deb.tableplus.com/apt.tableplus.com.gpg.key | sudo apt-key add - \
-  && sudo add-apt-repository "deb [arch=amd64] https://deb.tableplus.com/debian/22 tableplus main"
 ```
 
 ### PostgreSQL server: via Docker (over `apt`)
