@@ -33,24 +33,18 @@ matches:
   - triggers: [":partnerOrgId", ":partnerorgid"]
     replace: "pierrePartnerOrg----"
 
-  - trigger: ":email"
-    replace: "pierre.flauder@arsen.co"
-  - trigger: ":12ft"
-    replace: "https://12ft.io/"
-  - triggers: [":changelog", ":release"]
-    replace: "https://keepachangelog.com/en/1.0.0/"
   - triggers: [":warning", ":danger"]
     replace: "⚠️"
   - trigger: ":check"
     replace: "✅"
   - trigger: ":star"
     replace: "⭐"
-  - trigger: ":clock"
-    replace: "🕒"
   - trigger: ":brain"
     replace: "🧠"
   - triggers: [":death", ":skull"]
     replace: "💀"
+  - trigger: ":clock"
+    replace: "🕑"
   - trigger: ":hourglass"
     replace: "⏳"
   - trigger: ":fire"
@@ -59,15 +53,21 @@ matches:
     replace: "🤔"
   - trigger: ":rocket"
     replace: "🚀"
+  - trigger: ":bug"
+    replace: "🐞"
+  - trigger: ":mail"
+    replace: "✉️"
   - trigger: ":idea"
     replace: "💡"
   - trigger: ":stop"
     replace: "🚫"
   - trigger: ":lock"
     replace: "🔒"
+  - trigger: ":sparkles"
+    replace: "✨"
   - trigger: ":boom"
     replace: "💥"
-  - triggers: [":wip", ":construction"]
+  - triggers: [":wip", ":work"]
     replace: "🚧"
   - triggers: [":hammer", ":tool"]
     replace: "⚒️"
@@ -85,13 +85,14 @@ matches:
     replace: "🇫🇷"
   - trigger: ":en"
     replace: "🇬🇧"
-  - trigger: ":uuid"
-    replace: "{{output}}"
-    vars:
-      - name: output
-        type: shell
-        params:
-          cmd: "uuidgen"
+  - trigger: ":gh-release"
+    replace: "gh release create v2.3.4 --generate-notes"
+  - trigger: ":email"
+    replace: "pierre.flauder@arsen.co"
+  - trigger: ":12ft"
+    replace: "https://12ft.io/"
+  - triggers: [":changelog", ":release"]
+    replace: "https://keepachangelog.com/en/1.0.0/"
   - trigger: ":commit"
     replace: "build:"
   - trigger: ":commit"

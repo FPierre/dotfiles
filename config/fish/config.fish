@@ -5,6 +5,14 @@ set -g -x fish_greeting ''
 # https://github.com/fish-shell/fish-shell/issues/5593
 bind \cd true
 
+# Check if SSH agent is running, if not, start it
+if not pgrep -u (id -u) ssh-agent > /dev/null
+  eval (ssh-agent -c)
+end
+
+# Automatically add SSH key
+ssh-add ~/.ssh/id_ed25519 2>/dev/null
+
 # Starship
 starship init fish | source
 
@@ -19,8 +27,6 @@ starship init fish | source
 # Declare global bin path
 # Found with: yarn global bin
 set -gx PATH $PATH:/home/pierre/.yarn/bin
-
-# Zed
 
 abbr -a exti exit
 abbr -a gti git
@@ -48,3 +54,7 @@ if not string match -q -- $PNPM_HOME $PATH
   set -gx PATH "$PNPM_HOME" $PATH
 end
 # pnpm end
+
+# encore
+set --export ENCORE_INSTALL "$HOME/.encore"
+set --export PATH $ENCORE_INSTALL/bin $PATH

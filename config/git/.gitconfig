@@ -1,3 +1,4 @@
+# https://blog.gitbutler.com/how-git-core-devs-configure-git/
 [user]
   email = pflauder@gmail.com
   name = FPierre
@@ -5,6 +6,7 @@
   editor = nano
 [color]
   ui = auto
+  excludesfile
 [alias]
   co = checkout
   br = branch
@@ -17,6 +19,25 @@
 [pull]
   rebase = false
 [push]
-	default = current
+  default = simple
+  autoSetupRemote = true
+  followTags = true
+[column]
+  ui = auto
+[branch]
+  sort = -committerdate
+[tag]
+  sort = version:refname
 [init]
-	defaultBranch = main
+  defaultBranch = main
+[diff]
+  algorithm = histogram
+  colorMoved = plain
+  mnemonicPrefix = true
+  renames = true
+[fetch]
+  prune = true
+  pruneTags = true
+  all = true
+[help]
+  autocorrect = prompt

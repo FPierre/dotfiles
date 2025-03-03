@@ -8,7 +8,7 @@
 sudo add-apt-repository ppa:aslatter/ppa \
   && sudo add-apt-repository ppa:fish-shell/release-3 \
   && sudo apt update \
-  && sudo apt install alacritty=0.13.2+1-20241016T115423~jammy-1cc08ebb fish \
+  && sudo apt install alacritty=0.13.2+1-20241021T050102~jammy-6dbd785b fish \
   && curl -LO --output-dir ~/.config/alacritty https://github.com/catppuccin/alacritty/raw/main/catppuccin-macchiato.toml
 ```
 
@@ -29,6 +29,12 @@ GIT:
 
 ```sh
 sudo add-apt-repository -y ppa:git-core/ppa
+```
+
+```sh
+wget -qO- https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo tee /etc/apt/keyrings/githubcli-archive-keyring.gpg > /dev/null \
+  && sudo chmod go+r /etc/apt/keyrings/githubcli-archive-keyring.gpg \
+  && echo "deb [arch=amd64 signed-by=/etc/apt/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
 ```
 
 [Starship](https://starship.rs/guide/#%F0%9F%9A%80-installation)
@@ -62,6 +68,7 @@ sudo apt update \
   code \
   fonts-firacode \
   git \
+  gh \
   gnome-tweaks \
   powertop \
   preload \
@@ -179,6 +186,7 @@ cat config/code/extensions.txt | xargs -n 1 code --install-extension
 
 ```sh
 wget -P ~/.config/fish/completions \
+  https://raw.githubusercontent.com/fish-shell/fish-shell/master/share/completions/apt-get.fish \
   https://raw.githubusercontent.com/fish-shell/fish-shell/master/share/completions/apt.fish \
   https://raw.githubusercontent.com/fish-shell/fish-shell/master/share/completions/bun.fish \
   https://raw.githubusercontent.com/fish-shell/fish-shell/master/share/completions/fisher.fish \

@@ -79,13 +79,18 @@
   "workbench.tree.indent": 20,
   "editor.inlineSuggest.enabled": true,
   "github.copilot.enable": {
-    "*": false,
+    "*": true,
     "plaintext": true,
     "markdown": true,
     "scminput": false,
     "mdx": true,
     "yaml": false,
-    "typescript": true
+    "typescript": true,
+    "vue": true,
+    "css": true,
+    "html": true,
+    "json": true,
+    "javascript": true
   },
   "security.workspace.trust.untrustedFiles": "open",
   "javascript.updateImportsOnFileMove.enabled": "always",
@@ -107,6 +112,7 @@
     "Modulithe",
     "nestjs",
     "Onboarded",
+    "openai",
     "postgres",
     "prisma",
     "totp",
@@ -119,6 +125,7 @@
   ],
   "prettier.vueIndentScriptAndStyle": true,
   "cSpell.ignorePaths": [
+    "/home/pierre/Documents/Arsen/TODO.md",
     ".git/objects",
     ".vscode",
     ".vscode-insiders",
@@ -129,7 +136,6 @@
     "yarn.lock"
   ],
   "cSpell.language": "en,fr",
-  "cSpell.enableFiletypes": ["astro"],
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "eslint.experimental.useFlatConfig": true,
@@ -139,7 +145,6 @@
   },
   "window.zoomPerWindow": false,
   "workbench.editor.enablePreview": false,
-  "github.copilot.editor.enableAutoCompletions": true,
   "editor.minimap.enabled": false,
   "markdown.copyFiles.destination": {
     "**/*": "${documentWorkspaceFolder}/attachments/"
@@ -150,10 +155,6 @@
   "workbench.activityBar.location": "top",
   "workbench.layoutControl.enabled": false,
   "window.commandCenter": false,
-  "[astro]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "workbench.iconTheme": "material-icon-theme",
   "material-icon-theme.activeIconPack": "nest",
   "material-icon-theme.saturation": 0.75,
   "material-icon-theme.folders.color": "#777",
@@ -185,5 +186,20 @@
     "scripts": "",
     "validators": "",
     "workflows": ""
-  }
+  },
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/dist": true
+  },
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/node_modules/**": true
+  },
+  "security.promptForLocalFileProtocolHandling": false,
+  "[astro]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "cSpell.languageSettings": [],
+  "eslint.execArgv": ["--max-old-space-size=6144"]
 }
