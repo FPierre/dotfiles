@@ -6,9 +6,9 @@
 
 ```sh
 sudo add-apt-repository ppa:aslatter/ppa \
-  && sudo add-apt-repository ppa:fish-shell/release-3 \
+  && sudo add-apt-repository ppa:fish-shell/release-4 \
   && sudo apt update \
-  && sudo apt install alacritty=0.13.2+1-20241021T050102~jammy-6dbd785b fish \
+  && sudo apt install alacritty fish \
   && curl -LO --output-dir ~/.config/alacritty https://github.com/catppuccin/alacritty/raw/main/catppuccin-macchiato.toml
 ```
 
@@ -231,7 +231,7 @@ curl -fsSL https://fnm.vercel.app/install | bash \
 Restart the terminal, then:
 
 ```sh
-fnm install v20 \
+fnm install v22 \
   && npm install -g yarn \
   && fnm completions --shell fish > ~/.config/fish/completions/fnm.fish
 ```
