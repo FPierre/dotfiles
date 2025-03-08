@@ -1,6 +1,6 @@
 # Install
 
-> Needed: Yubikey, phone with 2FA, Bitwarden master password
+> Needed: Yubikey, phone with 2FA, Bitwarden master password, ssh from backup
 
 ## Install Alacritty, Fish and Fisher
 
@@ -15,8 +15,7 @@ sudo add-apt-repository ppa:aslatter/ppa \
 Set Fish as the [default shell](https://fishshell.com/docs/current/tutorial.html#switching-to-fish):
 
 ```sh
-echo /usr/bin/fish | sudo tee -a /etc/shells \
-  && chsh -s /usr/bin/fish
+echo /usr/bin/fish | sudo tee -a /etc/shells && chsh -s /usr/bin/fish
 ```
 
 ```sh
@@ -37,7 +36,11 @@ wget -qO- https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo t
   && echo "deb [arch=amd64 signed-by=/etc/apt/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
 ```
 
-[Starship](https://starship.rs/guide/#%F0%9F%9A%80-installation)
+Starship:
+
+```sh
+curl -sS https://starship.rs/install.sh | sh
+```
 
 [Brave](https://brave.com/linux/#release-channel-installation)
 
@@ -150,9 +153,6 @@ git clone git@github.com:FPierre/dotfiles.git ~/.dotfiles \
 ```sh
 sudo ln -sfv "$HOME/.dotfiles/config/hosts" /etc/hosts
 
-ln -sfv "$HOME/.dotfiles/config/fish/abbreviations.fish" "$HOME/.config/fish/abbreviations.fish"
-source ~/.config/fish/abbreviations.fish
-
 mkdir "$HOME/.config/alacritty" && ln -sfv "$HOME/.dotfiles/config/alacritty/alacritty.toml" "$HOME/.config/alacritty/alacritty.toml"
 
 ln -sfv "$HOME/.dotfiles/config/espanso/match/base.yml" "$HOME/.config/espanso/match/base.yml"
@@ -226,14 +226,6 @@ curl -fsSL https://fnm.vercel.app/install | bash \
   && fnm completions --shell fish > ~/.config/fish/completions/fnm.fish \
   && pnpm completion fish > ~/.config/fish/completions/pnpm.fish \
   && yarn global add netlify-cli http-server grunt-cli firebase-tools drizzle-kit create-vite @nestjs/cli
-```
-
-Restart the terminal, then:
-
-```sh
-fnm install v22 \
-  && npm install -g yarn \
-  && fnm completions --shell fish > ~/.config/fish/completions/fnm.fish
 ```
 
 ## OS configuration
@@ -352,11 +344,7 @@ Sync configuration:
 
 |   Local   |   Mega    |
 | :-------: | :-------: |
-| .dotfiles | .dotfiles |
-|   .ssh    |   .ssh    |
 | Documents | Documents |
-| Downloads | Downloads |
-| Pictures  | Pictures  |
 
 ```
 *.crdownload
@@ -397,12 +385,6 @@ echo "enabled=false" > ~/.config/user-dirs.conf
 
 ### [Firefoo](https://github.com/mltek/firefoo-releases/releases)
 
-### Firebase CLI
-
-```sh
-yarn global add firebase-tools
-```
-
 ### PostgreSQL server: via Docker (over `apt`)
 
 ### [PostgreSQL client](https://www.postgresql.org/download/linux/ubuntu/)
@@ -414,14 +396,14 @@ sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt '(lsb_release -cs)
 
 ## Touchpad behaviors
 
-The touchpad should behave like:
+The touchpad should:
 
 - Go back: 3 fingers swipe on left
 - Go next: 3 fingers swipe on right
 
 ### Keyboard behaviors
 
-The keyboard should behave like:
+The keyboard should:
 
 ### OS
 
