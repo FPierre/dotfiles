@@ -122,7 +122,7 @@ sudo powertop
 (Copy the SSH passphrase)
 
 ```sh
-mkdir ~/.ssh \
+mkdir -p ~/.ssh \
   && cp /media/pierre/SanDisk\ 256Go/Backup/.ssh/* ~/.ssh/ \
   && sudo chmod 600 ~/.ssh/id_ed25519 ~/.ssh/known_hosts \
   && sudo chmod 644 ~/.ssh/id_ed25519.pub \
