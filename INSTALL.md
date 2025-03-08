@@ -153,7 +153,7 @@ git clone git@github.com:FPierre/dotfiles.git ~/.dotfiles \
 ```sh
 sudo ln -sfv "$HOME/.dotfiles/config/hosts" /etc/hosts
 
-mkdir "$HOME/.config/alacritty" && ln -sfv "$HOME/.dotfiles/config/alacritty/alacritty.toml" "$HOME/.config/alacritty/alacritty.toml"
+mkdir -p "$HOME/.config/alacritty" && ln -sfv "$HOME/.dotfiles/config/alacritty/alacritty.toml" "$HOME/.config/alacritty/alacritty.toml"
 
 ln -sfv "$HOME/.dotfiles/config/espanso/match/base.yml" "$HOME/.config/espanso/match/base.yml"
 
