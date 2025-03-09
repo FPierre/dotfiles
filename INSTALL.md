@@ -9,7 +9,7 @@ sudo add-apt-repository ppa:aslatter/ppa \
   && sudo add-apt-repository ppa:fish-shell/release-4 \
   && sudo apt update \
   && sudo apt install alacritty fish \
-  && mkdir -p ~/.config/alacritty
+  && mkdir -p ~/.config/alacritty \
   && curl -LO --output-dir ~/.config/alacritty https://github.com/catppuccin/alacritty/raw/main/catppuccin-macchiato.toml
 ```
 
