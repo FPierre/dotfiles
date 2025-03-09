@@ -23,7 +23,9 @@ echo /usr/bin/fish | sudo tee -a /etc/shells && chsh -s /usr/bin/fish
 ## Install GIT and restore SSH and GPG
 
 ```sh
-sudo add-apt-repository -y ppa:git-core/ppa
+sudo add-apt-repository -y ppa:git-core/ppa \
+  && sudo apt update \
+  && sudo apt install -y git
 ```
 
 ```sh
