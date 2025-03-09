@@ -146,6 +146,7 @@ mkdir -p "$HOME/.config/alacritty" && ln -sfv "$HOME/.dotfiles/config/alacritty/
 
 ln -sfv "$HOME/.dotfiles/config/espanso/match/base.yml" "$HOME/.config/espanso/match/base.yml"
 
+mkdir -p "$HOME/.config/fish"
 ln -sfv "$HOME/.dotfiles/config/fish/config.fish" "$HOME/.config/fish/config.fish"
 ln -sfv "$HOME/.dotfiles/config/fish/functions/c.fish" "$HOME/.config/fish/functions/c.fish"
 ln -sfv "$HOME/.dotfiles/config/fish/functions/ls.fish" "$HOME/.config/fish/functions/ls.fish"
