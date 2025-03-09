@@ -68,8 +68,6 @@ git clone git@github.com:FPierre/dotfiles.git ~/.dotfiles \
 espanso install actually-all-emojis
 ```
 
-[Bruno](https://www.usebruno.com/downloads)
-
 [eza](https://github.com/eza-community/eza/blob/main/INSTALL.md)
 
 [btm](https://github.com/ClementTsang/bottom?tab=readme-ov-file#debian--ubuntu)
@@ -122,6 +120,7 @@ flatpak install \
   com.github.joseexposito.touche \
   com.slack.Slack \
   com.spotify.Client \
+  com.usebruno.Bruno \
   com.boxy_svg.BoxySVG
 ```
 
