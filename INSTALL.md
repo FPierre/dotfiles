@@ -1,34 +1,31 @@
 # Install
 
-> Needed: Yubikey, phone with 2FA, Bitwarden master password
+> Needed: Yubikey, phone with 2FA, Bitwarden master password, ssh from backup
 
-## Install Alacritty, Fish and Fisher
+## Install Alacritty, Fish and Starship
 
 ```sh
 sudo add-apt-repository ppa:aslatter/ppa \
   && sudo add-apt-repository ppa:fish-shell/release-4 \
   && sudo apt update \
-  && sudo apt install alacritty fish \
-  && curl -LO --output-dir ~/.config/alacritty https://github.com/catppuccin/alacritty/raw/main/catppuccin-macchiato.toml
+  && sudo apt install alacritty=0.15.1+1-20250317T050111~jammy-5a68e98d fish \
+  && mkdir -p ~/.config/alacritty \
+  && curl -LO --output-dir ~/.config/alacritty https://github.com/catppuccin/alacritty/raw/main/catppuccin-macchiato.toml \
+  && curl -sS https://starship.rs/install.sh | sh
 ```
 
 Set Fish as the [default shell](https://fishshell.com/docs/current/tutorial.html#switching-to-fish):
 
 ```sh
-echo /usr/bin/fish | sudo tee -a /etc/shells \
-  && chsh -s /usr/bin/fish
+echo /usr/bin/fish | sudo tee -a /etc/shells && chsh -s /usr/bin/fish
 ```
 
-```sh
-curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
-```
-
-## Install main packages
-
-GIT:
+## Install GIT and restore SSH and GPG
 
 ```sh
-sudo add-apt-repository -y ppa:git-core/ppa
+sudo add-apt-repository -y ppa:git-core/ppa \
+  && sudo apt update \
+  && sudo apt install -y git
 ```
 
 ```sh
@@ -37,7 +34,31 @@ wget -qO- https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo t
   && echo "deb [arch=amd64 signed-by=/etc/apt/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
 ```
 
-[Starship](https://starship.rs/guide/#%F0%9F%9A%80-installation)
+(Copy the SSH passphrase)
+
+```sh
+mkdir -p ~/.ssh \
+  && cp /media/pierre/SanDisk\ 256Go/Backup/.ssh/* ~/.ssh/ \
+  && sudo chmod 600 ~/.ssh/id_ed25519 ~/.ssh/known_hosts \
+  && sudo chmod 644 ~/.ssh/id_ed25519.pub \
+  && ssh-add ~/.ssh/id_ed25519
+```
+
+(Copy the passphrase)
+
+```sh
+gpg --import /media/pierre/SanDisk\ 256Go/Backup/gpg/gpg.pub.asc
+gpg --import /media/pierre/SanDisk\ 256Go/Backup/gpg/gpg.priv.asc
+gpg --import /media/pierre/SanDisk\ 256Go/Backup/gpg/gpg.sub_priv.asc
+gpg --import-ownertrust /media/pierre/SanDisk\ 256Go/Backup/gpg/ownertrust.txt
+```
+
+```sh
+git clone git@github.com:FPierre/dotfiles.git ~/.dotfiles \
+  && cd ~/.dotfiles
+```
+
+## Install softwares
 
 [Brave](https://brave.com/linux/#release-channel-installation)
 
@@ -48,8 +69,6 @@ wget -qO- https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo t
 ```sh
 espanso install actually-all-emojis
 ```
-
-[Bruno](https://www.usebruno.com/downloads)
 
 [eza](https://github.com/eza-community/eza/blob/main/INSTALL.md)
 
@@ -103,6 +122,7 @@ flatpak install \
   com.github.joseexposito.touche \
   com.slack.Slack \
   com.spotify.Client \
+  com.usebruno.Bruno \
   com.boxy_svg.BoxySVG
 ```
 
@@ -117,46 +137,16 @@ sudo powertop
 - Install the extension
 - Connect to Bitwarden
 
-### Restore SSH and GPG
-
-(Copy the SSH passphrase)
-
-```sh
-mkdir ~/.ssh \
-  && cp /media/pierre/SanDisk\ 256Go/Backup/.ssh/* ~/.ssh/ \
-  && sudo chmod 600 ~/.ssh/id_ed25519 ~/.ssh/known_hosts \
-  && sudo chmod 644 ~/.ssh/id_ed25519.pub \
-  && ssh-add ~/.ssh/id_ed25519
-```
-
-(Copy the passphrase)
-
-```sh
-gpg --import /media/pierre/SanDisk\ 256Go/Backup/gpg/gpg.pub.asc
-gpg --import /media/pierre/SanDisk\ 256Go/Backup/gpg/gpg.priv.asc
-gpg --import /media/pierre/SanDisk\ 256Go/Backup/gpg/gpg.sub_priv.asc
-gpg --import-ownertrust /media/pierre/SanDisk\ 256Go/Backup/gpg/ownertrust.txt
-```
-
-### Clone this repository
-
-```sh
-git clone git@github.com:FPierre/dotfiles.git ~/.dotfiles \
-  && cd ~/.dotfiles
-```
-
 ### Links to existing configurations
 
 ```sh
 sudo ln -sfv "$HOME/.dotfiles/config/hosts" /etc/hosts
 
-ln -sfv "$HOME/.dotfiles/config/fish/abbreviations.fish" "$HOME/.config/fish/abbreviations.fish"
-source ~/.config/fish/abbreviations.fish
-
-mkdir "$HOME/.config/alacritty" && ln -sfv "$HOME/.dotfiles/config/alacritty/alacritty.toml" "$HOME/.config/alacritty/alacritty.toml"
+mkdir -p "$HOME/.config/alacritty" && ln -sfv "$HOME/.dotfiles/config/alacritty/alacritty.toml" "$HOME/.config/alacritty/alacritty.toml"
 
 ln -sfv "$HOME/.dotfiles/config/espanso/match/base.yml" "$HOME/.config/espanso/match/base.yml"
 
+mkdir -p "$HOME/.config/fish" && mkdir -p "$HOME/.config/fish/functions"
 ln -sfv "$HOME/.dotfiles/config/fish/config.fish" "$HOME/.config/fish/config.fish"
 ln -sfv "$HOME/.dotfiles/config/fish/functions/c.fish" "$HOME/.config/fish/functions/c.fish"
 ln -sfv "$HOME/.dotfiles/config/fish/functions/ls.fish" "$HOME/.config/fish/functions/ls.fish"
@@ -208,11 +198,9 @@ wget -P ~/.config/fish/completions \
 [gcloud completion](https://github.com/lgathy/google-cloud-sdk-fish-completion):
 
 ```sh
-curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
-```
-
-```sh
-fisher install lgathy/google-cloud-sdk-fish-completion
+curl -sL https://git.io/fisher | source \
+  && fisher install jorgebucaran/fisher \
+  && fisher install lgathy/google-cloud-sdk-fish-completion
 ```
 
 ## Install Node.js environment
@@ -226,14 +214,6 @@ curl -fsSL https://fnm.vercel.app/install | bash \
   && fnm completions --shell fish > ~/.config/fish/completions/fnm.fish \
   && pnpm completion fish > ~/.config/fish/completions/pnpm.fish \
   && yarn global add netlify-cli http-server grunt-cli firebase-tools drizzle-kit create-vite @nestjs/cli
-```
-
-Restart the terminal, then:
-
-```sh
-fnm install v22 \
-  && npm install -g yarn \
-  && fnm completions --shell fish > ~/.config/fish/completions/fnm.fish
 ```
 
 ## OS configuration
@@ -352,11 +332,7 @@ Sync configuration:
 
 |   Local   |   Mega    |
 | :-------: | :-------: |
-| .dotfiles | .dotfiles |
-|   .ssh    |   .ssh    |
 | Documents | Documents |
-| Downloads | Downloads |
-| Pictures  | Pictures  |
 
 ```
 *.crdownload
@@ -397,12 +373,6 @@ echo "enabled=false" > ~/.config/user-dirs.conf
 
 ### [Firefoo](https://github.com/mltek/firefoo-releases/releases)
 
-### Firebase CLI
-
-```sh
-yarn global add firebase-tools
-```
-
 ### PostgreSQL server: via Docker (over `apt`)
 
 ### [PostgreSQL client](https://www.postgresql.org/download/linux/ubuntu/)
@@ -414,14 +384,14 @@ sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt '(lsb_release -cs)
 
 ## Touchpad behaviors
 
-The touchpad should behave like:
+The touchpad should:
 
 - Go back: 3 fingers swipe on left
 - Go next: 3 fingers swipe on right
 
 ### Keyboard behaviors
 
-The keyboard should behave like:
+The keyboard should:
 
 ### OS
 
