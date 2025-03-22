@@ -2,8 +2,8 @@ astro-build.astro-vscode
 bradlc.vscode-tailwindcss
 bruno-api-client.bruno
 dbaeumer.vscode-eslint
+ellreka.tailwindcss-highlight
 esbenp.prettier-vscode
-exodiusstudios.comment-anchors
 github.copilot
 github.copilot-chat
 lukas-tr.materialdesignicons-intellisense
@@ -19,3 +19,4 @@ unifiedjs.vscode-mdx
 vue.volar
 waderyan.gitblame
 wayou.vscode-todo-highlight
+yoavbls.pretty-ts-errors

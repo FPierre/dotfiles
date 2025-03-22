@@ -79,7 +79,6 @@
   "workbench.tree.indent": 20,
   "editor.inlineSuggest.enabled": true,
   "github.copilot.enable": {
-    "*": true,
     "plaintext": true,
     "markdown": true,
     "scminput": false,
@@ -90,7 +89,8 @@
     "css": true,
     "html": true,
     "json": true,
-    "javascript": true
+    "javascript": true,
+    "*": false
   },
   "security.workspace.trust.untrustedFiles": "open",
   "javascript.updateImportsOnFileMove.enabled": "always",
@@ -99,6 +99,7 @@
     "arsen",
     "Bitwarden",
     "composables",
+    "deepl",
     "délivrabilité",
     "Dsync",
     "dtos",
@@ -155,38 +156,6 @@
   "workbench.activityBar.location": "top",
   "workbench.layoutControl.enabled": false,
   "window.commandCenter": false,
-  "material-icon-theme.activeIconPack": "nest",
-  "material-icon-theme.saturation": 0.75,
-  "material-icon-theme.folders.color": "#777",
-  "material-icon-theme.opacity": 0.9,
-  "material-icon-theme.files.associations": {
-    "*.controller.ts": "Http",
-    "*.gateway.ts": "",
-    "*.module.ts": "",
-    "controller.api.ts": "Http"
-  },
-  "material-icon-theme.folders.associations": {
-    ".github": "",
-    ".husky": "",
-    ".vscode": "",
-    "core": "",
-    "custom": "",
-    "decorators": "",
-    "docker": "",
-    "drizzle": "",
-    "env": "",
-    "environments": "",
-    "firebase": "",
-    "fixtures": "",
-    "guards": "",
-    "jwt": "",
-    "models": "",
-    "node_modules": "",
-    "pipes": "",
-    "scripts": "",
-    "validators": "",
-    "workflows": ""
-  },
   "search.exclude": {
     "**/node_modules": true,
     "**/dist": true
@@ -201,5 +170,17 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "cSpell.languageSettings": [],
-  "eslint.execArgv": ["--max-old-space-size=6144"]
+  "eslint.execArgv": ["--max-old-space-size=6144"],
+  "github.copilot.chat.reviewSelection.enabled": false,
+  "github.copilot.chat.copilotDebugCommand.enabled": false,
+  "github.copilot.chat.codeGeneration.useInstructionFiles": false,
+  "github.copilot.renameSuggestions.triggerAutomatically": false,
+  "github.copilot.editor.enableCodeActions": false,
+  "github.copilot.chat.useProjectTemplates": false,
+  "github.copilot.chat.fixTestFailure.enabled": false,
+  "github.copilot.chat.followUps": "never",
+  "github.copilot.chat.startDebugging.enabled": false,
+  "github.copilot.chat.edits.suggestRelatedFilesForTests": false,
+  "github.copilot.chat.edits.suggestRelatedFilesFromGitHistory": false,
+  "github.copilot.chat.setupTests.enabled": false
 }
