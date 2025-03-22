@@ -8,7 +8,7 @@
 sudo add-apt-repository ppa:aslatter/ppa \
   && sudo add-apt-repository ppa:fish-shell/release-4 \
   && sudo apt update \
-  && sudo apt install alacritty fish \
+  && sudo apt install alacritty=0.15.1+1-20250317T050111~jammy-5a68e98d fish \
   && mkdir -p ~/.config/alacritty \
   && curl -LO --output-dir ~/.config/alacritty https://github.com/catppuccin/alacritty/raw/main/catppuccin-macchiato.toml \
   && curl -sS https://starship.rs/install.sh | sh
