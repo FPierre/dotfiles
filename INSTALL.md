@@ -198,15 +198,9 @@ wget -P ~/.config/fish/completions \
 [gcloud completion](https://github.com/lgathy/google-cloud-sdk-fish-completion):
 
 ```sh
-curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
-```
-
-```sh
-curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
-```
-
-```sh
-fisher install lgathy/google-cloud-sdk-fish-completion
+curl -sL https://git.io/fisher | source \
+  && fisher install jorgebucaran/fisher \
+  && fisher install lgathy/google-cloud-sdk-fish-completion
 ```
 
 ## Install Node.js environment
