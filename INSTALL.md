@@ -154,6 +154,8 @@ ln -sfv "$HOME/.dotfiles/config/fish/functions/bat.fish" "$HOME/.config/fish/fun
 
 ln -sfv "$HOME/.dotfiles/config/starship/starship.toml" "$HOME/.config/starship.toml"
 
+ln -sfv "$HOME/.dotfiles/config/bottom/bottom.toml" "$HOME/.config/bottom/bottom.toml"
+
 ln -sfv "$HOME/.dotfiles/config/git/.gitconfig" "$HOME/.gitconfig"
 
 ln -sfv "$HOME/.dotfiles/config/code/settings.json" "$HOME/.config/Code/User/settings.json"
