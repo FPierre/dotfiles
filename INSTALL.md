@@ -8,7 +8,7 @@
 sudo add-apt-repository ppa:aslatter/ppa \
   && sudo add-apt-repository ppa:fish-shell/release-4 \
   && sudo apt update \
-  && sudo apt install alacritty fish \
+  && sudo apt install alacritty=0.15.1+1-20250317T050111~jammy-5a68e98d fish \
   && mkdir -p ~/.config/alacritty \
   && curl -LO --output-dir ~/.config/alacritty https://github.com/catppuccin/alacritty/raw/main/catppuccin-macchiato.toml \
   && curl -sS https://starship.rs/install.sh | sh
@@ -152,6 +152,8 @@ ln -sfv "$HOME/.dotfiles/config/fish/functions/bat.fish" "$HOME/.config/fish/fun
 
 ln -sfv "$HOME/.dotfiles/config/starship/starship.toml" "$HOME/.config/starship.toml"
 
+ln -sfv "$HOME/.dotfiles/config/bottom/bottom.toml" "$HOME/.config/bottom/bottom.toml"
+
 ln -sfv "$HOME/.dotfiles/config/git/.gitconfig" "$HOME/.gitconfig"
 
 ln -sfv "$HOME/.dotfiles/config/code/settings.json" "$HOME/.config/Code/User/settings.json"
@@ -196,15 +198,9 @@ wget -P ~/.config/fish/completions \
 [gcloud completion](https://github.com/lgathy/google-cloud-sdk-fish-completion):
 
 ```sh
-curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
-```
-
-```sh
-curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
-```
-
-```sh
-fisher install lgathy/google-cloud-sdk-fish-completion
+curl -sL https://git.io/fisher | source \
+  && fisher install jorgebucaran/fisher \
+  && fisher install lgathy/google-cloud-sdk-fish-completion
 ```
 
 ## Install Node.js environment
