@@ -213,7 +213,7 @@ curl -fsSL https://fnm.vercel.app/install | bash \
   && npm install -g yarn pnpm \
   && fnm completions --shell fish > ~/.config/fish/completions/fnm.fish \
   && pnpm completion fish > ~/.config/fish/completions/pnpm.fish \
-  && yarn global add netlify-cli http-server grunt-cli firebase-tools drizzle-kit create-vite @nestjs/cli
+  && yarn global add netlify-cli http-server grunt-cli firebase-tools fireway drizzle-kit create-vite @nestjs/cli
 ```
 
 ## OS configuration
