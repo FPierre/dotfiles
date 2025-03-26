@@ -122,7 +122,11 @@ arc_color = "#99d1db"
 [[row]]
   ratio=30
   [[row.child]]
-  type="cpu"
+    ratio=2
+    type="cpu"
+  [[row.child]]
+    ratio=1
+    type="temp"
 [[row]]
     ratio=30
     [[row.child]]
@@ -136,7 +140,6 @@ arc_color = "#99d1db"
   [[row.child]]
     type="proc"
     default=true
-
 
 # Filters - you can hide specific temperature sensors, network interfaces, and disks using filters.  This is admittedly
 # a bit hard to use as of now, and there is a planned in-app interface for managing this in the future:
