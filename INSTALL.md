@@ -371,6 +371,8 @@ echo "enabled=false" > ~/.config/user-dirs.conf
 
 ### [Google Cloud CLI](https://cloud.google.com/sdk/docs/install#deb)
 
+### [Cloud SQL Proxy](https://github.com/GoogleCloudPlatform/cloud-sql-proxy#installation)
+
 ### [Firefoo](https://github.com/mltek/firefoo-releases/releases)
 
 ### PostgreSQL server: via Docker (over `apt`)
