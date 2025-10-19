@@ -27,7 +27,5 @@ It seems the Corsair USB key works in any situation.
 
 ## TODO
 
-- Link to NextDNS
-- Connect to Yubikey
 - Install RunJS
 - Install Obsidian

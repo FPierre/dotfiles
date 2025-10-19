@@ -83,6 +83,7 @@ sudo apt update \
   bat \
   brave-browser \
   code \
+  cosmic-store \
   fonts-firacode \
   gh \
   gnome-tweaks \
