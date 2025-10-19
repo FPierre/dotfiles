@@ -1,6 +1,6 @@
 # https://blog.gitbutler.com/how-git-core-devs-configure-git/
 [user]
-  email = pflauder@gmail.com
+  email = 3307327+FPierre@users.noreply.github.com
   name = FPierre
 [core]
   editor = nano

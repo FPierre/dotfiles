@@ -1,35 +1,33 @@
 # espanso match file
 # For a complete introduction, visit the official docs at: https://espanso.org/docs/
 matches:
+  #
   # -- Organization --
   #
-  # - User pierre.flauder@arsen.co:
-  #   - dev: `Yq9yLMif5zS9at6Zx1ItAqhzy0E2`
-  #   - prod: `OHx4G8K9XCQ6zexl8o4VUgHawk53`
   - triggers: [":orgId", ":orgid"]
     replace: "pierreSimpleOrg----"
+  # Dev - pierre.flauder@arsen.co
   - triggers: [":devUserId", ":devuserid", ":userDevId", ":userdevid"]
     replace: "Yq9yLMif5zS9at6Zx1ItAqhzy0E2"
+  # Prod - pierre.flauder@arsen.co
   - triggers: [":prodUserId", ":userProdId", ":produserid", ":userprodid"]
     replace: "OHx4G8K9XCQ6zexl8o4VUgHawk53"
 
+  #
   # -- Partner --
   #
-  # - Id: `pierrePartner-------`
-  # - Name: `Pierre Partner`
-  # - User pierre.flauder+partner@arsen.co:
-  #   - dev: `eSJksshWJBe1Zhm1KTqQmc4x9em1`
-  #   - prod: `z1l5OE8YFlVWOLIjxu5HECiGLsi1`
   - triggers: [":partnerId", ":partnerid"]
     replace: "pierrePartner-------"
+  # Dev - pierre.flauder+partner@arsen.co
   - triggers: [":devPartnerUserId", ":devpartneruserid", ":userPartnerDevId", ":userpartnerdevid"]
     replace: "eSJksshWJBe1Zhm1KTqQmc4x9em1"
+  # Prod - pierre.flauder+partner@arsen.co
   - triggers: [":prodPartnerUserId", ":prodpartneruserid", ":userPartnerProdId", ":userpartnerprodid"]
     replace: "z1l5OE8YFlVWOLIjxu5HECiGLsi1"
 
-  # -- Partner's Org --
   #
-  # - Id: `pierrePartnerOrg----` (Pierre Partner's Org)
+  # -- Partner's Organization --
+  #
   - triggers: [":partnerOrgId", ":partnerorgid"]
     replace: "pierrePartnerOrg----"
 
@@ -141,3 +139,18 @@ matches:
         type: date
         params:
           format: "%d/%m/%Y"
+  - trigger: ":id"
+    replace: "{{output}}"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: |
+            size=20
+            chars='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
+            id=""
+            for ((i=0; i<size; i++)); do
+              rand=$(( RANDOM % ${#chars} ))
+              id+="${chars:rand:1}"
+            done
+            echo "$id"
