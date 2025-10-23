@@ -24,8 +24,3 @@ Boot on the bootable USB:
 After the USB boot, the installation process may fail.
 It is still possible to download again the OS image and copy to another USB key from the running virtual OS.
 It seems the Corsair USB key works in any situation.
-
-## TODO
-
-- Install RunJS
-- Install Obsidian
