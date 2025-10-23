@@ -241,6 +241,8 @@ gsettings set org.gnome.desktop.privacy remember-recent-files false
 gsettings set org.gnome.desktop.search-providers disabled \[\'org.gnome.Contacts.desktop\',\ \'org.gnome.Calculator.desktop\',\ \'org.gnome.Calendar.desktop\',\ \'org.gnome.seahorse.Application.desktop\',\ \'org.gnome.Terminal.desktop\'\]
 ```
 
+<img width="1275" height="1401" alt="Screenshot from 2025-10-23 07-55-28" src="https://github.com/user-attachments/assets/5aad673d-fec0-4fa7-8e0e-55ca3b03c859" />
+
 ```sh
 gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-down "['<Primary><Super>Down']"
 gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-left "['<Primary><Super>Left']"
