@@ -1,6 +1,6 @@
 # Install
 
-> Needed: Yubikey, phone with 2FA, Bitwarden master password, ssh from backup
+> Needed: phone with 2FA, Bitwarden master password, ssh from backup
 
 ## Install Alacritty, Fish and Starship
 
