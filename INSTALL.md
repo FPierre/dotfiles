@@ -209,8 +209,11 @@ curl -sL https://git.io/fisher | source \
 Install [fnm](https://github.com/Schniz/fnm#using-a-script-macoslinux), Node.js and Yarn:
 
 ```sh
-curl -fsSL https://fnm.vercel.app/install | bash \
-  && fnm install v22 \
+curl -fsSL https://fnm.vercel.app/install | bash
+```
+
+```sh
+fnm install v25 \
   && npm install -g yarn pnpm \
   && fnm completions --shell fish > ~/.config/fish/completions/fnm.fish \
   && pnpm completion fish > ~/.config/fish/completions/pnpm.fish \
